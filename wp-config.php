@@ -32,8 +32,7 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-define('WP_HOME','http://local.tomledesigns.com');
-define('WP_SITEURL','http://local.tomledesigns.com');
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
