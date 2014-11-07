@@ -29,7 +29,7 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700,Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700|Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Julee|Swanky+and+Moo+Moo|Gochi+Hand' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">
 
