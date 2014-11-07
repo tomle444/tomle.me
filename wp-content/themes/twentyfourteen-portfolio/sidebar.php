@@ -27,3 +27,4 @@
 	</div><!-- #primary-sidebar -->
 	<?php endif; ?>
 </div><!-- #secondary -->
+</section>

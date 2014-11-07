@@ -28,18 +28,14 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700,Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Julee|Swanky+and+Moo+Moo|Gochi+Hand' rel='stylesheet' type='text/css'>
-	<style>
-		.class-name { display: none; }
-	</style>
 	<script type="text/javascript">
+
 		$(document).ready(function () {
-				$('body').fadeIn(1000).removeClass('class-name');
-		});
-		$(document).ready(function () {
-	
+				
+
 				$('.contact-link').click(function(){
 
 					$('html, body').stop().animate({
@@ -47,11 +43,11 @@
 					}, 1000);
 					return false;
 				});
-		
+			
 				$('.work-link').click(function(){
 
 					$('html, body').stop().animate({
-						scrollTop: $('#recentwork').offset().top -100
+						scrollTop: $('#work').offset().top -100
 					}, 1000);
 					return false;
 				});		
@@ -63,15 +59,15 @@
 					}, 1000);
 					return false;
 				});
-				
+
 		});
 
 	</script>
-
+	
 </head>
 
-<body <?php body_class('class-name');  ?>>
-<div id="page" class="hfeed ">
+<body <?php body_class(); ?>>
+<div id="page" class="hfeed">
 	<?php if ( get_header_image() ) : ?>
 	<div id="site-header">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -94,12 +90,12 @@
 		<section id="mainHero">
 			<section class="overlay">
 				<div class="intro">
-					<?php $intro_post = new WP_Query( 'p=9' ); ?>
+					<?php $intro_post = new WP_Query( 'p=106' ); ?>
 					<?php while ($intro_post->have_posts()) : $intro_post->the_post(); ?>
 						<?php the_content(); ?>
 					<?php endwhile;?>
 					<?php wp_reset_postdata(); ?>
-					<button class="continue">Continue</button>
+					<button class="continue work-link" >Continue</button>
 				</div>
 			</section>
 		</section>

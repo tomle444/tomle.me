@@ -96,7 +96,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .marginBottom10{margin-bottom:10px;}
 .marginBottom5{margin-bottom:5px;}
 
-h1, h2, h3, h4, h5, h6 {}
+h1, h2, h3, h4, h5, h6 {font-family:"Roboto Slab", Gerogia, serif; font-weight:normal; }
 
 /* begin custom theme styles */
 body { background-color:#fff; color:#333; font-family:"Roboto Condensed", arial, sans-serif;}
@@ -112,15 +112,15 @@ a, button { -webkit-transition: all 200ms ease;
 #page {margin:0px auto;}
 #masthead {width:100%; padding:0; background:#333; position:fixed; top:0px; z-index:9999; box-shadow:1px 1px 2px rgba(0,0,0,.5);}
 	 .header-main {max-width:1260px; padding:0; margin:auto;}
-		.logo {font-family:"Swanky and Moo Moo", Georgia, serif; font-size:24px; font-weight:normal; margin:0px 10px;}
+		.logo {font-family:"Swanky and Moo Moo", Georgia, serif; font-size:28px; font-weight:normal; margin:0px 10px;}
 		
 		.primary-navigation li:hover > a {background-color:#666; }
 
 #main, section{margin:auto; overflow:hidden;}
 	#mainHero {min-height:500px; margin:auto; text-align:center; background-image: url('images/bg-hero.jpg'); background-repeat:no-repeat; background-position:center; background-attachment:fixed; -webkit-background-size: cover;
   -moz-background-size: cover;  -o-background-size: cover; background-size: cover; position:relative; width:100%; position:relative; line-height:500px; }
-		.overlay {position:absolute; background-color: rgba(84, 160, 215, .8); width:100%; height:100%; box-shadow: inset 0 -10px 10px -10px rgba(29,92,135,0.8), inset 0 -10px 10px -10px rgba(29,92,135,0.8);}
-		#mainHero .intro {width:70%; font-size:20px; color:#fff; font-weight:300;  display:inline-block; vertical-align:middle; line-height:30px; border:1px solid rgba(169, 213, 254,0.5); border-left:0px; border-right:0px; padding:50px 25px 0; }
+		.overlay {position:absolute; background-color: rgba(84, 160, 215, .8); width:100%; height:100%; box-shadow: inset 0 -10px 20px -20px rgba(29,92,135,0.8), inset 0 -20px 20px -10px rgba(29,92,135,0.8);}
+		#mainHero .intro {width:70%; font-size:18px; color:#fff; font-weight:300;  display:inline-block; vertical-align:middle; line-height:28px; border:1px solid rgba(169, 213, 254,0.5); border-left:0px; border-right:0px; padding:30px 20px 0; }
 			#mainHero .intro p {text-shadow:2px 2px 1px rgba(0,0,0,0.2);}
 				#mainHero .intro p .large {font-size:150%}
 				#mainHero .intro p b {border-bottom:1px dotted rgba(255,255,255,0.5);}
@@ -137,9 +137,32 @@ a, button { -webkit-transition: all 200ms ease;
 		.content-area {padding-top:0px;}
 	section {}
 		section.body {max-width:1260px; margin-top:48px;}
-		section.body .inner {width:90%;}
+		section.body .inner {width:90%; overflow:hidden;}
 
-#primary {float:left; width:100%; overflow:hidden;}
+#primary { width:95%; overflow:hidden; }
+	.content-area { float:none; margin:auto;}
+	.list-view .content-area {margin:auto; padding:0;}
+	#content h2, #content h3 {font-weight:300;}
+	#content h2 {text-transform:uppercase;}
+	#content h3 {font-size:20px;}
+	
+	/* projects */
+	.projects-container { overflow:hidden; }
+		.project {min-height:350px; line-height:350px; background-repeat:no-repeat; background-position:top center; background-size:cover; position:relative; overflow:hidden; border:1px solid #eee;}
+		.project .inner {width:95%; margin:auto; text-align:center; }
+			.project:hover {}
+				.project-overlay {position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.7); top:0;left:0; text-align:center; display:none;}
+					.project-content {display:inline-block; vertical-align:middle; line-height:30px; color:#fff;}
+				
+			.remodel-solutions {background-image:url('images/projects/project-remodel-solutions.jpg'); }
+			.tribal-hollywood {background-image:url('images/projects/project-tribalhollywood.jpg'); }
+			.gitter-gallery {background-image:url('images/projects/project-gitter-gallery.jpg'); }
+			.fashion-island {background-image:url('images/projects/project-fashion-island.jpg'); }
+			.dance-socks {background-image:url('images/projects/project-dance-socks.jpg'); }
+			.bsasi {background-image:url('images/projects/project-bsasi.jpg'); }
+			.thebeamstore {background-image:url('images/projects/project-thebeamstore.jpg'); }
+			.thebeamstore {background-image:url('images/projects/project-thebeamstore.jpg'); }
+
 #secondary {float:left; width:100%; overflow:hidden; margin:auto; padding:0; background:#ccc; clear:none; border:0;}
 
 #footer {}
@@ -151,9 +174,10 @@ a, button { -webkit-transition: all 200ms ease;
 				.footer-links ul li {list-style-type:none;  text-align:center;}
 					.footer-links ul li a {display:block; font-size:18px; padding:10px;}
 					.footer-links ul li a:hover {background-color:rgba(255,255,255,0.9); color:rgba(31, 92, 132, 1);}
-					
-			.site-footer .icon {fill:rgba(255,255,255,0.4); display:inline-block; margin-right:8px;}
-				.site-footer .icon:hover {fill:rgba(255,255,255,0.9);}
+				.footer-social {margin-top:20px; border-top:1px solid rgba(255,255,255,0.2);}
+					.icon-resume {margin-top:10px;}
+				.site-footer .icon {fill:rgba(255,255,255,0.4); display:inline-block; margin:10px 2px;}
+					.site-footer .icon:hover {fill:rgba(255,255,255,0.9);}
 				
 			.site-info {float:none; width:auto; text-align:center;}
 				.site-info p {margin:2px auto; padding:0; }
@@ -346,10 +370,15 @@ footer[role="contentinfo"] {border:0px; margin:20px 2%; overflow:hidden;}
 	
 	
 	/* resposive styling */
-	
+	@media (min-width: 673px) {
+		
+	}
 	@media (min-width: 783px) {
-		#mainHero {background-position:center -123px;}
-	
+		#mainHero {background-position:center 0px;}
+			#mainHero .intro { font-size:20px; line-height:30px;}
+		
+			
+		
 		.footer-column {float:left; width:33%;}
 			
 			.footer-links ul li {display:inline-block;}
@@ -363,6 +392,12 @@ footer[role="contentinfo"] {border:0px; margin:20px 2%; overflow:hidden;}
 		
 		.site-info {float:right; width:auto; text-align:right;}
 			
+	}
+	
+	@media (min-width: 1024px) {
+		
+			#mainHero .intro { font-size:24px; line-height:40px;}
+	
 	}
 	
 	/*

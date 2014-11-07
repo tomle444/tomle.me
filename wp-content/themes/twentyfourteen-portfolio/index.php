@@ -28,23 +28,52 @@ get_header(); ?>
 
 			<div id="primary" class="content-area">
 				<div id="content" class="site-content" role="main">
-					<h2 class="entry-title">Recent Work</h2>
-					
-					<?php 
-						query_posts('cat=24');
-						while (have_posts()) : the_post();
-					?>
-						<div class="project <?php echo get_post_meta($post->ID, 'project_title', true); ?>">
-							<?php the_title('<h3>','</h3>'); ?>
-							<?php the_content(); ?>
+					<div id="work" class="projects-container">
+						<h2 class="entry-title">Recent Work</h2>
+						<script>
+							$(document).ready( function() {
+								$('.project').hover( 
+								function() {
+									$(this).find('.project-overlay').fadeIn(300);
+								}, 
+								function() { 
+									$(this).find('.project-overlay').fadeOut(300);
+								});	
+							});
+						</script>
+						<?php 
+							query_posts('cat=24');
+							while (have_posts()) : the_post();
+						?>
+							<div class="project <?php echo get_post_meta($post->ID, 'project_title', true); ?>">
+												
+								
+									<div class="project-overlay">
+										<div class="project-content">
+											<?php the_title('<h3>','</h3>'); ?>
+											<?php the_content(); ?>
+											<?php
+												$posttags = get_the_tags();
+												if ($posttags) {
+													$numItems = count($posttags);
+													$i = 0;
+													foreach($posttags as $tag) {
+														echo $tag->name;
+														if (++$i !== $numItems){
+															echo ' | ';
+														}
+													}
+												}
+											?>
+										</div>
+									</div>
 							
-						</div>
-						
+							</div>
 
-					<?php	
-						endwhile;
-					?>
-				
+						<?php	
+							endwhile;
+						?>
+					</div>
 				<?php
 				
 					query_posts(array('post__not_in' => array(106), 'cat' => -24));	
