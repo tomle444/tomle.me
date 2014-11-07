@@ -90,7 +90,7 @@
 		<section id="mainHero">
 			<section class="overlay">
 				<div class="intro">
-					<?php $intro_post = new WP_Query( 'p=106' ); ?>
+					<?php $intro_post = new WP_Query( 'p=9' ); ?>
 					<?php while ($intro_post->have_posts()) : $intro_post->the_post(); ?>
 						<?php the_content(); ?>
 					<?php endwhile;?>

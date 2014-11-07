@@ -42,7 +42,7 @@ get_header(); ?>
 							});
 						</script>
 						<?php 
-							query_posts('cat=24');
+							query_posts('cat=7');
 							while (have_posts()) : the_post();
 						?>
 							<div class="project <?php echo get_post_meta($post->ID, 'project_title', true); ?>">
@@ -76,7 +76,7 @@ get_header(); ?>
 					</div>
 				<?php
 				
-					query_posts(array('post__not_in' => array(106), 'cat' => -24));	
+					query_posts(array('post__not_in' => array(9), 'cat' => -7));	
 					if ( have_posts() ) :
 						// Start the Loop.
 						
