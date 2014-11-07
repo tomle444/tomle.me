@@ -29,7 +29,7 @@ get_header(); ?>
 			<div id="primary" class="content-area">
 				<div id="content" class="site-content" role="main">
 					<div id="work" class="projects-container">
-						<h2 class="entry-title">Recent Work</h2>
+						<h2 class="entry-title">Recent Work TEST</h2>
 						<script>
 							$(document).ready( function() {
 								$('.project').hover( 
