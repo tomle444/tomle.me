@@ -153,7 +153,9 @@ a, button { -webkit-transition: all 200ms ease;
 			.project:hover {}
 				.project-overlay {position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.7); top:0;left:0; text-align:center; display:none;}
 					.project-content {display:inline-block; vertical-align:middle; line-height:30px; color:#fff;}
-				
+						.project-link {background:url('images/view-more.svg'); background-repeat:no-repeat; background-position:center center; color:white; text-indent:-9999px; display:block; width:40px; height:40px; margin:auto;}
+							.project-link:hover {opacity:0.5;}
+							
 			.remodel-solutions {background-image:url('images/projects/project-remodel-solutions.jpg'); }
 			.tribal-hollywood {background-image:url('images/projects/project-tribalhollywood.jpg'); }
 			.gitter-gallery {background-image:url('images/projects/project-gitter-gallery.jpg'); }
@@ -161,7 +163,7 @@ a, button { -webkit-transition: all 200ms ease;
 			.dance-socks {background-image:url('images/projects/project-dance-socks.jpg'); }
 			.bsasi {background-image:url('images/projects/project-bsasi.jpg'); }
 			.thebeamstore {background-image:url('images/projects/project-thebeamstore.jpg'); }
-			.thebeamstore {background-image:url('images/projects/project-thebeamstore.jpg'); }
+			
 
 #secondary {float:left; width:100%; overflow:hidden; margin:auto; padding:0; background:#ccc; clear:none; border:0;}
 

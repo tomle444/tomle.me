@@ -95,7 +95,7 @@ get_header(); ?>
 
 					else :
 						// If no content, include the "No posts found" template.
-						get_template_part( 'content', 'none' );
+						//get_template_part( 'content', 'none' );
 
 					endif;
 				?>
@@ -107,5 +107,5 @@ get_header(); ?>
 	</div><!-- #main-content -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();
