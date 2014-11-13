@@ -51,9 +51,11 @@
 			</div>
 			<div class="site-info">
 				<div class="footer-links"><?php wp_nav_menu( array('menu' => 'Portfolio Links' )); ?></div>
-				<p>tomledesigns.com <?php echo date('Y'); ?> All rights reserved. </p>
+				
 				<?php do_action( 'twentyfourteen_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyfourteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfourteen' ), 'WordPress' ); ?></a>				
+				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyfourteen' ) ); ?>"  target="_blank" class="icon-wordpress"><?php printf( __( 'Proudly powered by %s', 'twentyfourteen' ), 'WordPress' ); ?></a>	
+				<a href="http://www.mediatemple.net" target="_blank" class="icon-mt">&nbsp;</a>	
+				<p class="copyright">tomledesigns.com <?php echo date('Y'); ?> All rights reserved. </p>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #page -->

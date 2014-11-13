@@ -54,3 +54,18 @@ function twentyfourteen_posted_on() {
 	);
 }
 endif;
+
+add_filter('stylesheet_directory_uri','wpi_stylesheet_dir_uri',10,2);
+
+/**
+ * wpi_stylesheet_dir_uri
+ * overwrite theme stylesheet directory uri
+ * filter stylesheet_directory_uri
+ * @see get_stylesheet_directory_uri()
+ */
+function wpi_stylesheet_dir_uri($stylesheet_dir_uri, $theme_name){
+
+	$subdir = '/css';
+	return $stylesheet_dir_uri.$subdir;
+
+}

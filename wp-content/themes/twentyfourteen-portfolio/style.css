@@ -20,83 +20,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* www.tomledesigns.com */
 
 
-/* utility classes */
-.pageWidth{width: 90%; max-width:1260px;}
-
-.widthAuto{width:auto;}
-.width15Percent{width:14.9%;}
-.width16Percent{width:16.6%;}
-.width20Percent{width:19.9%;}
-.width25Percent{width:24.9%;}
-.width33Percent{width:33.33333%;}
-.width39Percent{width:39%;}
-.width40Percent{width:39.9%;}
-.width42Percent{width:41.9%;}
-.width45Percent{width:44.9%;}
-.width48Percent{width:48%;}
-.width50Percent{width:49.9%;}
-.width55Percent{width:54.9%;}
-.width58Percent{width:58%;}
-.width60Percent{width:59.9%;}
-.width66Percent{width:66.66666%;}
-.width70Percent{width:70%;}
-.width72Percent{width:72%;}
-.width75Percent{width:74.9%;}
-.width80Percent{width:80%;}
-.width85Percent{width:84.9%;}
-.width90Percent{width:90%;}
-.width95Percent{width:95%;}
-.width96Percent{width:96%;}
-.width98Percent{width:98%;}
-.width100Percent{width:100%;}
-
-.textAlignCenter{text-align:center;}
-.textAlignLeft{text-align:left;}
-.textAlignRight{text-align:right;}
-
-.overflowHidden{overflow:hidden;}
-.positionRelative{position:relative;}
-.positionAbsolute{position:absolute;}
-.floatLeft{float:left;}
-.floatRight{float:right;}
-
-.inner{width:94%; margin:auto;}
-
-.marginAuto{margin:auto;}
-.marginNone, .noMargin{margin:0; }
-
-.verticalAlignMiddle {vertical-align:middle;}
-
-.displayNone{display:none;}
-.displayBlock{display:block;}
-.displayInlineBlock, .inlineBlock{display:inline-block;}
-
-.clear{clear:both; line-height:0px; height:0px; font-size:0px;}
-
-.vpadding1Percent, .vPadding1Percent{padding-top:1%; padding-bottom:1%;}
-.vpadding2Percent, .vPadding2Percent{padding-top:2%; padding-bottom:2%;}
-.vpadding3Percent, .vPadding3Percent{padding-top:3%; padding-bottom:3%;}
-
-.vmargin10{margin-top:10px; margin-bottom:10px;}
-.vmargin20{margin-top:20px; margin-bottom:20px;}
-
-.vCenter{vertical-align:middle;}
-
-.noMargin{margin:0 !important}
-
-.marginTop{margin-top:5%;}
-.marginTop10{margin-top:10px;}
-.marginTop15{margin-top:15px;}
-.marginTop20{margin-top:20px;}
-.marginTop30{margin-top:30px;}
-.marginTop40{margin-top:40px;}
-.marginTop50{margin-top:50px;}
-.marginBottom50{margin-bottom:50px;}
-.marginBottom20{margin-bottom:20px;}
-.marginBottom10{margin-bottom:10px;}
-.marginBottom5{margin-bottom:5px;}
-
-h1, h2, h3, h4, h5, h6 {font-family:"Roboto Slab", Gerogia, serif; font-weight:normal; }
 
 /* begin custom theme styles */
 body { background-color:#fff; color:#333; font-family:"Roboto Condensed", arial, sans-serif;}
@@ -183,7 +106,8 @@ a, button { -webkit-transition: all 200ms ease;
 				
 			.site-info {float:none; width:auto; text-align:center;}
 				.site-info p {margin:2px auto; padding:0; }
-
+					.icon-wordpress {background-image:url('images/wp-icon.png'); background-repeat:no-repeat; background-position:center center; width:60px; height:60px; margin:auto; text-indent:-9999px;  display:inline-block;}
+					.icon-mt {background-image:url('images/mt-logo.png'); background-repeat:no-repeat; background-position:center center; display:block; text-indent:-9999px; width:60px; height:60px; margin:auto;}
 /*
 #topnav {position:fixed; width: 100%; z-index:99; overflow:hidden; top:0; height:43px; background:#fff url('images/bg_topnav.png') repeat-x top; margin:auto; text-align:center;}
 #topnav .inner {margin:auto; overflow:hidden; min-height:43px;}
@@ -392,7 +316,9 @@ footer[role="contentinfo"] {border:0px; margin:20px 2%; overflow:hidden;}
 			.footer-contact h3, .footer-contact h6 {margin:0; padding:0; font-weight:normal;}
 			.footer-contact p {}
 		
-		.site-info {float:right; width:auto; text-align:right;}
+		.site-info {float:right; width:auto; }
+			.site-info ul {text-align:right;}
+				.icon-wordpress, .icon-mt {float:right; margin:10px;}
 			
 	}
 	

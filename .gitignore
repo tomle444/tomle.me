@@ -116,5 +116,6 @@ wp-content/themes/nv/
 
 # ignore node/grunt dependency directories
 node_modules/
-
+.npm-debug.log
+tmp
 wp-config.php
