@@ -18,14 +18,14 @@
 			
 				
 			
-			<div class="footer-contact footer-column">
+			<div id="contact" class="footer-contact footer-column">
 			<div class="inner">
 				<h6>Tom Le</h6>
-				<p>Phone: 760 812-0448</p>
+				<p>Phone: 760 542-8866</p>
 				<p>Email: <a href="mailto:hello@tomledesigns.com?subject=Contact Form">hello@tomledesigns.com</a></p>
 				
 				<div class="footer-social">
-					<a href="http://www.linkedin.com/" target="_blank" class="icon">
+					<a href="https://www.linkedin.com/profile/view?id=14393462" target="_blank" class="icon">
 						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve" width="16px" height="16px" class="icon-linkedin" >
 				
@@ -34,7 +34,7 @@
 							C9.2,6.7,9,7.5,9,7.5v4.3H7v-7h2v0.7c0.3-0.2,1-0.7,2-0.7c0.6,0,2,0.4,2,2.7V11.9z"/>				
 						</svg> 
 					</a>	
-					<a href="http://www.linkedin.com/" target="_blank" class="icon">
+					<a href="https://www.linkedin.com/profile/view?id=14393462" target="_blank" class="icon">
 						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve" width="16px" height="16px" class="icon-resume ">				
 								
