@@ -277,7 +277,44 @@ a, button { -webkit-transition: all 200ms ease;
 	}
 	
 	
-	/* resposive styling */
+	/* resposive styling */	
+	@media (max-width: 782px) {
+		 #masthead {
+			 .header-main {
+				.logo {} 		
+				.primary-navigation {
+					li { display:block; float:none;
+						&:hover {
+							> a {background-color:rgba(42,70,90, 0.5); text-shadow:none; }
+						}
+						a { font-size:10px; letter-spacing:6px; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); padding:7px;
+							&:hover {
+								color:#fff;
+							}
+						}
+					}
+					li.focus {				
+						> a {background-color:rgba(42,70,90, 0.25); outline: none;}
+					}
+					&.toggle-on {
+						.menu-navigation-links-container {
+							position:absolute;
+							top:50px;
+							right:0px;
+						}
+					}				
+				}
+				.primary-navigation.toggled-on { padding:0px;
+					.menu-navigation-links-container {
+						background: rgba(42, 70, 90, 0.5);
+						position:absolute;
+						top:49px;
+						right:0px;
+					} 
+				}
+			}
+		}
+	}
 	@media (min-width: 673px) {
 		 
 	}
