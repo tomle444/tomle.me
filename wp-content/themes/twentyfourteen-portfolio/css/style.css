@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background-color: #fff;
   color: #333;
-  font-family: "Roboto Condensed", arial, sans-serif;
+  font-family: "Roboto", arial, sans-serif;
 }
 
 /* line 89, ../scss/style.scss */
@@ -363,6 +363,7 @@ a, button {
   top: 0px;
   z-index: 9999;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: "Montserrat", arial, sans-serif;
 }
 /* line 99, ../scss/style.scss */
 #masthead .header-main {
@@ -372,10 +373,11 @@ a, button {
 }
 /* line 100, ../scss/style.scss */
 #masthead .header-main .logo {
-  font-family: "Swanky and Moo Moo", Georgia, serif;
+  font-family: "Oregano", Georgia, serif;
   font-size: 28px;
   font-weight: normal;
   margin: 0px 10px;
+  font-style: italic;
 }
 /* line 102, ../scss/style.scss */
 #masthead .header-main .primary-navigation li {
@@ -432,6 +434,7 @@ a, button {
   width: 100%;
   position: relative;
   line-height: 500px;
+  font-family: "Roboto Condensed", arial, sans-serif;
 }
 /* line 121, ../scss/style.scss */
 #mainHero .overlay {
@@ -680,6 +683,12 @@ section.body .main-content .projects-container .project .project-link:hover {
   border: 0;
 }
 
+/* line 184, ../scss/style.scss */
+footer {
+  font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
 /* line 185, ../scss/style.scss */
 .site-footer {
   background-color: #1f5c84;
@@ -759,6 +768,8 @@ section.body .main-content .projects-container .project .project-link:hover {
 .site-info p {
   margin: 2px auto;
   padding: 0;
+  clear: both;
+  font-size: 10px;
 }
 
 /* line 200, ../scss/style.scss */
@@ -813,7 +824,7 @@ section.body .main-content .projects-container .project .project-link:hover {
 }
 
 /* articles */
-/* line 207, ../scss/style.scss */
+/* line 209, ../scss/style.scss */
 .site-content .entry-content,
 .site-content .entry-summary,
 .page-content, .site-content .entry-header {
@@ -866,7 +877,7 @@ section.body .main-content .projects-container .project .project-link:hover {
 }
 
 /* Buttons */
-/* line 242, ../scss/style.scss */
+/* line 246, ../scss/style.scss */
 button,
 .button,
 input[type="button"],
@@ -883,7 +894,7 @@ input[type="submit"] {
   vertical-align: bottom;
 }
 
-/* line 257, ../scss/style.scss */
+/* line 266, ../scss/style.scss */
 button:hover,
 button:focus,
 .button:hover,
@@ -898,7 +909,7 @@ input[type="submit"]:focus {
   color: #285c15;
 }
 
-/* line 271, ../scss/style.scss */
+/* line 275, ../scss/style.scss */
 button:active,
 .button:active,
 input[type="button"]:active,
