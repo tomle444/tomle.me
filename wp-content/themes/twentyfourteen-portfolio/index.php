@@ -42,7 +42,7 @@ get_header(); ?>
 							});
 						</script>
 						<?php 
-							query_posts('cat=7');
+							query_posts('cat=7&order=DESC' );
 							while (have_posts()) : the_post();
 						?>
 							<div class="project <?php echo get_post_meta($post->ID, 'project_title', true); ?>">
