@@ -123,6 +123,9 @@ a, button { -webkit-transition: all 200ms ease;
 			 p {text-shadow:2px 2px 1px rgba(0,0,0,0.2);
 				.large {font-size:150%}
 				b {border-bottom:1px dotted rgba(255,255,255,0.5);}
+				span.secondLine {
+					display: block;
+				}
 			 }
 		}
 		button.continue {border:2px solid #fff; background:none; color:#fff; position:relative; bottom:-70px; position:relative; outline:none; 
@@ -164,19 +167,14 @@ a, button { -webkit-transition: all 200ms ease;
 	#content h2, #content h3 {font-weight:300;}
 	#content h2 {text-transform:uppercase;}
 	#content h3 {font-size:20px;}
-	
-	
 		
-
-				
-							
-			.remodel-solutions {background-image:url('../images/projects/project-remodel-solutions.jpg'); }
-			.tribal-hollywood {background-image:url('../images/projects/project-tribalhollywood.jpg'); }   
-			.gitter-gallery {background-image:url('../images/projects/project-gitter-gallery.jpg'); }
-			.fashion-island {background-image:url('../images/projects/project-fashion-island.jpg'); }
-			.dance-socks {background-image:url('../images/projects/project-dance-socks.jpg'); }   
-			.bsasi {background-image:url('../images/projects/project-bsasi.jpg'); }
-			.thebeamstore {background-image:url('../images/projects/project-thebeamstore.jpg'); }
+		.remodel-solutions {background-image:url('../images/projects/project-remodel-solutions.jpg'); }
+		.tribal-hollywood {background-image:url('../images/projects/project-tribalhollywood.jpg'); }   
+		.gitter-gallery {background-image:url('../images/projects/project-gitter-gallery.jpg'); }
+		.fashion-island {background-image:url('../images/projects/project-fashion-island.jpg'); }
+		.dance-socks {background-image:url('../images/projects/project-dance-socks.jpg'); }   
+		.bsasi {background-image:url('../images/projects/project-bsasi.jpg'); }
+		.thebeamstore {background-image:url('../images/projects/project-thebeamstore.jpg'); }
 			
 
 #secondary {float:left; width:100%; overflow:hidden; margin:auto; padding:0; background:#ccc; clear:none; border:0;} 
@@ -198,7 +196,7 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 			.site-info {float:none; width:auto; text-align:center;}
 				.site-info p {margin:2px auto; padding:0; clear:both; font-size: 10px;}
 					.icon-wordpress {background-image:url('../images/wp-icon.png'); background-repeat:no-repeat; background-position:center center; width:60px; height:60px; margin:auto; text-indent:-9999px;  display:inline-block;}
-					.icon-mt {background-image:url('../images/mt-logo.png'); background-repeat:no-repeat; background-position:center center; display:block; text-indent:-9999px; width:60px; height:60px; margin:auto;}
+					.icon-mt {background-image:url('../images/mt-logo.png'); background-repeat:no-repeat; background-position:center center; display:block; text-indent:-9999px; width:85px; height:60px; margin:auto;}
 					
 	 #uparrow {width: 50px; height: 50px; opacity: 1; position: fixed; bottom: 20px; right: 10px; display: none; z-index: 9999; background-color: #00527d; background-image:url('../images/top.png'); background-repeat:no-repeat; background-position:center center; text-align: center; color: #fff; font-size: 11px; line-height: 50px;	text-indent:-9999px; }
 	#uparrow:hover {cursor: pointer; background-color: #0096e3;}
