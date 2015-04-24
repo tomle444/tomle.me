@@ -73,10 +73,21 @@ class PMXI_Chunk {
     $this->options['chunkSize'] *= PMXI_Plugin::getInstance()->getOption('chunk_size');      
 
     // set the filename
-    $this->file = $file;     
+    $this->file = $file;   
+
+    $is_html = false;
+    $f = @fopen($file, "rb");       
+    while (!@feof($f)) {
+      $chunk = @fread($f, 1024);         
+      if (strpos($chunk, "<!DOCTYPE") === 0) $is_html = true;
+      break;      
+    }  
+    @fclose($f);
+
+    if ($is_html) return;
 
     if (empty($this->options['element'])){
-      $founded_tags = array();   
+      //$founded_tags = array();   
 
       if (function_exists('stream_filter_register')){
         stream_filter_register('preprocessxml', 'preprocessXml_filter');
@@ -90,8 +101,12 @@ class PMXI_Chunk {
       while ( @$reader->read()) {
          switch ($reader->nodeType) {
            case (XMLREADER::ELEMENT):              
-              array_push($founded_tags, str_replace(":", "_", $reader->localName));
-              if (count($founded_tags) > 100) break(2);
+              if (array_key_exists(str_replace(":", "_", $reader->localName), $this->cloud))
+                $this->cloud[str_replace(":", "_", $reader->localName)]++;
+              else
+                $this->cloud[str_replace(":", "_", $reader->localName)] = 1;
+              //array_push($founded_tags, str_replace(":", "_", $reader->localName));
+              
               break;
             default:
 
@@ -100,7 +115,7 @@ class PMXI_Chunk {
       }
       unset($reader);   
       
-      if (!empty($founded_tags)) {            
+      /*if (!empty($founded_tags)) {            
         $element_counts = array_count_values($founded_tags);                          
         if (!empty($element_counts)){
           foreach ($element_counts as $tag => $count)
@@ -109,11 +124,13 @@ class PMXI_Chunk {
           
           arsort($element_counts);           
         }              
-      }        
+      } */       
      
       if (!empty($this->cloud)){      
         
-        $main_elements = array('node', 'product', 'job', 'deal', 'entry', 'item', 'property', 'listing', 'hotel', 'record', 'article', 'post');
+        arsort($this->cloud);           
+
+        $main_elements = array('node', 'product', 'job', 'deal', 'entry', 'item', 'property', 'listing', 'hotel', 'record', 'article', 'post', 'book');
 
         foreach ($this->cloud as $element_name => $value) {          
           if ( in_array(strtolower($element_name), $main_elements) ){
@@ -121,12 +138,13 @@ class PMXI_Chunk {
             break;    
           }
         }
+        
         if (empty($this->options['element'])){                
-          foreach ($element_counts as $el => $count) {                        
+          foreach ($this->cloud as $el => $count) {                        
               $this->options['element'] = $el;
               break;            
           }          
-        }             
+        }          
       }
     }                           
 
@@ -137,8 +155,8 @@ class PMXI_Chunk {
     else $path = $this->file;
 
     $this->reader = new XMLReader();        
-    $this->reader->open($path);    
-    $this->reader->setParserProperty(XMLReader::VALIDATE, false);
+    @$this->reader->open($path);
+    @$this->reader->setParserProperty(XMLReader::VALIDATE, false);
     
 
   }  
@@ -171,7 +189,7 @@ class PMXI_Chunk {
     // trim it
     $element = trim($this->options['element']);
                   
-    $xml = '';        
+    $xml = '';    
 
     try { 
       while ( @$this->reader->read() ) {        
@@ -218,10 +236,15 @@ class PMXI_Chunk {
         $pattern = '/(\s+\w+):(\w+[=]{1})/i';
         $replacement = '$1_$2';
         $feed = preg_replace($pattern, $replacement, $feed);
+        // pull colons from single element 
+        // (<\w+):(\w+\/>)
+        $pattern = '/(<\w+):(\w+\/>)/i';
+        $replacement = '<$2';
+        $feed = preg_replace($pattern, $replacement, $feed);
       
         return $feed;
 
-    }
+  }
 
 }
 
