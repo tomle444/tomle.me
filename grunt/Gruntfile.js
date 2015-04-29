@@ -7,7 +7,7 @@ module.exports = function(grunt){
 			dev: {
 				options: {
 					sassDir: themeDir + 'scss',
-					cssDir: themeDir + 'css',
+					cssDir: themeDir,
 					outputStyle: 'expanded',
 					environment: 'development'
 				}
@@ -19,7 +19,7 @@ module.exports = function(grunt){
                     livereload: true
                 },
                 files: [
-                    themeDir + 'css/{,**/}*.css'                   
+                    themeDir + '{,**/}*.css'                   
                 ]
             },
 			 compass: {
@@ -32,5 +32,5 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.registerTask('default',['watch']);
+	grunt.registerTask('default',['compass']);
 }
