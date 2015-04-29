@@ -1,4 +1,4 @@
-@import url("../../twentyfourteen/style.css");
+@import url("../twentyfourteen/style.css");
 
 /* utility classes */
 .pageWidth{width: 90%; max-width:1260px;}
@@ -18,11 +18,11 @@
 .width55Percent{width:54.9%;}
 .width58Percent{width:58%;}
 .width60Percent{width:59.9%;}
-.width66Percent{width:66.66666%;}
+.width66Percent{width:66.66666%;} 
 .width70Percent{width:70%;}
 .width72Percent{width:72%;}
 .width75Percent{width:74.9%;}
-.width80Percent{width:80%;}
+.width80Percent{width:80%;}    
 .width85Percent{width:84.9%;}
 .width90Percent{width:90%;}
 .width95Percent{width:95%;}
@@ -95,7 +95,7 @@ a, button { -webkit-transition: all 200ms ease;
  }
   
 #page {margin:0px auto;} 
-#masthead {width:100%; padding:0; background-color:rgba(42,70,90, 0.5); position:fixed; top:0px; z-index:9999; box-shadow:1px 1px 2px rgba(0,0,0,.5); font-family:"Montserrat", arial, sans-serif;
+#masthead {width:100%; padding:0; background-color:rgba(42,70,90, 0.5); position:fixed; top:0px; z-index:9999; box-shadow:0px 1px 2px rgba(0,0,0,.5); font-family:"Montserrat", arial, sans-serif;
 	 .header-main {max-width:1260px; padding:0; margin:auto;
 		.logo {font-family:"Oregano", Georgia, serif; font-size:28px; font-weight:normal; margin:0px 10px; font-style: italic;} 		
 		.primary-navigation {
@@ -116,7 +116,7 @@ a, button { -webkit-transition: all 200ms ease;
 .menu-toggle:active, .menu-toggle:focus, .menu-toggle:hover {background-color:rgba(42,70,90, 0.75);}
 
 #main, section{margin:auto; overflow:hidden;} 
-	#mainHero {min-height:500px; margin:auto; text-align:center; background-image: url('../images/bg-hero.png'); background-repeat:no-repeat; background-position:center 0; background-attachment:fixed; -webkit-background-size: cover;
+	#mainHero {min-height:500px; margin:auto; text-align:center; background-image: url('images/bg-hero.png'); background-repeat:no-repeat; background-position:center 0; background-attachment:fixed; -webkit-background-size: cover;
   -moz-background-size: cover;  -o-background-size: cover; background-size: cover; position:relative; width:100%; position:relative; line-height:500px; font-family:"Roboto Condensed", arial, sans-serif;
 		.overlay {position:absolute; /*background-color: rgba(84, 160, 215, .8);*/ width:100%; height:100%; box-shadow: inset 0 -10px 20px -20px rgba(29,92,135,0.8), inset 0 -20px 20px -10px rgba(29,92,135,0.8);}
 		.intro {width:70%; font-size:18px; color:#fff; font-weight:300;  display:inline-block; vertical-align:middle; line-height:28px; border:1px solid rgba(169, 213, 254,0.5); border-left:0px; border-right:0px; padding:30px 20px 0; 
@@ -150,7 +150,7 @@ a, button { -webkit-transition: all 200ms ease;
 					.inner {width:95%; margin:auto; text-align:center; }
 					.project-overlay {position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.7); top:0;left:0; text-align:center; display:none;}
 					.project-content {display:inline-block; vertical-align:middle; line-height:30px; color:#fff;}
-						.project-link {background:url('../images/view-more.svg'); background-repeat:no-repeat; background-position:center center; color:white; text-indent:-9999px; display:block; width:40px; height:40px; margin:auto;
+						.project-link {background:url('images/view-more.svg'); background-repeat:no-repeat; background-position:center center; color:white; text-indent:-9999px; display:block; width:40px; height:40px; margin:auto;
 							&:hover {opacity:0.5;}
 						}
 				}
@@ -168,13 +168,13 @@ a, button { -webkit-transition: all 200ms ease;
 	#content h2 {text-transform:uppercase;}
 	#content h3 {font-size:20px;}
 		
-		.remodel-solutions {background-image:url('../images/projects/project-remodel-solutions.jpg'); }
-		.tribal-hollywood {background-image:url('../images/projects/project-tribalhollywood.jpg'); }   
-		.gitter-gallery {background-image:url('../images/projects/project-gitter-gallery.jpg'); }
-		.fashion-island {background-image:url('../images/projects/project-fashion-island.jpg'); }
-		.dance-socks {background-image:url('../images/projects/project-dance-socks.jpg'); }   
-		.bsasi {background-image:url('../images/projects/project-bsasi.jpg'); }
-		.thebeamstore {background-image:url('../images/projects/project-thebeamstore.jpg'); }
+		.remodel-solutions {background-image:url('images/projects/project-remodel-solutions.jpg'); }
+		.tribal-hollywood {background-image:url('images/projects/project-tribalhollywood.jpg'); }   
+		.gitter-gallery {background-image:url('images/projects/project-gitter-gallery.jpg'); }
+		.fashion-island {background-image:url('images/projects/project-fashion-island.jpg'); }
+		.dance-socks {background-image:url('images/projects/project-dance-socks.jpg'); }   
+		.bsasi {background-image:url('images/projects/project-bsasi.jpg'); }
+		.thebeamstore {background-image:url('images/projects/project-thebeamstore.jpg'); }
 			
 
 #secondary {float:left; width:100%; overflow:hidden; margin:auto; padding:0; background:#ccc; clear:none; border:0;} 
@@ -195,10 +195,10 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 				
 			.site-info {float:none; width:auto; text-align:center;}
 				.site-info p {margin:2px auto; padding:0; clear:both; font-size: 10px;}
-					.icon-wordpress {background-image:url('../images/wp-icon.png'); background-repeat:no-repeat; background-position:center center; width:60px; height:60px; margin:auto; text-indent:-9999px;  display:inline-block;}
-					.icon-mt {background-image:url('../images/mt-logo.png'); background-repeat:no-repeat; background-position:center center; display:block; text-indent:-9999px; width:85px; height:60px; margin:auto;}
+					.icon-wordpress {background-image:url('images/wp-icon.png'); background-repeat:no-repeat; background-position:center center; width:60px; height:60px; margin:auto; text-indent:-9999px;  display:inline-block;}
+					.icon-mt {background-image:url('images/mt-logo.png'); background-repeat:no-repeat; background-position:center center; display:block; text-indent:-9999px; width:85px; height:60px; margin:auto;}
 					
-	 #uparrow {width: 50px; height: 50px; opacity: 1; position: fixed; bottom: 20px; right: 10px; display: none; z-index: 9999; background-color: #00527d; background-image:url('../images/top.png'); background-repeat:no-repeat; background-position:center center; text-align: center; color: #fff; font-size: 11px; line-height: 50px;	text-indent:-9999px; }
+	 #uparrow {width: 50px; height: 50px; opacity: 1; position: fixed; bottom: 20px; right: 10px; display: none; z-index: 9999; background-color: #00527d; background-image:url('images/top.png'); background-repeat:no-repeat; background-position:center center; text-align: center; color: #fff; font-size: 11px; line-height: 50px;	text-indent:-9999px; }
 	#uparrow:hover {cursor: pointer; background-color: #0096e3;}
 	
 	/* articles */
@@ -285,7 +285,7 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 						&:hover {
 							> a {background-color:rgba(42,70,90, 0.5); text-shadow:none; }
 						}
-						a { font-size:10px; letter-spacing:6px; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); padding:7px;
+						a { font-size:10px; letter-spacing:6px; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); padding:14px;
 							&:hover {
 								color:#fff;
 							}
@@ -306,8 +306,9 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 					.menu-navigation-links-container {
 						background: rgba(42, 70, 90, 0.5);
 						position:absolute;
-						top:49px;
+						top:48px;
 						right:0px;
+						width: 100%;
 					} 
 				}
 			}
