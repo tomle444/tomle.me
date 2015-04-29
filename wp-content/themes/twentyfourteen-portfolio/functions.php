@@ -55,17 +55,11 @@ function twentyfourteen_posted_on() {
 }
 endif;
 
-add_filter('stylesheet_directory_uri','wpi_stylesheet_dir_uri',10,2);
 
-/**
- * wpi_stylesheet_dir_uri
- * overwrite theme stylesheet directory uri
- * filter stylesheet_directory_uri
- * @see get_stylesheet_directory_uri()
- */
-function wpi_stylesheet_dir_uri($stylesheet_dir_uri, $theme_name){
 
-	$subdir = '/css';
-	return $stylesheet_dir_uri.$subdir;
-
+function twentyfourteen_child_scripts() {
+	wp_enqueue_script('extra_js', get_stylesheet_directory_uri() . '/js/SmoothScroll.js');
 }
+
+add_action( 'wp_enqueue_scripts', 'twentyfourteen_child_scripts' );
+
