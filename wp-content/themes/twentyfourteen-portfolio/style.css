@@ -716,18 +716,20 @@ footer {
 
 /* line 187, scss/style.scss */
 .footer-links ul {
-  margin: 6px;
+  margin: 6px auto;
 }
 
 /* line 188, scss/style.scss */
 .footer-links ul li {
   list-style-type: none;
   text-align: center;
+  display: inline-block;
 }
 
 /* line 189, scss/style.scss */
 .footer-links ul li a {
-  display: block;
+  display: inline-block;
+  float: left;
   font-size: 18px;
   padding: 10px;
 }
@@ -793,7 +795,7 @@ footer {
   background-image: url("images/mt-logo.png");
   background-repeat: no-repeat;
   background-position: center center;
-  display: block;
+  display: inline-block;
   text-indent: -9999px;
   width: 85px;
   height: 60px;
@@ -923,7 +925,7 @@ input[type="submit"]:active {
 }
 
 /* resposive styling */
-@media (max-width: 782px) {
+@media screen and (max-width: 782px) {
   /* line 284, scss/style.scss */
   #masthead .header-main .primary-navigation li {
     display: block;
@@ -969,64 +971,64 @@ input[type="submit"]:active {
     width: 100%;
   }
 }
-@media (min-width: 783px) {
-  /* line 323, scss/style.scss */
+@media screen and (min-width: 783px) {
+  /* line 320, scss/style.scss */
   #mainHero .intro {
     font-size: 20px;
     line-height: 30px;
   }
 
-  /* line 328, scss/style.scss */
+  /* line 325, scss/style.scss */
   .footer-column {
     float: left;
     width: 33%;
   }
 
-  /* line 330, scss/style.scss */
+  /* line 327, scss/style.scss */
   .footer-links ul li {
     display: inline-block;
   }
 
-  /* line 331, scss/style.scss */
+  /* line 328, scss/style.scss */
   .footer-links ul li a {
     padding: 8px;
     display: block;
     font-size: 12px;
   }
 
-  /* line 334, scss/style.scss */
+  /* line 331, scss/style.scss */
   .footer-contact {
     text-align: left;
   }
-  /* line 335, scss/style.scss */
+  /* line 332, scss/style.scss */
   .footer-contact .inner {
     margin: 30px auto 30px 30px;
     width: 70%;
   }
-  /* line 336, scss/style.scss */
+  /* line 333, scss/style.scss */
   .footer-contact h3, .footer-contact h6 {
     margin: 0;
     padding: 0;
     font-weight: normal;
   }
 
-  /* line 341, scss/style.scss */
+  /* line 338, scss/style.scss */
   .site-info {
     float: right;
     width: auto;
   }
-  /* line 342, scss/style.scss */
+  /* line 339, scss/style.scss */
   .site-info ul {
     text-align: right;
   }
-  /* line 343, scss/style.scss */
+  /* line 340, scss/style.scss */
   .site-info .icon-wordpress, .site-info .icon-mt {
     float: right;
     margin: 10px;
   }
 }
-@media (min-width: 1024px) {
-  /* line 349, scss/style.scss */
+@media screen and (min-width: 1024px) {
+  /* line 346, scss/style.scss */
   #mainHero .intro {
     font-size: 24px;
     line-height: 40px;
