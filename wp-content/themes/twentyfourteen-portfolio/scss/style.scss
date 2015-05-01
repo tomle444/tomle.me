@@ -184,9 +184,9 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 		.site-footer a {color:rgba(255,255,255,0.7);}
 			.footer-contact  {text-align:center;}
 				.footer-contact p {margin:4px auto 8px;}
-				.footer-links ul {margin:6px;}
-				.footer-links ul li {list-style-type:none;  text-align:center;}
-					.footer-links ul li a {display:block; font-size:18px; padding:10px;}
+				.footer-links ul {margin:6px auto;}
+				.footer-links ul li {list-style-type:none;  text-align:center; display: inline-block;}
+					.footer-links ul li a {display:inline-block; float:left; font-size:18px; padding:10px;} 
 					.footer-links ul li a:hover {background-color:rgba(255,255,255,0.9); color:rgba(31, 92, 132, 1);}
 				.footer-social {margin-top:20px; border-top:1px solid rgba(255,255,255,0.2);}
 					.icon-resume {margin-top:10px;}
@@ -196,7 +196,7 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 			.site-info {float:none; width:auto; text-align:center;}
 				.site-info p {margin:2px auto; padding:0; clear:both; font-size: 10px;}
 					.icon-wordpress {background-image:url('images/wp-icon.png'); background-repeat:no-repeat; background-position:center center; width:60px; height:60px; margin:auto; text-indent:-9999px;  display:inline-block;}
-					.icon-mt {background-image:url('images/mt-logo.png'); background-repeat:no-repeat; background-position:center center; display:block; text-indent:-9999px; width:85px; height:60px; margin:auto;}
+					.icon-mt {background-image:url('images/mt-logo.png'); background-repeat:no-repeat; background-position:center center; display:inline-block; text-indent:-9999px; width:85px; height:60px; margin:auto;}
 					
 	 #uparrow {width: 50px; height: 50px; opacity: 1; position: fixed; bottom: 20px; right: 10px; display: none; z-index: 9999; background-color: #00527d; background-image:url('images/top.png'); background-repeat:no-repeat; background-position:center center; text-align: center; color: #fff; font-size: 11px; line-height: 50px;	text-indent:-9999px; }
 	#uparrow:hover {cursor: pointer; background-color: #0096e3;}
@@ -276,7 +276,7 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 	
 	
 	/* resposive styling */	
-	@media (max-width: 782px) {
+	@media screen and (max-width: 782px) {
 		 #masthead {
 			 .header-main {
 				.logo {} 		
@@ -314,11 +314,8 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 			}
 		}
 	}
-	@media (min-width: 673px) {
-		 
-	}
 	 
-	@media (min-width: 783px) {
+	@media screen and (min-width: 783px) {
 		#mainHero {
 			.intro { font-size:20px; line-height:30px;}
 		}
@@ -345,6 +342,6 @@ footer { font-family: "Montserrat", Helvetica Nueue, Arial, sans-serif; text-tra
 			
 	}
 	
-	@media (min-width: 1024px) {		
+	@media screen and (min-width: 1024px) {		
 			#mainHero .intro { font-size:24px; line-height:40px;}	
 	}

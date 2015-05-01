@@ -55,8 +55,16 @@ function twentyfourteen_posted_on() {
 }
 endif;
 
+/* Sample Hook/Function */
+/*add_action('wp_head', 'actionhook_example');
+
+function actionhook_example(){
+	echo '<meta name="description" content="Our New Meta Description">';
+}*/
 
 
+
+/* SmoothScroll.js */
 function twentyfourteen_child_scripts() {
 	wp_enqueue_script('extra_js', get_stylesheet_directory_uri() . '/js/SmoothScroll.js');
 }
