@@ -29,43 +29,13 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700|Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Oregano:400,400italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<script type="text/javascript">
+	<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,700,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 
-		$(document).ready(function () {
-				
-
-				$('.contact-link').click(function(){
-
-					$('html, body').stop().animate({
-						scrollTop: $('#contact').offset().top -100
-					}, 1000);
-					return false;
-				});
-			
-				$('.work-link').click(function(){
-
-					$('html, body').stop().animate({
-						scrollTop: $('#work').offset().top -100
-					}, 1000);
-					return false;
-				});		
-
-				$('.home-link').click(function(){
-
-					$('html, body').stop().animate({
-						scrollTop: $('html').offset().top 
-					}, 1000);
-					return false;
-				});
-
-		});
-
-	</script>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -99,19 +69,5 @@
 			</nav>
 		</div>
 	</header><!-- #masthead -->
-	<?php if ( is_front_page() && is_home() ): ?>
-		<section id="mainHero">
-			<section class="overlay">
-				<div class="intro">
-					<?php $intro_post = new WP_Query( 'p=9' ); ?>
-					<?php while ($intro_post->have_posts()) : $intro_post->the_post(); ?>
-						<?php the_content(); ?>
-					<?php endwhile;?>
-					<?php wp_reset_postdata(); ?>
-					<button class="continue work-link" >Continue</button>
-				</div>
-			</section>
-		</section>
-	<?php endif; ?>
-	<section class="body">
+	
 	<div id="main" class="site-main">

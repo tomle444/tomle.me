@@ -9,7 +9,7 @@
  * @since Twenty Fourteen 1.0
  */
 ?>
-			</section>
+
 		</div><!-- #main -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
@@ -53,46 +53,13 @@
 				<div class="footer-links"><?php wp_nav_menu( array('menu' => 'Portfolio Links' )); ?></div>
 				
 				<?php do_action( 'twentyfourteen_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyfourteen' ) ); ?>"  target="_blank" class="icon-wordpress"><?php printf( __( 'Proudly powered by %s', 'twentyfourteen' ), 'WordPress' ); ?></a>	
-				<a href="http://www.mediatemple.net" target="_blank" class="icon-mt">&nbsp;</a>	
+				
 				<p class="copyright">tomledesigns.com <?php echo date('Y'); ?> All rights reserved. </p>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
-	</div><!-- #page -->
-	<script type="text/javascript">
-			// scroll to top functionality
-
-		
-			$(document).ready(function(){
-		
-				// hide #back-top first
-				$("#uparrow").hide();
-		
-				// fade in #back-top
-				$(function () {
-					$(window).scroll(function () {
-						if ($(this).scrollTop() > 340) {
-							$('#uparrow').fadeIn();
-						} else {
-							$('#uparrow').fadeOut();
-						}
-					});
-
-					// scroll body to 0px on click
-					$('#uparrow').click(function () {
-						$('body,html').animate({
-							scrollTop: 0
-						}, 800);
-						return false;
-					});
-				});
-
-			});
-		</script>
-		<div id="uparrow">
-			TOP
+		<div id="uparrow">			
+			<div class="arrow-up"></div>
 		</div> 
-	</script>
 	<?php wp_footer(); ?>
 </body>
 </html>
