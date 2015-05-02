@@ -462,6 +462,59 @@ footer { font-family: $f-stack-secondary; text-transform: uppercase; }
 			.site-info {
 				padding: 15px 30px 50px;
 			}
+
+		}
+	}
+
+	@media screen and (max-width: 540px) {
+		section.services {
+			#services.content-area .service {
+				width:170px;
+				float:none; 
+				display:inline-block;
+				margin-top:20px;
+				background-size: 50%;
+				span {
+					margin-top: 100px;
+				}
+			}
+		
+
+			#tools.content-area .tool {
+				width:120px;
+				float:none; 
+				display:inline-block;
+				background-size:60%;
+				margin-top:20px;
+				span {
+					margin-top: 70px;
+				}
+			}
+
+		}
+		footer {
+			.footer-links {
+				ul {
+					li { 
+						display:block; 
+
+						a {
+							//font-size: 12px;
+							padding: 10px 4px;
+							display:block;
+							float: none;
+						}
+					}
+				}
+			}
+		}			
+	}
+
+	@media screen and (max-width: 420px) {
+		section.services {
+			#services.content-area .service {
+				width:150px;				
+			}			
 		}
 	}
 	 

@@ -1106,64 +1106,107 @@ input[type="submit"]:active {
     padding: 15px 30px 50px;
   }
 }
+@media screen and (max-width: 540px) {
+  /* line 471, scss/style.scss */
+  section.services #services.content-area .service {
+    width: 170px;
+    float: none;
+    display: inline-block;
+    margin-top: 20px;
+    background-size: 50%;
+  }
+  /* line 477, scss/style.scss */
+  section.services #services.content-area .service span {
+    margin-top: 100px;
+  }
+  /* line 483, scss/style.scss */
+  section.services #tools.content-area .tool {
+    width: 120px;
+    float: none;
+    display: inline-block;
+    background-size: 60%;
+    margin-top: 20px;
+  }
+  /* line 489, scss/style.scss */
+  section.services #tools.content-area .tool span {
+    margin-top: 70px;
+  }
+
+  /* line 498, scss/style.scss */
+  footer .footer-links ul li {
+    display: block;
+  }
+  /* line 501, scss/style.scss */
+  footer .footer-links ul li a {
+    padding: 10px 4px;
+    display: block;
+    float: none;
+  }
+}
+@media screen and (max-width: 420px) {
+  /* line 515, scss/style.scss */
+  section.services #services.content-area .service {
+    width: 150px;
+  }
+}
 @media screen and (min-width: 782px) {
-  /* line 470, scss/style.scss */
+  /* line 523, scss/style.scss */
   #mainHero .intro {
     font-size: 20px;
     line-height: 30px;
   }
 
-  /* line 475, scss/style.scss */
+  /* line 528, scss/style.scss */
   .footer-column {
     float: left;
     width: 33%;
   }
 
-  /* line 477, scss/style.scss */
+  /* line 530, scss/style.scss */
   .footer-links ul li {
     display: inline-block;
   }
 
-  /* line 478, scss/style.scss */
+  /* line 531, scss/style.scss */
   .footer-links ul li a {
     padding: 8px;
     display: block;
     font-size: 12px;
   }
 
-  /* line 481, scss/style.scss */
+  /* line 534, scss/style.scss */
   .footer-contact {
     text-align: left;
   }
-  /* line 482, scss/style.scss */
+  /* line 535, scss/style.scss */
   .footer-contact .inner {
     margin: 30px auto 30px 30px;
     width: 70%;
   }
-  /* line 483, scss/style.scss */
+  /* line 536, scss/style.scss */
   .footer-contact h3, .footer-contact h6 {
     margin: 0;
     padding: 0;
     font-weight: normal;
   }
 
-  /* line 488, scss/style.scss */
+  /* line 541, scss/style.scss */
   .site-info {
     float: right;
     width: auto;
   }
-  /* line 490, scss/style.scss */
+  /* line 543, scss/style.scss */
   .site-info ul {
     text-align: right;
   }
-  /* line 491, scss/style.scss */
+  /* line 544, scss/style.scss */
   .site-info .icon-wordpress, .site-info .icon-mt {
     float: right;
     margin: 10px;
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 497, scss/style.scss */
+  /* line 550, scss/style.scss */
   #mainHero .intro {
     font-size: 24px;
     line-height: 40px;
