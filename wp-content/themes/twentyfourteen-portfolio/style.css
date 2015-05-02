@@ -1078,14 +1078,14 @@ input[type="submit"]:active {
   }
 
   /* line 439, scss/style.scss */
-  section.services #services.content-area .skill {
+  section.services #services.content-area .service {
     width: 270px;
     float: none;
     display: inline-block;
     margin-top: 20px;
   }
   /* line 444, scss/style.scss */
-  section.services #services.content-area .skill span {
+  section.services #services.content-area .service span {
     margin-top: 100px;
   }
   /* line 450, scss/style.scss */
