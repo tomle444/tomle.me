@@ -160,7 +160,7 @@ a, button { -webkit-transition: all 200ms ease;
 	}	
 
 	.site-content {margin:auto;}
-	section.body {max-width:1260px; margin-top:48px;
+	section.body {max-width:1260px; margin-top:48px; min-height:500px;
 		.inner {width:90%; overflow:hidden;}
 		.main-content {float:none; margin:auto; overflow:hidden;
 			#primary {  }
@@ -196,6 +196,7 @@ a, button { -webkit-transition: all 200ms ease;
 			margin: 50px auto;
 			overflow: hidden;
 			display: inline-block;
+			max-width: 1260px;
 			h2 {
 				color: #1f5c84;
 				font-family: $f-stack-alt;
@@ -440,7 +441,7 @@ footer { font-family: $f-stack-secondary; text-transform: uppercase; }
 				width:270px;
 				float:none; 
 				display:inline-block;
-				margin-top:20px;
+				margin-top:20px;				
 				span {
 					margin-top: 100px;
 				}
