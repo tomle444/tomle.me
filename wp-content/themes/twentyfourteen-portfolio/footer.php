@@ -13,7 +13,7 @@
 		</div><!-- #main -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			
+			<div class="pageWidth overflowHidden marginAuto">
 			<?php get_sidebar( 'footer' ); ?>
 			
 				
@@ -56,6 +56,7 @@
 				
 				<p class="copyright">tomledesigns.com <?php echo date('Y'); ?> All rights reserved. </p>
 			</div><!-- .site-info -->
+			</div>
 		</footer><!-- #colophon -->
 		<div id="uparrow">			
 			<div class="arrow-up"></div>
