@@ -160,10 +160,16 @@ a, button { -webkit-transition: all 200ms ease;
 	}	
 
 	.site-content {margin:auto;}
-	section.body {max-width:1260px; margin-top:48px; min-height:500px;
+	#primary { margin-top:88px; 
+		h1 {
+			font-size:40px;
+			font-weight:normal;
+		}
+	}
+	.home #primary { margin-top:48px; }
+	section.body {max-width:1260px; min-height:500px;
 		.inner {width:90%; overflow:hidden;}
 		.main-content {float:none; margin:auto; overflow:hidden;
-			#primary {  }
 			.content-area {
 				padding-top:0px;
 				float:none; margin:auto; width:95%; overflow:hidden;
@@ -270,6 +276,7 @@ a, button { -webkit-transition: all 200ms ease;
 		.dance-socks {background-image:url('images/projects/project-dance-socks.jpg'); }   
 		.bsasi {background-image:url('images/projects/project-bsasi.jpg'); }
 		.thebeamstore {background-image:url('images/projects/project-thebeamstore.jpg'); }
+		.gozolt {background-image:url('images/projects/project-gozolt.jpg'); }
 			
 
 #secondary {float:left; width:100%; overflow:hidden; margin:auto; padding:0; background:#ccc; clear:none; border:0;} 
@@ -397,7 +404,10 @@ footer { font-family: $f-stack-secondary; text-transform: uppercase; }
 		background-color: #8cff72;
 	}
 	
-	
+	.error404 .page-content {
+		padding: 20px 30px 12px;
+	}
+
 	/* resposive styling */	
 	@media screen and (max-width: 783px) {
 		 #masthead {

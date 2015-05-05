@@ -544,24 +544,38 @@ a, button {
 }
 
 /* line 163, scss/style.scss */
-section.body {
-  max-width: 1260px;
-  margin-top: 48px;
-  min-height: 500px;
+#primary {
+  margin-top: 88px;
 }
 /* line 164, scss/style.scss */
+#primary h1 {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+/* line 169, scss/style.scss */
+.home #primary {
+  margin-top: 48px;
+}
+
+/* line 170, scss/style.scss */
+section.body {
+  max-width: 1260px;
+  min-height: 500px;
+}
+/* line 171, scss/style.scss */
 section.body .inner {
   width: 90%;
   overflow: hidden;
 }
-/* line 165, scss/style.scss */
+/* line 172, scss/style.scss */
 section.body .main-content {
   float: none;
   margin: auto;
   overflow: hidden;
   /* projects */
 }
-/* line 167, scss/style.scss */
+/* line 173, scss/style.scss */
 section.body .main-content .content-area {
   padding-top: 0px;
   float: none;
@@ -569,7 +583,7 @@ section.body .main-content .content-area {
   width: 95%;
   overflow: hidden;
 }
-/* line 170, scss/style.scss */
+/* line 176, scss/style.scss */
 section.body .main-content .content-area h2 {
   font-family: "Cabin", arial, sans-serif;
   margin: 0 0 34px;
@@ -580,11 +594,11 @@ section.body .main-content .content-area h2 {
   text-align: center;
   letter-spacing: 12px;
 }
-/* line 178, scss/style.scss */
+/* line 184, scss/style.scss */
 section.body .main-content .projects-container {
   overflow: hidden;
 }
-/* line 180, scss/style.scss */
+/* line 186, scss/style.scss */
 section.body .main-content .projects-container .project {
   min-height: 350px;
   line-height: 350px;
@@ -596,13 +610,13 @@ section.body .main-content .projects-container .project {
   border: 10px solid #f0f5fa;
   margin: 40px auto;
 }
-/* line 181, scss/style.scss */
+/* line 187, scss/style.scss */
 section.body .main-content .projects-container .project .inner {
   width: 95%;
   margin: auto;
   text-align: center;
 }
-/* line 182, scss/style.scss */
+/* line 188, scss/style.scss */
 section.body .main-content .projects-container .project .project-overlay {
   position: absolute;
   width: 100%;
@@ -613,14 +627,14 @@ section.body .main-content .projects-container .project .project-overlay {
   text-align: center;
   display: none;
 }
-/* line 183, scss/style.scss */
+/* line 189, scss/style.scss */
 section.body .main-content .projects-container .project .project-content {
   display: inline-block;
   vertical-align: middle;
   line-height: 30px;
   color: #fff;
 }
-/* line 184, scss/style.scss */
+/* line 190, scss/style.scss */
 section.body .main-content .projects-container .project .project-link {
   background: url("images/view-more.svg");
   background-repeat: no-repeat;
@@ -632,25 +646,25 @@ section.body .main-content .projects-container .project .project-link {
   height: 40px;
   margin: auto;
 }
-/* line 185, scss/style.scss */
+/* line 191, scss/style.scss */
 section.body .main-content .projects-container .project .project-link:hover {
   opacity: 0.5;
 }
 
 /* services */
-/* line 192, scss/style.scss */
+/* line 198, scss/style.scss */
 section.services {
   background-color: #f0f5fa;
   text-align: center;
 }
-/* line 195, scss/style.scss */
+/* line 201, scss/style.scss */
 section.services #services.content-area, section.services #tools.content-area {
   margin: 50px auto;
   overflow: hidden;
   display: inline-block;
   max-width: 1260px;
 }
-/* line 200, scss/style.scss */
+/* line 206, scss/style.scss */
 section.services #services.content-area h2, section.services #tools.content-area h2 {
   color: #1f5c84;
   font-family: "Cabin", arial, sans-serif;
@@ -658,7 +672,7 @@ section.services #services.content-area h2, section.services #tools.content-area
   letter-spacing: 4px;
   text-align: center;
 }
-/* line 207, scss/style.scss */
+/* line 213, scss/style.scss */
 section.services #services.content-area .service, section.services #services.content-area .tool, section.services #tools.content-area .service, section.services #tools.content-area .tool {
   float: left;
   width: 20%;
@@ -669,7 +683,7 @@ section.services #services.content-area .service, section.services #services.con
   min-height: 100px;
   min-width: 100px;
 }
-/* line 216, scss/style.scss */
+/* line 222, scss/style.scss */
 section.services #services.content-area .service span, section.services #services.content-area .tool span, section.services #tools.content-area .service span, section.services #tools.content-area .tool span {
   font-size: 10px;
   text-transform: uppercase;
@@ -679,131 +693,136 @@ section.services #services.content-area .service span, section.services #service
   margin: 120px auto 0;
   width: 80%;
 }
-/* line 227, scss/style.scss */
+/* line 233, scss/style.scss */
 section.services #services.content-area .service-code, section.services #tools.content-area .service-code {
   background-image: url("images/skill-code.png");
 }
-/* line 228, scss/style.scss */
+/* line 234, scss/style.scss */
 section.services #services.content-area .service-design, section.services #tools.content-area .service-design {
   background-image: url("images/skill-design.png");
 }
-/* line 229, scss/style.scss */
+/* line 235, scss/style.scss */
 section.services #services.content-area .service-responsive, section.services #tools.content-area .service-responsive {
   background-image: url("images/skill-responsive.png");
 }
-/* line 230, scss/style.scss */
+/* line 236, scss/style.scss */
 section.services #services.content-area .service-logo, section.services #tools.content-area .service-logo {
   background-image: url("images/skill-logo.png");
 }
-/* line 231, scss/style.scss */
+/* line 237, scss/style.scss */
 section.services #services.content-area .service-ecommerce, section.services #tools.content-area .service-ecommerce {
   background-image: url("images/skill-ecommerce.png");
 }
-/* line 233, scss/style.scss */
+/* line 239, scss/style.scss */
 section.services #services.content-area .tool, section.services #tools.content-area .tool {
   width: 16%;
 }
-/* line 235, scss/style.scss */
+/* line 241, scss/style.scss */
 section.services #services.content-area .tool span, section.services #tools.content-area .tool span {
   margin-top: 100px;
 }
-/* line 237, scss/style.scss */
+/* line 243, scss/style.scss */
 section.services #services.content-area .tool-photoshop, section.services #tools.content-area .tool-photoshop {
   background-image: url("images/tool-photoshop.png");
 }
-/* line 238, scss/style.scss */
+/* line 244, scss/style.scss */
 section.services #services.content-area .tool-illustrator, section.services #tools.content-area .tool-illustrator {
   background-image: url("images/tool-illustrator.png");
 }
-/* line 239, scss/style.scss */
+/* line 245, scss/style.scss */
 section.services #services.content-area .tool-sublime, section.services #tools.content-area .tool-sublime {
   background-image: url("images/tool-sublime.png");
 }
-/* line 240, scss/style.scss */
+/* line 246, scss/style.scss */
 section.services #services.content-area .tool-wordpress, section.services #tools.content-area .tool-wordpress {
   background-image: url("images/tool-wordpress.png");
 }
-/* line 241, scss/style.scss */
+/* line 247, scss/style.scss */
 section.services #services.content-area .tool-magento, section.services #tools.content-area .tool-magento {
   background-image: url("images/tool-magento.png");
 }
-/* line 242, scss/style.scss */
+/* line 248, scss/style.scss */
 section.services #services.content-area .tool-bitbucket, section.services #tools.content-area .tool-bitbucket {
   background-image: url("images/tool-bitbucket.png");
 }
-/* line 245, scss/style.scss */
+/* line 251, scss/style.scss */
 section.services #tools.content-area {
   border-top: 1px solid #deedf7;
   width: 79%;
   margin-bottom: 100px;
 }
-/* line 249, scss/style.scss */
+/* line 255, scss/style.scss */
 section.services #tools.content-area h2 {
   margin: 54px 0 20px;
 }
 
-/* line 256, scss/style.scss */
+/* line 262, scss/style.scss */
 [class*="content"]:before, [class*="content"]:after {
   content: none;
 }
 
-/* line 261, scss/style.scss */
+/* line 267, scss/style.scss */
 .list-view .content-area {
   margin: auto;
   padding: 0;
 }
 
-/* line 262, scss/style.scss */
+/* line 268, scss/style.scss */
 #content h2, #content h3 {
   font-weight: 300;
 }
 
-/* line 263, scss/style.scss */
+/* line 269, scss/style.scss */
 #content h2 {
   text-transform: uppercase;
 }
 
-/* line 264, scss/style.scss */
+/* line 270, scss/style.scss */
 #content h3 {
   font-size: 20px;
 }
 
-/* line 266, scss/style.scss */
+/* line 272, scss/style.scss */
 .remodel-solutions {
   background-image: url("images/projects/project-remodel-solutions.jpg");
 }
 
-/* line 267, scss/style.scss */
+/* line 273, scss/style.scss */
 .tribal-hollywood {
   background-image: url("images/projects/project-tribalhollywood.jpg");
 }
 
-/* line 268, scss/style.scss */
+/* line 274, scss/style.scss */
 .gitter-gallery {
   background-image: url("images/projects/project-gitter-gallery.jpg");
 }
 
-/* line 269, scss/style.scss */
+/* line 275, scss/style.scss */
 .fashion-island {
   background-image: url("images/projects/project-fashion-island.jpg");
 }
 
-/* line 270, scss/style.scss */
+/* line 276, scss/style.scss */
 .dance-socks {
   background-image: url("images/projects/project-dance-socks.jpg");
 }
 
-/* line 271, scss/style.scss */
+/* line 277, scss/style.scss */
 .bsasi {
   background-image: url("images/projects/project-bsasi.jpg");
 }
 
-/* line 272, scss/style.scss */
+/* line 278, scss/style.scss */
 .thebeamstore {
   background-image: url("images/projects/project-thebeamstore.jpg");
 }
 
-/* line 275, scss/style.scss */
+/* line 279, scss/style.scss */
+.gozolt {
+  background-image: url("images/projects/project-gozolt.jpg");
+}
+
+/* line 282, scss/style.scss */
 #secondary {
   float: left;
   width: 100%;
@@ -815,46 +834,46 @@ section.services #tools.content-area h2 {
   border: 0;
 }
 
-/* line 277, scss/style.scss */
+/* line 284, scss/style.scss */
 footer {
   font-family: "Montserrat", arial, sans-serif;
   text-transform: uppercase;
 }
 
-/* line 278, scss/style.scss */
+/* line 285, scss/style.scss */
 .site-footer {
   background-color: #1f5c84;
   color: #fff;
 }
 
-/* line 279, scss/style.scss */
+/* line 286, scss/style.scss */
 .site-footer a {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* line 280, scss/style.scss */
+/* line 287, scss/style.scss */
 .footer-contact {
   text-align: center;
 }
 
-/* line 281, scss/style.scss */
+/* line 288, scss/style.scss */
 .footer-contact p {
   margin: 4px auto 8px;
 }
 
-/* line 282, scss/style.scss */
+/* line 289, scss/style.scss */
 .footer-links ul {
   margin: 6px auto;
 }
 
-/* line 283, scss/style.scss */
+/* line 290, scss/style.scss */
 .footer-links ul li {
   list-style-type: none;
   text-align: center;
   display: inline-block;
 }
 
-/* line 284, scss/style.scss */
+/* line 291, scss/style.scss */
 .footer-links ul li a {
   display: inline-block;
   float: left;
@@ -862,43 +881,43 @@ footer {
   padding: 10px;
 }
 
-/* line 285, scss/style.scss */
+/* line 292, scss/style.scss */
 .footer-links ul li a:hover {
   background-color: rgba(255, 255, 255, 0.9);
   color: #1f5c84;
 }
 
-/* line 286, scss/style.scss */
+/* line 293, scss/style.scss */
 .footer-social {
   margin-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 287, scss/style.scss */
+/* line 294, scss/style.scss */
 .icon-resume {
   margin-top: 10px;
 }
 
-/* line 288, scss/style.scss */
+/* line 295, scss/style.scss */
 .site-footer .icon {
   fill: rgba(255, 255, 255, 0.4);
   display: inline-block;
   margin: 10px 2px;
 }
 
-/* line 289, scss/style.scss */
+/* line 296, scss/style.scss */
 .site-footer .icon:hover {
   fill: rgba(255, 255, 255, 0.9);
 }
 
-/* line 291, scss/style.scss */
+/* line 298, scss/style.scss */
 .site-info {
   float: none;
   width: auto;
   text-align: center;
 }
 
-/* line 292, scss/style.scss */
+/* line 299, scss/style.scss */
 .site-info p {
   margin: 2px auto;
   padding: 0;
@@ -906,7 +925,7 @@ footer {
   font-size: 10px;
 }
 
-/* line 295, scss/style.scss */
+/* line 302, scss/style.scss */
 #uparrow {
   width: 100%;
   position: fixed;
@@ -918,7 +937,7 @@ footer {
   letter-spacing: 4px;
   border-bottom: 5px solid #153f5b;
 }
-/* line 304, scss/style.scss */
+/* line 311, scss/style.scss */
 #uparrow .arrow-up {
   min-height: 40px;
   min-width: 70px;
@@ -931,14 +950,14 @@ footer {
   -moz-transition: background-position 200ms ease, background-image 400ms ease, opacity 400ms ease;
   transition: background-position 200ms ease,background-image 400ms ease, opacity 400ms ease;
 }
-/* line 317, scss/style.scss */
+/* line 324, scss/style.scss */
 #uparrow .arrow-up:hover {
   cursor: pointer;
   background-position: center 0px;
 }
 
 /* articles */
-/* line 330, scss/style.scss */
+/* line 337, scss/style.scss */
 .site-content .entry-content,
 .site-content .entry-summary,
 .page-content, .site-content .entry-header {
@@ -947,7 +966,7 @@ footer {
   max-width: 100%;
 }
 
-/* line 336, scss/style.scss */
+/* line 343, scss/style.scss */
 .list-view .site-content .hentry, .list-view .site-content .hentry:first-of-type, article.post {
   border-bottom: 1px solid #a9d5fe;
   border-top: 1px solid #a9d5fe;
@@ -955,35 +974,35 @@ footer {
   padding-top: 0;
 }
 
-/* line 341, scss/style.scss */
+/* line 348, scss/style.scss */
 .site-content .entry-meta {
   background-color: rgba(69, 129, 172, 0.3);
   color: #fff;
 }
 
-/* line 346, scss/style.scss */
+/* line 353, scss/style.scss */
 .entry-title a, .entry-meta a {
   color: #d5eaf6;
 }
 
-/* line 347, scss/style.scss */
+/* line 354, scss/style.scss */
 .entry-date a, .comments-link a {
   color: #21759b;
 }
 
-/* line 348, scss/style.scss */
+/* line 355, scss/style.scss */
 .entry-date a:hover, .entry-meta a:hover, .entry-title a:hover, .entry-meta a:hover {
   color: #fff;
 }
 
-/* line 350, scss/style.scss */
+/* line 357, scss/style.scss */
 ::selection {
   background: #4eaed7;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 356, scss/style.scss */
+/* line 363, scss/style.scss */
 ::-moz-selection {
   background: #4eaed7;
   color: #fff;
@@ -991,7 +1010,7 @@ footer {
 }
 
 /* Buttons */
-/* line 367, scss/style.scss */
+/* line 374, scss/style.scss */
 button,
 .button,
 input[type="button"],
@@ -1008,7 +1027,7 @@ input[type="submit"] {
   vertical-align: bottom;
 }
 
-/* line 387, scss/style.scss */
+/* line 394, scss/style.scss */
 button:hover,
 button:focus,
 .button:hover,
@@ -1023,7 +1042,7 @@ input[type="submit"]:focus {
   color: #285c15;
 }
 
-/* line 396, scss/style.scss */
+/* line 403, scss/style.scss */
 button:active,
 .button:active,
 input[type="button"]:active,
@@ -1032,45 +1051,50 @@ input[type="submit"]:active {
   background-color: #8cff72;
 }
 
+/* line 407, scss/style.scss */
+.error404 .page-content {
+  padding: 20px 30px 12px;
+}
+
 /* resposive styling */
 @media screen and (max-width: 783px) {
-  /* line 407, scss/style.scss */
+  /* line 417, scss/style.scss */
   #masthead .header-main .primary-navigation li {
     display: block;
     float: none;
   }
-  /* line 409, scss/style.scss */
+  /* line 419, scss/style.scss */
   #masthead .header-main .primary-navigation li:hover > a {
     background-color: rgba(42, 70, 90, 0.5);
     text-shadow: none;
   }
-  /* line 411, scss/style.scss */
+  /* line 421, scss/style.scss */
   #masthead .header-main .primary-navigation li a {
     font-size: 10px;
     letter-spacing: 6px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     padding: 14px;
   }
-  /* line 412, scss/style.scss */
+  /* line 422, scss/style.scss */
   #masthead .header-main .primary-navigation li a:hover {
     color: #fff;
   }
-  /* line 418, scss/style.scss */
+  /* line 428, scss/style.scss */
   #masthead .header-main .primary-navigation li.focus > a {
     background-color: rgba(42, 70, 90, 0.25);
     outline: none;
   }
-  /* line 421, scss/style.scss */
+  /* line 431, scss/style.scss */
   #masthead .header-main .primary-navigation.toggle-on .menu-navigation-links-container {
     position: absolute;
     top: 50px;
     right: 0px;
   }
-  /* line 428, scss/style.scss */
+  /* line 438, scss/style.scss */
   #masthead .header-main .primary-navigation.toggled-on {
     padding: 0px;
   }
-  /* line 429, scss/style.scss */
+  /* line 439, scss/style.scss */
   #masthead .header-main .primary-navigation.toggled-on .menu-navigation-links-container {
     background: rgba(42, 70, 90, 0.5);
     position: absolute;
@@ -1079,18 +1103,18 @@ input[type="submit"]:active {
     width: 100%;
   }
 
-  /* line 440, scss/style.scss */
+  /* line 450, scss/style.scss */
   section.services #services.content-area .service {
     width: 270px;
     float: none;
     display: inline-block;
     margin-top: 20px;
   }
-  /* line 445, scss/style.scss */
+  /* line 455, scss/style.scss */
   section.services #services.content-area .service span {
     margin-top: 100px;
   }
-  /* line 451, scss/style.scss */
+  /* line 461, scss/style.scss */
   section.services #tools.content-area .tool {
     width: 150px;
     float: none;
@@ -1098,18 +1122,18 @@ input[type="submit"]:active {
     background-size: 40%;
     margin-top: 20px;
   }
-  /* line 457, scss/style.scss */
+  /* line 467, scss/style.scss */
   section.services #tools.content-area .tool span {
     margin-top: 60px;
   }
 
-  /* line 463, scss/style.scss */
+  /* line 473, scss/style.scss */
   footer .site-info {
     padding: 15px 30px 50px;
   }
 }
 @media screen and (max-width: 540px) {
-  /* line 472, scss/style.scss */
+  /* line 482, scss/style.scss */
   section.services #services.content-area .service {
     width: 170px;
     float: none;
@@ -1117,11 +1141,11 @@ input[type="submit"]:active {
     margin-top: 20px;
     background-size: 50%;
   }
-  /* line 478, scss/style.scss */
+  /* line 488, scss/style.scss */
   section.services #services.content-area .service span {
     margin-top: 100px;
   }
-  /* line 484, scss/style.scss */
+  /* line 494, scss/style.scss */
   section.services #tools.content-area .tool {
     width: 120px;
     float: none;
@@ -1129,16 +1153,16 @@ input[type="submit"]:active {
     background-size: 60%;
     margin-top: 20px;
   }
-  /* line 490, scss/style.scss */
+  /* line 500, scss/style.scss */
   section.services #tools.content-area .tool span {
     margin-top: 70px;
   }
 
-  /* line 499, scss/style.scss */
+  /* line 509, scss/style.scss */
   footer .footer-links ul li {
     display: block;
   }
-  /* line 502, scss/style.scss */
+  /* line 512, scss/style.scss */
   footer .footer-links ul li a {
     padding: 10px 4px;
     display: block;
@@ -1146,69 +1170,69 @@ input[type="submit"]:active {
   }
 }
 @media screen and (max-width: 420px) {
-  /* line 516, scss/style.scss */
+  /* line 526, scss/style.scss */
   section.services #services.content-area .service {
     width: 150px;
   }
 }
 @media screen and (min-width: 782px) {
-  /* line 524, scss/style.scss */
+  /* line 534, scss/style.scss */
   #mainHero .intro {
     font-size: 20px;
     line-height: 30px;
   }
 
-  /* line 529, scss/style.scss */
+  /* line 539, scss/style.scss */
   .footer-column {
     float: left;
     width: 33%;
   }
 
-  /* line 531, scss/style.scss */
+  /* line 541, scss/style.scss */
   .footer-links ul li {
     display: inline-block;
   }
 
-  /* line 532, scss/style.scss */
+  /* line 542, scss/style.scss */
   .footer-links ul li a {
     padding: 8px;
     display: block;
     font-size: 12px;
   }
 
-  /* line 535, scss/style.scss */
+  /* line 545, scss/style.scss */
   .footer-contact {
     text-align: left;
   }
-  /* line 536, scss/style.scss */
+  /* line 546, scss/style.scss */
   .footer-contact .inner {
     margin: 30px auto 30px 30px;
     width: 70%;
   }
-  /* line 537, scss/style.scss */
+  /* line 547, scss/style.scss */
   .footer-contact h3, .footer-contact h6 {
     margin: 0;
     padding: 0;
     font-weight: normal;
   }
 
-  /* line 542, scss/style.scss */
+  /* line 552, scss/style.scss */
   .site-info {
     float: right;
     width: auto;
   }
-  /* line 544, scss/style.scss */
+  /* line 554, scss/style.scss */
   .site-info ul {
     text-align: right;
   }
-  /* line 545, scss/style.scss */
+  /* line 555, scss/style.scss */
   .site-info .icon-wordpress, .site-info .icon-mt {
     float: right;
     margin: 10px;
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 551, scss/style.scss */
+  /* line 561, scss/style.scss */
   #mainHero .intro {
     font-size: 24px;
     line-height: 40px;
