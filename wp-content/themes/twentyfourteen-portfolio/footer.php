@@ -22,7 +22,7 @@
 			<div class="inner">
 				<h6>Tom Le</h6>
 				<p>Phone: 760 542-8866</p>
-				<p>Email: <a href="mailto:hello@tomledesigns.com?subject=Contact Form">hello@tomledesigns.com</a></p>
+				<p>Email: <a href="mailto:hello@tomle.me?subject=Contact Form">hello@tomle.me</a></p>
 				
 				<div class="footer-social">
 					<a href="https://www.linkedin.com/profile/view?id=14393462" target="_blank" class="icon">
@@ -54,7 +54,7 @@
 				
 				<?php do_action( 'twentyfourteen_credits' ); ?>
 				
-				<p class="copyright">tomledesigns.com <?php echo date('Y'); ?> All rights reserved. </p>
+				<p class="copyright">tomle.me <?php echo date('Y'); ?> All rights reserved. </p>
 			</div><!-- .site-info -->
 			</div>
 		</footer><!-- #colophon -->
