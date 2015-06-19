@@ -19,10 +19,11 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
+	<script src="//cdn.optimizely.com/js/2963220201.js"></script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+	 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
