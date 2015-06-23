@@ -64,10 +64,23 @@ function actionhook_example(){
 
 
 
-/* SmoothScroll.js */
+/* Add custom JS files */
 function twentyfourteen_child_scripts() {
+
+	wp_enqueue_script('jquery_js', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js');
 	wp_enqueue_script('extra_js', get_stylesheet_directory_uri() . '/js/SmoothScroll.js');
+	wp_enqueue_script('all_js', get_stylesheet_directory_uri() . '/js/all.js');
+	wp_enqueue_script('fancybox_js', get_stylesheet_directory_uri() . '/js/jquery.fancybox.js');
+	wp_enqueue_script('fancyboxpack_js', get_stylesheet_directory_uri() . '/js/jquery.fancybox.pack.js');
 }
 
 add_action( 'wp_enqueue_scripts', 'twentyfourteen_child_scripts' );
+
+function twentyfourteen_custom_css() {
+	wp_register_style('extra_css', get_stylesheet_directory_uri() . '/css/jquery.fancybox.css');
+	wp_enqueue_style('extra_css', get_stylesheet_directory_uri() . '/css/jquery.fancybox.css');
+}
+
+add_action( 'wp_enqueue_scripts', 'twentyfourteen_custom_css' );
+
 
