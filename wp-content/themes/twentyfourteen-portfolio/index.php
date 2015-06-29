@@ -41,7 +41,7 @@ get_header(); ?>
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
 						<div id="work" class="projects-container">
-							<h2 class="entry-title">Recent Work</h2>
+							<h2 class="entry-title">Featured Work</h2>
 							
 							<?php 
 								query_posts('cat=7&order=DESC' );
@@ -76,33 +76,48 @@ get_header(); ?>
 								endwhile;
 							?>
 						</div>
-					<?php
-					
-						query_posts(array('post__not_in' => array(9), 'cat' => -7));	
-						if ( have_posts() ) :
-							// Start the Loop.
-							
-							while ( have_posts() ) : the_post();
-								
-								/*
-								 * Include the post format-specific template for the content. If you want to
-								 * use this in a child theme, then include a file called called content-___.php
-								 * (where ___ is the post format) and that will be used instead.
-								 */
-								get_template_part( 'content', get_post_format() );
-
-							endwhile;
-							// Previous/next post navigation.
-							twentyfourteen_paging_nav();
-
-						else :
-							// If no content, include the "No posts found" template.
-							//get_template_part( 'content', 'none' );
-
-						endif;
-					?>
-
+						
+						<div id="viewWork">
+						<div class="inner">
+							<h2>Portfolio</h2>
+							<?php
+								query_posts('cat=9');
+								while (have_posts()) : the_post();
+									//get_template_part( 'content', get_post_format() );
+							?>
+								<?php $full = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+								<a class="portfolio-project fancybox" href="<?php echo $full[0]; ?>" > 
+									<div class="portfolio-inner">									
+										<?php echo get_the_content(); ?>
+										<div class="project-overlay">
+												<span class="over-text">
+													<?php the_title('<h3>','</h3>'); ?>
+												
+													<?php
+														$posttags = get_the_tags();
+														if ($posttags) {
+															$numItems = count($posttags);
+															$i = 0;
+															foreach($posttags as $tag) {
+																echo $tag->name;
+																if (++$i !== $numItems){
+																	echo ' | ';
+																}
+															}
+														}
+													?>
+												</span>									
+										</div>
+									</div>
+								</a>
+							<?php
+								endwhile;
+							?>
+						</div>
+						</div>
+						
 					</div><!-- #content -->
+					<button class="view-more">+</button>
 				</div><!-- #primary -->
 				
 			<?php get_sidebar( 'content' ); ?>
