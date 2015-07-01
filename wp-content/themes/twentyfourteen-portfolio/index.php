@@ -117,7 +117,7 @@ get_header(); ?>
 						</div>
 						
 					</div><!-- #content -->
-					<button class="view-more">+</button>
+					<button class="view-more open"><span>+</span></button>
 				</div><!-- #primary -->
 				
 			<?php get_sidebar( 'content' ); ?>
