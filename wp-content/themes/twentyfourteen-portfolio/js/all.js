@@ -8,51 +8,53 @@
 
 	// fade in #back-top
 
-		$(window).scroll(function () {
-			
+ 
 
-			var scroll = $(window).scrollTop();
-		    var h = $(window).height();
+	$(window).scroll(function () {
+		
 
-
-		     //>=, not <=
-		    if (scroll >= 420) {
-		        //clearHeader, not clearheader - caps H
-		        $("#masthead").addClass("darkHeader");
-		    } else {
-		    	$("#masthead").removeClass("darkHeader");
-		    }
-		    
-		    var footerPos = $(".site-info .logo");
-		    var viewPos = $("button.view-more");
-		   
+		var scroll = $(window).scrollTop();
+	    var h = $(window).height();
 
 
+	     //>=, not <=
+	    if (scroll >= 420) {
+	        //clearHeader, not clearheader - caps H
+	        $("#masthead").addClass("darkHeader");
+	    } else {
+	    	$("#masthead").removeClass("darkHeader");
+	    }
+	    
+	    var footerPos = $(".site-info .logo");
+	    var viewPos = $("button.view-more");
+	   
 
 
-		    if(scroll + h > footerPos.position().top){		    	
-		    	$(".site-info .logo").stop().animate({ opacity: 1, top: "0px" }, 200);
-		    	$('#uparrow').fadeIn();
-		    } else {
-				$('#uparrow').fadeOut();
-			}
 
-		    /*if(scroll + h > viewPos.position().top) {
-		    	viewPos.stop().animate({ opacity: 1, bottom: "0px" }, 200);
-		    } else if(scroll + h < viewPos.position().top + viewPos.outerHeight()) {
-		    	viewPos.stop().animate({ opacity: 0, bottom: "-100px" }, 200);
-		    } else {
-		    	viewPos.stop().animate({ opacity: 0, bottom: "-100px" }, 200);
-		    }*/
 
-		    if(scroll + h > viewPos.position().top) {
-		        viewPos.stop().animate({ opacity: 1, bottom: "-50px" }, 100);
-		   	
-		    } 
+	    if(scroll + h > footerPos.position().top){		    	
+	    	$(".site-info .logo").stop().animate({ opacity: 1, top: "0px" }, 200);
+	    }
 
-		    
+	    if(scroll + h == $(document).height() ){		    	
+	    	$('#uparrow').fadeIn();
+	    } else {
+			$('#uparrow').fadeOut();
+		}
 
-		});
+
+
+	    /*if(scroll + h > viewPos.position().top) {
+	    	viewPos.stop().animate({ opacity: 1, bottom: "0px" }, 200);
+	    } else if(scroll + h < viewPos.position().top + viewPos.outerHeight()) {
+	    	viewPos.stop().animate({ opacity: 0, bottom: "-100px" }, 200);
+	    } else {
+	    	viewPos.stop().animate({ opacity: 0, bottom: "-100px" }, 200);
+	    }*/
+
+	    
+
+	});
 
 		
 
@@ -102,19 +104,19 @@ $( document ).ready(function() {
 	/* Recent Work Hover */
 	$('.project').hover( 
 		function() {
-			$(this).find('.project-overlay').fadeIn(300);
+			$(this).find('.project-overlay').stop().fadeIn(300);
 		}, 
 		function() { 
-			$(this).find('.project-overlay').fadeOut(300);
+			$(this).find('.project-overlay').stop().fadeOut(300);
 		}
 	);	
 
 	$('.portfolio-project').hover( 
 		function() {
-			$(this).find('.project-overlay').fadeIn(300);
+			$(this).find('.project-overlay').stop().fadeIn(300);
 		}, 
 		function() { 
-			$(this).find('.project-overlay').fadeOut(300);
+			$(this).find('.project-overlay').stop().fadeOut(300);
 		}
 	);	
 
@@ -136,18 +138,30 @@ $( document ).ready(function() {
 	var viewMore = $("button.view-more");
 	$("#viewWork").css("height", 0);
 	$("#viewWork").hide();
-	$("button.view-more").click(function(){		
+
+	viewMore.mouseenter(function(){
+		$(this).addClass("hover");
+	})
+	.mouseleave(function(){
+		$(this).removeClass("hover");
+	});
+
+	viewMore.click(function(){		
 
 		if($("#viewWork").height() === 0 ){
 			$("#viewWork").show();
-			$("#viewWork").animate({
+			$("#viewWork").stop().animate({
 				height: height
 			}, function(){
 				$('html, body').animate({
-					scrollTop: $('#viewWork').offset().top -10
+					scrollTop: $('#viewWork').offset().top -100
 				});
 				$("button.view-more").addClass("close");
 				$("button.view-more").removeClass("open");
+				viewMore.stop().animate({ bottom: "-50px" }, 100, function(){
+					viewMore.removeClass("hover");
+				});
+
 			});
 			
 
@@ -156,11 +170,14 @@ $( document ).ready(function() {
 			$("#viewWork").animate({
 				height: "0"
 			}, function(){
-				$('html, body').animate({
+				$('html, body').stop().animate({
 					scrollTop: $('#viewWork').offset().top -100
 				});
 				$("button.view-more").removeClass("close");
 				$("button.view-more").addClass("open");
+				viewMore.stop().animate({ bottom: "-50px" }, 100, function(){
+					viewMore.removeClass("hover");
+				});
 			});
 
 			

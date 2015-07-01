@@ -115,7 +115,7 @@ a, button { -webkit-transition: all 200ms ease;
 .section.body{max-width:100%;}
 
 #page {margin:0px auto;} 
-#masthead {width:100%; height: 48px; padding:0; background-color:rgba(42,70,90, 0.5); position:fixed; top:0px; z-index:2; box-shadow:0px 1px 2px rgba(0,0,0,.5); font-family:$f-stack-secondary; @include transition-property(background-color); @include transition-duration(0.5s);
+#masthead {width:100%; height: 48px; padding:0; background-color:rgba(42,70,90, 0.5); position:fixed; top:0px; z-index:4; box-shadow:0px 1px 2px rgba(0,0,0,.5); font-family:$f-stack-secondary; @include transition-property(background-color); @include transition-duration(0.5s);
 	 .header-main {max-width:1260px; padding:0; margin:auto;
 		.logo {position:absolute; z-index:3; } 		
 		.primary-navigation {
@@ -229,13 +229,14 @@ section.body { min-height:500px;
 				}
 			}
 			button.view-more {
-				width:100%; font-size:44px; padding: 30px;  background:#e1e7eb; color:#beced8; position:relative; bottom:-100px;margin: 0px auto;  outline:none; opacity:0;   @include transition(all 200ms ease);
-				&:hover {background:#1f5c84; color:#669cbf; bottom:0px;}
+				width:100%; font-size:44px; padding: 30px;  background:#e1e7eb; color:#beced8; position:relative; z-index:1;bottom:-50px;margin: 0px auto;  outline:none;    @include transition(all 200ms ease);
+				span{ width:50px; margin:auto; display:block; @include transition(all 800ms ease)}
+				&.hover {background:#1f5c84; color:#669cbf; bottom:0px;}
 				&:before, &:after {content:" ";border:solid transparent;  top:100%; left:50%; position:absolute; height: 0; width: 0; @include transition(all 200ms ease);}
 				&:before {border-color:tranparent transparent;border-top-color:#1f5c84;border-width:0 250px 60px 250px;  margin-left:-250px}
 				&:after {border-top-color:#1f5c84;border-width:0 250px 60px 250px; margin-left:-12px}
 				&.close { bottom:0px; @include transition(all 200ms ease);
-					span {display:block; -webkit-transform:rotate(45deg);}
+					span { -webkit-transform:rotate(-135deg);-moz-transform:rotate(-135deg); transform:rotate(-135deg);}
 				}	
 			}
 		}
@@ -244,6 +245,11 @@ section.body { min-height:500px;
 
 /* services */
 	section.services {
+		position:relative;
+		z-index:2;
+		-webkit-box-shadow:  0px 2px 3px 6px rgba(29, 92, 135, 0.15);
+		-moz-box-shadow:  0px 2px 3px 6px rgba(29, 92, 135, 0.15);
+		box-shadow:  0px 2px 3px 6px rgba(29, 92, 135, 0.15);
 		background-color:#f0f5fa;
 		text-align: center;
 		#services.content-area, #tools.content-area {
