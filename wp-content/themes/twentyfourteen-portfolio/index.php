@@ -127,20 +127,22 @@ get_header(); ?>
 	<section class="services">
 		<div id="services" class="content-area">
 			<h2 class="entry-title">What I can do for you</h2>
-			<div class="service service-code">
-				<span>HTML/CSS Code</span>
-			</div>
-			<div class="service service-design">
-				<span>Web & Graphic Design</span>
-			</div>
-			<div class="service service-responsive">
-				<span>Responsive Web Design</span>
-			</div>
-			<div class="service service-logo">
-				<span>Logo Design</span>
-			</div>
-			<div class="service service-ecommerce">
-				<span>E-Commerce</span>
+			<div class="services-container">
+				<div class="service service-code">
+					<span>HTML/CSS Code</span>
+				</div>
+				<div class="service service-design">
+					<span>Web & Graphic Design</span>
+				</div>
+				<div class="service service-responsive">
+					<span>Responsive Web Design</span>
+				</div>
+				<div class="service service-logo">
+					<span>Logo Design</span>
+				</div>
+				<div class="service service-ecommerce">
+					<span>E-Commerce</span>
+				</div>
 			</div>
 		</div>
 		<div id="tools" class="content-area">

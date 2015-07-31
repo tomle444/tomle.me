@@ -32,9 +32,9 @@
 
 
 
-	    if(scroll + h > footerPos.position().top){		    	
+	    /*if(scroll + h > footerPos.position().top){		    	
 	    	$(".site-info .logo").stop().animate({ opacity: 1, top: "0px" }, 200);
-	    }
+	    }*/
 
 	    if(scroll + h == $(document).height() ){		    	
 	    	$('#uparrow').fadeIn();

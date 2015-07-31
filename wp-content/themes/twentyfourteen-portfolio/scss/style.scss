@@ -252,6 +252,11 @@ section.body { min-height:500px;
 		box-shadow:  0px 2px 3px 6px rgba(29, 92, 135, 0.15);
 		background-color:#f0f5fa;
 		text-align: center;
+		.services-container {
+			margin:auto;
+			overflow: hidden;
+			width: 90%;
+		}
 		#services.content-area, #tools.content-area {
 			float: none;
 			margin: 50px auto;
@@ -372,6 +377,9 @@ footer { font-family: $f-stack-secondary; }
 						background-color: #fff;
 					}
 				}
+				.cntctfrm_input.cntctfrm_input_submit {
+					overflow: hidden;
+				}
 				input[type="submit"] {
 					background-color: rgba(255,255,255,0);
 					border:2px solid #a9d5fe;
@@ -428,12 +436,12 @@ footer { font-family: $f-stack-secondary; }
 		
 		
 	.site-info {background-color:#fff; float:none; width:auto; text-align:center; color:$c-main-blue; padding-bottom:100px;
-		.footer-social {
-			float:left; margin-top:20px; border-top:1px solid rgba(255,255,255,0.2); 
+		.footer-social { 
+			display:none; float:left; margin-top:20px; border-top:1px solid rgba(255,255,255,0.2); 
 			.icon-resume {margin-top:10px;}
 		}
 		.footer-links {
-			float:right;
+			
 			text-transform: uppercase;
 			ul {
 				margin:6px auto;
@@ -449,7 +457,7 @@ footer { font-family: $f-stack-secondary; }
 			text-align: center;
 			margin: auto;
 			float:none;
-			opacity:0;
+			//opacity:1;
 			top:-50px;
 			a {
 				margin: 50px auto 0;
@@ -631,6 +639,28 @@ footer { font-family: $f-stack-secondary; }
 				}
 			}
 		}
+		section.body { 
+			.main-content {
+				#primary { 
+					
+					#content {
+						#viewWork {			
+							.inner {			
+								.portfolio-project {
+									float:none; width: 100%; margin: 40px auto;
+									.portfolio-inner { 
+										.project-overlay {
+											span.over-text {}
+										}					
+									
+									}
+								}
+							}
+						}
+					}
+				}
+			}												
+		}
 		section.services {
 			#services.content-area .service {
 				width:270px;
@@ -655,7 +685,16 @@ footer { font-family: $f-stack-secondary; }
 			}
 		}
 		footer {
-			
+			.footer-contact {
+				.contact-form {
+					form {
+						input[type="submit"] {
+							width:100%;
+							margin: 20px auto 60px;
+						}
+					}
+				}
+			}
 			.site-info {
 				padding: 15px 30px 50px;
 				
@@ -672,6 +711,7 @@ footer { font-family: $f-stack-secondary; }
 				display:inline-block;
 				margin-top:20px;
 				background-size: 50%;
+				vertical-align: top;
 				span {
 					margin-top: 100px;
 				}
@@ -714,6 +754,18 @@ footer { font-family: $f-stack-secondary; }
 				width:150px;				
 			}			
 		}
+		section.body { 
+			.main-content {
+				#primary { 
+					#content {						
+						h2 {
+							font-size: 18px;
+							letter-spacing: 8px;
+						}
+					}
+				}
+			}
+		}
 	}
 	 
 	@media screen and (min-width: 782px) {
@@ -742,7 +794,7 @@ footer { font-family: $f-stack-secondary; }
 		
 		.site-info { 
 
-			 ul {text-align:right;}
+			 ul {}
 			 .icon-wordpress {float:right; margin:10px;}
 		}				
 			
