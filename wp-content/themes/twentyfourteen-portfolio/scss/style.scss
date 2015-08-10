@@ -117,13 +117,32 @@ a, button { -webkit-transition: all 200ms ease;
 #page {margin:0px auto;} 
 #masthead {width:100%; height: 48px; padding:0; background-color:rgba(42,70,90, 0.5); position:fixed; top:0px; z-index:4; box-shadow:0px 1px 2px rgba(0,0,0,.5); font-family:$f-stack-secondary; @include transition-property(background-color); @include transition-duration(0.5s);
 	 .header-main {max-width:1260px; padding:0; margin:auto;
-		.logo {position:absolute; z-index:3; } 		
+		.logo {position:absolute; z-index:3; line-height: 0; }
+		a {			
+			svg {
+				width:172px;
+				margin: 4px;			
+				path, polygon {
+					fill: #fff;
+					@include transition(fill 0.6s ease);
+					
+				}				
+			}
+			&:hover {				
+				svg {									
+					path, polygon {
+						fill: $c-light-blue;
+						
+					}				
+				}
+			} 
+		}		
 		.primary-navigation {
 			li { display:block; float:left;
 				&:hover {
 					> a {background-color:rgba(42,70,90, 0.5); text-shadow:none; }
 				}
-				a { font-size:10px; letter-spacing:6px; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); display:block;}
+				a { font-size:10px; letter-spacing:6px; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); display:block; padding: 0 8px 0 12px;}
 			}
 			li.focus {				
 				> a {background-color:rgba(42,70,90, 0.25); outline: none;}
@@ -229,7 +248,7 @@ section.body { min-height:500px;
 				}
 			}
 			button.view-more {
-				width:100%; font-size:44px; padding: 30px;  background:#e1e7eb; color:#beced8; position:relative; z-index:1;bottom:-50px;margin: 0px auto;  outline:none;    @include transition(all 200ms ease);
+				width:100%; font-size:44px; padding: 30px;  background:#e1e7eb; color:#beced8; position:relative; z-index:1;bottom:-30px;margin: 0px auto;  outline:none;    @include transition(all 200ms ease);
 				span{ width:50px; margin:auto; display:block; @include transition(all 800ms ease)}
 				&.hover {background:#1f5c84; color:#669cbf; bottom:0px;}
 				&:before, &:after {content:" ";border:solid transparent;  top:100%; left:50%; position:absolute; height: 0; width: 0; @include transition(all 200ms ease);}
@@ -458,14 +477,36 @@ footer { font-family: $f-stack-secondary; }
 			margin: auto;
 			float:none;
 			//opacity:1;
-			top:-50px;
+			//top:-50px;
 			a {
-				margin: 50px auto 0;
-				img {width:75px;}
-			}
-			p {margin:2px auto; padding:0; clear:both; font-size: 11px; font-family: $f-stack-secondary; font-weight: normal; line-height:1;}
+				margin: 50px auto 0;				
+				display:inline-block; 
 
+				svg {
+					width: 30px;
+					
+					path, polygon  {
+						fill: $c-light-blue;
+						@include transition(fill 0.6s ease);
+					}
+										
+					&:hover{
+						path, polygon {
+							fill: darken($c-light-blue, 20%);
+						}
+					}
+				}
+				
+			}
 		}
+		p.copyright {margin:20px auto; padding:0; clear:both;  font-family: $f-stack-secondary; font-weight: normal; font-size: 14px;
+			span {
+				font-size: 10px;
+				color: #ddd;
+				display: block;
+			} 
+		}
+
 		a {
 			color:$c-main-blue; 
 		}
@@ -591,7 +632,7 @@ footer { font-family: $f-stack-secondary; }
 				.primary-navigation {
 					li { display:block; float:none;
 						&:hover {
-							> a {background-color:rgba(42,70,90, 0.5); text-shadow:none; }
+							> a {background-color:lighten(#2a465a, 10%);; text-shadow:none; }
 						}
 						a { font-size:10px; letter-spacing:6px; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); padding:14px; text-align:center;
 							&:hover {
@@ -604,7 +645,8 @@ footer { font-family: $f-stack-secondary; }
 					}
 					&.toggled-on { padding:0px;
 						.menu-navigation-links-container {
-							background: rgba(42, 70, 90, 0.5);
+							//background: rgba(42, 70, 90, 0.5);
+							background: rgba(42, 70, 90, 0.95);
 							position:absolute;
 							top:48px;
 							right:0px;

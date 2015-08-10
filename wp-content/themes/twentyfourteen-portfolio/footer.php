@@ -60,9 +60,11 @@
 					<div class="footer-links"><?php wp_nav_menu( array('menu' => 'Portfolio Links' )); ?></div>
 					
 					<?php do_action( 'twentyfourteen_credits' ); ?>
-					<h1 class="site-title logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" /></a>
-						<p class="copyright">tomle.me <?php echo date('Y'); ?> All rights reserved. </p>
-					</h1>
+					<div class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 47 47" enable-background="new 0 0 47 47" xml:space="preserve"><polygon points="37.4 32.1 14.9 9.6 19.8 4.7 37.6 22.4 47 13 47 3.9 47 0 43.1 0 3.9 0 0 0 0 3.9 0 24.5 13 11.5 17.8 16.3 14.4 19.7 32.1 37.4 27.2 42.4 9.4 24.6 0 34.1 0 43.1 0 47 3.9 47 43.1 47 47 47 47 43.1 47 22.5 "/></svg></a>
+						
+					</div>
+					<p class="copyright">tomle.me <?php echo date('Y'); ?> 
+						<span>All rights reserved.</span> </p>
 					
 				</div>
 			</div><!-- .site-info -->

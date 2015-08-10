@@ -187,7 +187,7 @@ $( document ).ready(function() {
 	$("button.view-more.open").hover(function(){
     	viewMore.stop().animate({ bottom: "0px" }, 100);
     }, function(){
-    	viewMore.stop().animate({ bottom: "-50px" }, 100);
+    	viewMore.stop().animate({ bottom: "-30px" }, 100);
     });
 
    
