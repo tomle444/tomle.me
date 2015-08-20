@@ -122,7 +122,7 @@ $( document ).ready(function() {
 
 	
 	/* Fancybox */
-	$(".fancybox").fancybox({
+	$("a[rel='group-fancybox'].fancybox").fancybox({
 		helpers: {
 	        title: {
 	            type: 'outside'

@@ -81,12 +81,12 @@ get_header(); ?>
 						<div class="inner">
 							<h2>Portfolio</h2>
 							<?php
-								query_posts('cat=9');
+								query_posts('cat=15');
 								while (have_posts()) : the_post();
 									//get_template_part( 'content', get_post_format() );
 							?>
 								<?php $full = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large' ); ?>
-								<a class="portfolio-project fancybox" href="<?php echo $full[0]; ?>" > 
+								<a class="portfolio-project fancybox" rel="group-fancybox" href="<?php echo $full[0]; ?>" > 
 									<div class="portfolio-inner">									
 										<?php echo get_the_content(); ?>
 										<div class="project-overlay">
