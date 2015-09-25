@@ -81,7 +81,7 @@ get_header(); ?>
 						<div class="inner">
 							<h2>Portfolio</h2>
 							<?php
-								query_posts('cat=9');
+								query_posts('cat=15'); 
 								while (have_posts()) : the_post();
 									//get_template_part( 'content', get_post_format() );
 							?>
