@@ -88,8 +88,7 @@
 	background-position: 0 -108px;
 	opacity: 0.8;
 	cursor: pointer;
-	z-index: 8060;
-}
+	z-index: 9999;}
 
 #fancybox-loading div {
 	width: 44px;
@@ -139,12 +138,12 @@
 }
 
 .fancybox-prev span {
-	left: 10px;
+	left: 0px;
 	background-position: 0 -36px;
 }
 
 .fancybox-next span {
-	right: 10px;
+	right: 0px;
 	background-position: 0 -72px;
 }
 
