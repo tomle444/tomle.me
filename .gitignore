@@ -99,20 +99,11 @@ wp-content/*
 # ADVANCED OPTION (disabled by default)
 # ignore everything in the "themes" directory,
 # except the themes you specify
-#wp-content/themes/*
-#!wp-content/themes/bootstrap-genesis/
+wp-content/themes/*
 
-# ignore specific themes
-wp-content/themes/twentyten/
-wp-content/themes/twentyeleven/
-wp-content/themes/twentytwelve/
-wp-content/themes/twentythirteen/
-#wp-content/themes/twentyfourteen/
-wp-content/themes/tomle/
-wp-content/themes/twentyfourteen-tomle/
-wp-content/themes/wootique/
-wp-content/themes/wordpress-bootstrap-master/
-wp-content/themes/nv/
+!wp-content/themes/twentyfourteen/
+!wp-content/themes/twentyfourteen-portfolio/
+
 
 # ignore node/grunt dependency directories
 node_modules/
