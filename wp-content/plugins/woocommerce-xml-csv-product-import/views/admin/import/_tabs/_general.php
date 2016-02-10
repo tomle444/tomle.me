@@ -83,6 +83,13 @@
 		</p>	
 
 		<p class="form-field wpallimport-radio-field">
+			<input type="hidden" name="convert_decimal_separator" value="0" />
+			<input type="checkbox" id="convert_decimal_separator" name="convert_decimal_separator" value="1" <?php echo $post['convert_decimal_separator'] ? 'checked="checked"' : '' ?> />
+			<label for="convert_decimal_separator" style="width:220px;"><?php _e('Convert decimal separator to a period', 'pmxi_plugin') ?></label>
+			<a href="#help" class="wpallimport-help" title="<?php _e('Prices must be imported using a period as the decimal separator. If you\'d like to change the decimal separator you can do so by editing your WooCommerce settings.', 'pmxi_plugin') ?>" style="position:relative; top:1px;">?</a>			
+		</p>
+
+		<p class="form-field wpallimport-radio-field">
 			<input type="hidden" name="prepare_price_to_woo_format" value="0" />
 			<input type="checkbox" id="prepare_price_to_woo_format" name="prepare_price_to_woo_format" value="1" <?php echo $post['prepare_price_to_woo_format'] ? 'checked="checked"' : '' ?> />
 			<label for="prepare_price_to_woo_format" style="width:420px;"><?php _e('Attempt to convert incorrectly formatted prices to WooCommerce format', 'pmxi_plugin') ?></label>
@@ -94,7 +101,13 @@
 		</p>
 
 	</div>
-	<div class="options_group show_if_virtual">
+	<div class="options_group show_if_variable">
+		<p class="form-field">
+			<label><?php _e("Variation Description"); ?></label>
+			<input type="text" class="short" name="single_product_variation_description" value="<?php echo esc_attr($post['single_product_variation_description']) ?>"/>			
+		</p>
+	</div>
+	<div class="options_group">
 		
 			<p class="form-field wpallimport-radio-field">
 				<input type="radio" id="is_product_virtual_yes" class="switcher" name="is_product_virtual" value="yes" <?php echo 'yes' == $post['is_product_virtual'] ? 'checked="checked"': '' ?>/>
@@ -117,7 +130,7 @@
 			</div>
 		
 	</div>
-	<div class="options_group show_if_downloadable">
+	<div class="options_group">
 		
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="is_product_downloadable_yes" class="switcher" name="is_product_downloadable" value="yes" <?php echo 'yes' == $post['is_product_downloadable'] ? 'checked="checked"': '' ?>/>

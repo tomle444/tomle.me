@@ -3,7 +3,7 @@
 Plugin Name: WP All Import - WooCommerce Add-On
 Plugin URI: http://www.wpallimport.com/
 Description: An extremely easy, drag & drop importer to import WooCommerce simple products. A paid upgrade is available for premium support and support for Variable, Grouped, and External/Affiliate products
-Version: 1.2.1
+Version: 1.2.5
 Author: Soflyy
 */
 /**
@@ -24,7 +24,7 @@ define('PMWI_ROOT_URL', rtrim(plugin_dir_url(__FILE__), '/'));
  */
 define('PMWI_PREFIX', 'pmwi_');
 
-define('PMWI_FREE_VERSION', '1.2.1');
+define('PMWI_FREE_VERSION', '1.2.5');
 
 define('PMWI_EDITION', 'free');
 
@@ -273,33 +273,43 @@ final class PMWI_Plugin {
 			$controllerName =  preg_replace('%(^' . preg_quote(self::PREFIX, '%') . '|_).%e', 'strtoupper("$0")', str_replace('-', '_', $page)); // capitalize prefix and first letters of class name parts
 			$actionName = str_replace('-', '_', $action);
 			if (method_exists($controllerName, $actionName)) {
-				$this->_admin_current_screen = (object)array(
-					'id' => $controllerName,
-					'base' => $controllerName,
-					'action' => $actionName,
-					'is_ajax' => isset($_SERVER['HTTP_X_REQUESTED_WITH']) and strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest',
-					'is_network' => is_network_admin(),
-					'is_user' => is_user_admin(),
-				);
-				add_filter('current_screen', array($this, 'getAdminCurrentScreen'));
-				add_filter('admin_body_class', create_function('', 'return "' . PMWI_Plugin::PREFIX . 'plugin";'));
+
+				if ( ! get_current_user_id() or ! current_user_can('manage_options')) {
+				    // This nonce is not valid.
+				    die( 'Security check' ); 
+
+				} else {
+					
+					$this->_admin_current_screen = (object)array(
+						'id' => $controllerName,
+						'base' => $controllerName,
+						'action' => $actionName,
+						'is_ajax' => isset($_SERVER['HTTP_X_REQUESTED_WITH']) and strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest',
+						'is_network' => is_network_admin(),
+						'is_user' => is_user_admin(),
+					);
+					add_filter('current_screen', array($this, 'getAdminCurrentScreen'));
+					add_filter('admin_body_class', create_function('', 'return "' . PMWI_Plugin::PREFIX . 'plugin";'));
+					
+					$controller = new $controllerName();
+					if ( ! $controller instanceof PMWI_Controller_Admin) {
+						throw new Exception("Administration page `$page` matches to a wrong controller type.");
+					}
+
+					if ($this->_admin_current_screen->is_ajax) { // ajax request
+						$controller->$action();
+						do_action('PMWI_action_after');
+						die(); // stop processing since we want to output only what controller is randered, nothing in addition
+					} elseif ( ! $controller->isInline) {
+						ob_start();
+						$controller->$action();
+						$buffer = ob_get_clean();
+					} else {
+						$buffer_callback = array($controller, $action);
+					}
 				
-				$controller = new $controllerName();
-				if ( ! $controller instanceof PMWI_Controller_Admin) {
-					throw new Exception("Administration page `$page` matches to a wrong controller type.");
 				}
 
-				if ($this->_admin_current_screen->is_ajax) { // ajax request
-					$controller->$action();
-					do_action('PMWI_action_after');
-					die(); // stop processing since we want to output only what controller is randered, nothing in addition
-				} elseif ( ! $controller->isInline) {
-					ob_start();
-					$controller->$action();
-					$buffer = ob_get_clean();
-				} else {
-					$buffer_callback = array($controller, $action);
-				}
 			} else { // redirect to dashboard if requested page and/or action don't exist
 				wp_redirect(admin_url()); die();
 			}
@@ -467,6 +477,17 @@ final class PMWI_Plugin {
 			'is_visible' => array(),
 			'is_taxonomy' => array(),
 			'create_taxonomy_in_not_exists' => array(),
+
+			'is_advanced' => array(),
+			'advanced_in_variations' => array(),
+			'advanced_in_variations_xpath' => array(),
+			'advanced_is_visible' => array(),
+			'advanced_is_visible_xpath' => array(),
+			'advanced_is_taxonomy' => array(),
+			'advanced_is_taxonomy_xpath' => array(),
+			'advanced_is_create_terms' => array(),
+			'advanced_is_create_terms_xpath' => array(),
+
 			'single_product_purchase_note' => '',
 			'single_product_menu_order' => 0,			
 			'is_product_enable_reviews' => 'no',
@@ -548,15 +569,22 @@ final class PMWI_Plugin {
 			'single_variable_product_downloadable_use_parent' => 0,
 			'variable_download_limit_use_parent' => 0,
 			'variable_download_expiry_use_parent' => 0,
+
+			'single_product_variation_description' => '',
+			'variable_description' => '',
+			'variable_description_use_parent' => 0,
+				
 			'first_is_parent' => 'yes',
 			'single_product_whosale_price' => '',
 			'variable_whosale_price' => '',
 			'variable_whosale_price_use_parent' => 0,
 			'disable_auto_sku_generation' => 0,
 			'is_default_attributes' => 0,
+			'default_attributes_type' => 'first',
 			'disable_sku_matching' => 1,
 			'disable_prepare_price' => 1,
 			'prepare_price_to_woo_format' => 0,
+			'convert_decimal_separator' => 1,
 			'grouping_indicator' => 'xpath',				
 			'custom_grouping_indicator_name' => '',
 			'custom_grouping_indicator_value' => '',
@@ -573,7 +601,14 @@ final class PMWI_Plugin {
 			'update_attributes_logic' => 'full_update',						
 			'attributes_list' => array(),
 			'attributes_only_list' => array(),
-			'attributes_except_list' => array()
+			'attributes_except_list' => array(),
+
+			'is_variation_product_manage_stock' => 'no',
+			'single_variation_product_manage_stock' => '',
+			'variation_stock' => '',
+			'variation_stock_status' => 'auto',
+			'put_variation_image_to_gallery' => 0,
+			'single_variation_stock_status' => ''
 		);
 	}	
 }

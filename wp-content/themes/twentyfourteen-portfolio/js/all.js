@@ -135,9 +135,12 @@ $( document ).ready(function() {
 
 	/* View More Work */
 	var height = $("#viewWork").height();
+	//console.log(height);
+	var startHeight = 99;
 	var viewMore = $("button.view-more");
-	$("#viewWork").css("height", 0);
-	$("#viewWork").hide();
+	$("#viewWork").css("height", startHeight);
+	$("#viewWork h2").text('View More');
+	//$("#viewWork").hide();
 
 	viewMore.mouseenter(function(){
 		$(this).addClass("hover");
@@ -148,8 +151,8 @@ $( document ).ready(function() {
 
 	viewMore.click(function(){		
 
-		if($("#viewWork").height() === 0 ){
-			$("#viewWork").show();
+		if($("#viewWork").height() === startHeight ){
+			$("#viewWork h2").text('Portfolio');
 			$("#viewWork").stop().animate({
 				height: height
 			}, function(){
@@ -161,14 +164,15 @@ $( document ).ready(function() {
 				viewMore.stop().animate({ bottom: "-50px" }, 100, function(){
 					viewMore.removeClass("hover");
 				});
+				
 
 			});
 			
 
 		} else {
-
+			$("#viewWork h2").text('View More');
 			$("#viewWork").animate({
-				height: "0"
+				height: startHeight
 			}, function(){
 				$('html, body').stop().animate({
 					scrollTop: $('#viewWork').offset().top -100
@@ -178,6 +182,7 @@ $( document ).ready(function() {
 				viewMore.stop().animate({ bottom: "-50px" }, 100, function(){
 					viewMore.removeClass("hover");
 				});
+				
 			});
 
 			

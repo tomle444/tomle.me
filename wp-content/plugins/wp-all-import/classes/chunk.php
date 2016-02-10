@@ -21,7 +21,9 @@ class PMXI_Chunk {
     'type' => 'upload',
     'encoding' => 'UTF-8',
     'pointer' => 1,
-    'chunkSize' => 1024
+    'chunkSize' => 1024,
+    'filter' => true,
+    'get_cloud' => false
   );
   
   /**
@@ -86,10 +88,9 @@ class PMXI_Chunk {
 
     if ($is_html) return;
 
-    if (empty($this->options['element'])){
-      //$founded_tags = array();   
-
-      if (function_exists('stream_filter_register')){
+    if (empty($this->options['element']) or $this->options['get_cloud'])
+    {      
+      if (function_exists('stream_filter_register') and $this->options['filter']){
         stream_filter_register('preprocessxml', 'preprocessXml_filter');
         $path = 'php://filter/read=preprocessxml/resource=' . $this->file;   
       }
@@ -104,29 +105,16 @@ class PMXI_Chunk {
               if (array_key_exists(str_replace(":", "_", $reader->localName), $this->cloud))
                 $this->cloud[str_replace(":", "_", $reader->localName)]++;
               else
-                $this->cloud[str_replace(":", "_", $reader->localName)] = 1;
-              //array_push($founded_tags, str_replace(":", "_", $reader->localName));
-              
+                $this->cloud[str_replace(":", "_", $reader->localName)] = 1;                       
               break;
             default:
 
               break;
          }
       }
-      unset($reader);   
-      
-      /*if (!empty($founded_tags)) {            
-        $element_counts = array_count_values($founded_tags);                          
-        if (!empty($element_counts)){
-          foreach ($element_counts as $tag => $count)
-            if (strpos($tag, ":") === false)
-                $this->cloud[$tag] = $count;                
-          
-          arsort($element_counts);           
-        }              
-      } */       
+      unset($reader);             
      
-      if (!empty($this->cloud)){      
+      if ( ! empty($this->cloud) and empty($this->options['element']) ){
         
         arsort($this->cloud);           
 
@@ -148,7 +136,7 @@ class PMXI_Chunk {
       }
     }                           
 
-    if (function_exists('stream_filter_register')){
+    if (function_exists('stream_filter_register') and $this->options['filter']){
       stream_filter_register('preprocessxml', 'preprocessXml_filter');
       $path = 'php://filter/read=preprocessxml/resource=' . $this->file;        
     }
@@ -216,7 +204,7 @@ class PMXI_Chunk {
       $xml = false;
     }        
     
-    return ( ! empty($xml) ) ? $this->removeColonsFromRSS(preg_replace('%xmlns.*=\s*([\'"]).*\1%sU', '', $xml)) : false;
+    return ( ! empty($xml) ) ? $this->removeColonsFromRSS(preg_replace('%xmlns.*=\s*([\'"&quot;]).*\1%sU', '', $xml)) : false;
 
   }  
 
