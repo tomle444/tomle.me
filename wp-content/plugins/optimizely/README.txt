@@ -2,10 +2,10 @@
 Contributors: arthuracs, jonslaught, bradtaylorsf
 Tags: optimizely, ab testing, split testing, website optimization
 Requires at least: 3.0
-Tested up to: 4.2.2
-Stable tag: 3.7.1
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tested up to: 4.4
+Stable tag: 3.7.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin helps you configure your WordPress website to use Optimizely, a dramatically easier way to improve your website through A/B testing.
 
@@ -29,6 +29,10 @@ You're ready to start using Optimizely!
 == Screenshots ==
 1. Create multiple headlines for each post
 2. View your results and launch winners directly from the dashboard
+
+= 3.7.5 =
+* FIXED bug on edit post page that displayed unwanted tooltip
+* UPDATED default conditional activation code to exclude users coming from other sites 
 
 = 3.7.1 =
 * FIXED bug on config.js around the conditional activation input
