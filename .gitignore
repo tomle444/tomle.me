@@ -103,6 +103,7 @@ wp-content/themes/*
 
 !wp-content/themes/twentyfourteen/
 !wp-content/themes/twentyfourteen-portfolio/
+!wp-content/themes/tomle/
 
 
 # ignore node/grunt dependency directories
