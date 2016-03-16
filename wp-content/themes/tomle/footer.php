@@ -4,7 +4,7 @@
             <div class="col-md-12">
               <div class="built-with text-center">
                 <p>This website is brought to you by: </p>
-                <a href="#">Bootstrap</a> <a href="#">Sublime Text 2</a> <a href="#">Photoshop</a> <a href="#">Github</a> <br />Google Fonts used <a href="#">Cabin</a> <a href="#">Source Sans Pro</a> and Icons provided by <a href="#">Font Awesome</a> <a href="#">Glyphicons</a></p>
+                <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> <a href="https://www.sublimetext.com/" target="_blank">Sublime Text 2</a> <a href="http://www.adobe.com/products/photoshop.html" target="_blank">Photoshop</a> <a href="https://github.com/" target="_blank">Github</a> <br />Google Fonts used <a href="https://www.google.com/fonts/specimen/Cabin" target="_blank">Cabin</a> <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro" target="_blank">Source Sans Pro</a> and Icons provided by <a href="https://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> <a href="http://glyphicons.com/" target="_blank">Glyphicons</a></p>
               </div>
             </div>
           </div>
@@ -28,9 +28,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/all.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/SmoothScroll.js" type="text/JavaScript" rel="JavaScript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript" rel="JavaScript"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/all.js" type="text/javascript" rel="JavaScript"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/SmoothScroll.js" type="text/JavaScript" rel="JavaScript"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/enquire.js" type="text/JavaScript" rel="JavaScript"></script>
     <script type="text/javascript">
     $(document).ready(function(){
@@ -92,9 +92,9 @@
 
 </script>
 
-<script>window.jQuery || document.write('<script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="<?php bloginfo('template_directory'); ?>/dist/js/bootstrap.js"></script>
+<script>window.jQuery || document.write('<script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/jquery.min.js" rel="JavaScript"><\/script>')</script>
+<script src="<?php bloginfo('template_directory'); ?>/dist/js/bootstrap.js" rel="JavaScript"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/ie10-viewport-bug-workaround.js" rel="JavaScript"></script>
 </body>
 </html>

@@ -98,16 +98,17 @@
       <div class="call-to-action-overlay"></div>
         <div class="container">
           <h1>Contact</h1>
-          <p>Get in touch with me about any projects you have in mind. I am available to take on new work and to help in any way I can to get goals accomplished. Let’s work together and create something.</p>
-          <a class="btn btn-default">Send</a>
+          <p>Get in touch with me about any projects you have in mind. I am available to take on new work and to help in any way I can to get goals accomplished. </p>
+          <p class="large">Let’s work together and create something.</p>
+          <a class="btn btn-default" href="mailto:tomle444@gmail.com">Send</a>
         </div>      
       </div>
 
       <div id="about" class="about">
         <div class="container">
           <h1>About</h1>
-          <p>With over 10 years of professional experience in the web and graphic design industry, I am always finding myself learning new things everyday. I enjoy working in an industry where I can be creative on a daily basis. I am currently a full time front-end web developer at a Magento Hosting and Development company called Neoverve, yeah that's right <i>neo-verve</i>.</p>
-          <p>My specialties include HTML, CSS, Responsive Web Design, Graphic Design, Magento Ecommerce, Javascript and much more.</p>
+          <p>With over 10 years of professional experience in the web and graphic design industry, I am always finding myself learning new things everyday. I enjoy working in an industry where I can be creative on a daily basis. I am currently a full time front-end web developer at a Magento Hosting and Development company.</p>
+          <p>My specialties include HTML, CSS, Responsive Web Design, Graphic Design, Magento, Wordpress, Javascript, and Jquery.</p>
           
         </div>
       </div>

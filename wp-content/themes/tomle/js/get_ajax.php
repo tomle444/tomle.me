@@ -62,7 +62,7 @@
 						          </ul>",
 				"date" 			=> "2015", 
 				"url" 			=> "www.fpdatasolutions.com", 
-				"thumbnail_1" 			=> array("src" => $path . "/images/portfolio/project-gozolt-1.png", "height" => 468),
+				//"thumbnail_1" 			=> array("src" => $path . "/images/portfolio/project-gozolt-1.png", "height" => 468),
 				)
 			);
 		break;
@@ -87,7 +87,7 @@
 							    </ul>",
 				"date" 			=> "2014", 
 				"url" 			=> "www.thedancesocks.com", 
-				"thumbnail_1" 			=> array("src" => $path . "/images/portfolio/project-gozolt-1.png", "height" => 468),
+				//"thumbnail_1" 			=> array("src" => $path . "/images/portfolio/project-gozolt-1.png", "height" => 468),
 				)
 			);
 		break;
