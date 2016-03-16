@@ -153,8 +153,10 @@ $(function(){
 		});
 	}
 	function clickMobileNav(){
+
 		$navBar.css({'display': 'block', 'right': -windowWidth, 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
 		$mainContainer.removeAttr('style' );
+
 		$('.navbar-toggle, .nav-close, .overlay').bind('click', function(){
 			if($navBar.hasClass('active')){
 				$navBar.css('right', '0' );
@@ -167,29 +169,31 @@ $(function(){
 
 		
 	}
+
 	enquire.register("screen and (max-width:769px)", {
 
-		match : function(){
-
+		match : function(){			
+			$('body').addClass('touch');
 			initDesktopNav();
 			clickDesktopNav();
-
 		}, 
 		unmatch : function(){
 			$('.navbar-toggle, .nav-close, .overlay').unbind('click');
-
+			$('body').removeClass('touch');
 			$overlayDiv.css('display', 'none' );
 			$mainContainer.removeAttr('style' );
 			$navBar.css({'display': 'block', 'right': 0, 'position': 'absolute', 'width' : 'auto' });
-		}
+		} 
 	});	
 
 	enquire.register("screen and (max-width:400px)", {
 
-		match : function(){
+		match : function(){		
+			$('body').addClass('touch');	
 			clickMobileNav();
 		},
 		unmatch : function(){
+			$('body').removeClass('touch');
 			//$('.navbar-toggle, .nav-close, .overlay').unbind('click');
 			$navBar.css({'display': 'block', 'right': -windowWidth, 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
 			$mainContainer.removeAttr('style' );
