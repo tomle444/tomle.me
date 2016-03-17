@@ -6739,6 +6739,7 @@ body {
 a {
   color: #111;
   outline: none;
+  transition: all 0.2s ease-in-out;
 }
 a:hover {
   text-decoration: none;
@@ -6805,7 +6806,7 @@ p {
   max-width: 1260px;
   min-height: 400px;
   overflow: hidden;
-  width: 75%;
+  width: 85%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -6865,16 +6866,38 @@ p {
 }
 .main-container .overlay .overlay-modal .overlay-project h2,
 .main-container .overlay-results .overlay-modal .overlay-project h2 {
-  font-size: 24px;
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.main-container .overlay .overlay-modal .overlay-project h2 span,
+.main-container .overlay-results .overlay-modal .overlay-project h2 span {
+  font-size: 18px;
+  display: inline-block;
+  margin-left: 20px;
 }
 .main-container .overlay .overlay-modal .overlay-project p,
 .main-container .overlay-results .overlay-modal .overlay-project p {
   font-size: 18px;
 }
+.main-container .overlay .overlay-modal .overlay-project a,
+.main-container .overlay-results .overlay-modal .overlay-project a {
+  color: #fff;
+}
+.main-container .overlay .overlay-modal .overlay-project a:hover,
+.main-container .overlay-results .overlay-modal .overlay-project a:hover {
+  color: #00cbff;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-date,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-date {
+  font-size: 14px;
+}
 .main-container .overlay .overlay-modal .overlay-project .overlay-project-url,
 .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url {
   clear: both;
   overflow: hidden;
+  margin: auto;
+  text-align: center;
 }
 .main-container .overlay .overlay-modal .overlay-project .overlay-project-url .btn-default,
 .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default {
@@ -6882,10 +6905,8 @@ p {
   color: #fff;
   margin: 40px auto;
   text-align: center;
-  width: 200px;
-  display: block;
   font-size: 18px;
-  padding: 10px 5px;
+  padding: 10px 80px;
 }
 .main-container .overlay .overlay-modal .overlay-project .overlay-project-url .btn-default:hover,
 .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default:hover {
@@ -6897,6 +6918,10 @@ p {
   float: left;
   width: 20%;
 }
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
+  padding: 20px 0;
+}
 .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
 .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
   font-size: 16px;
@@ -6905,6 +6930,11 @@ p {
 .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main {
   float: left;
   width: 79%;
+  border-right: 1px solid #333;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
+  padding: 20px;
 }
 .main-container .overlay .overlay-modal .overlay-project .overlay-project-thumb,
 .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-thumb {
@@ -7168,6 +7198,14 @@ nav.navbar.navbar-fixed-top {
 .jumbotron .container .btn:hover {
   background-color: rgba(0, 0, 0, 0.25);
 }
+@media (max-width: 480px) {
+  .jumbotron .container {
+    padding: 0 60px;
+  }
+  .jumbotron .container h1 span {
+    font-size: 28px;
+  }
+}
 .icon-prev,
 .icon-next,
 .glyphicon-menu-left,
@@ -7424,7 +7462,7 @@ nav.navbar.navbar-fixed-top {
   margin-right: auto;
 }
 .call-to-action .container p.large {
-  font-size: 24px;
+  font-size: 22px;
 }
 .call-to-action .container .btn {
   color: #fff;
@@ -7433,6 +7471,11 @@ nav.navbar.navbar-fixed-top {
   margin: 40px auto;
   padding: 12px 80px;
   font-size: 18px;
+}
+@media (max-width: 769px) {
+  .call-to-action .container {
+    width: 90%;
+  }
 }
 /* About */
 .about .container {
@@ -7449,6 +7492,11 @@ nav.navbar.navbar-fixed-top {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 769px) {
+  .about .container {
+    width: 90%;
+  }
 }
 /* Other Work */
 .other-work .container {
@@ -7527,6 +7575,13 @@ footer .bottom a:hover .fa {
 footer .bottom .container {
   margin: 20px auto;
 }
+footer .bottom .container .copyright {
+  float: left;
+  line-height: 2;
+}
+footer .bottom .container .social-icons {
+  float: right;
+}
 footer .bottom .container .social-icons span {
   vertical-align: top;
   display: inline-block;
@@ -7541,5 +7596,18 @@ footer .bottom .container .social-icons a .fa {
 }
 footer .bottom .container .social-icons a .fa:hover {
   color: #fff;
+}
+@media (max-width: 769px) {
+  footer .bottom .container .copyright,
+  footer .bottom .container .social-icons {
+    float: none;
+    width: auto;
+    margin: 10px auto;
+    text-align: center;
+  }
+  footer .bottom .container .social-icons span {
+    display: block;
+    margin: auto;
+  }
 }
 /*# sourceMappingURL=bootstrap.css.map */

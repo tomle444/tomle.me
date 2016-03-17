@@ -73,8 +73,12 @@ $(function(){
 		
 		//$('.overlay-project').append('Title: ' + JSON.stringify(data.id));
 		$.each(data, function(index, element) {
-			$('.overlay-project').append('<div class="overlay-project-title"><h2>' + data[index].title + '</h2>' + '<p>' + data[index].date + '</p>' + '</div>');
-			
+			$('.overlay-project').attr('id', data[index].id);
+			$('.overlay-project').append('<div class="overlay-project-title"><h2>' + data[index].title + '</h2>' + '</div>');
+			if(data[index].url){
+				$('.overlay-project-title h2').append('<span><a href=//' + data[index].url + ' target="_blank">' + data[index].url + '</a></span>');
+			}
+			$('.overlay-project').append('<p class="overlay-project-date">' + data[index].date + '</p>');			
 				
 				$('.overlay-project').append('<div class="overlay-project-main">');
 	            
@@ -82,7 +86,9 @@ $(function(){
 	           
 	            $('.overlay-project').append('<div class="overlay-project-tags">' + data[index].tags + '</div>');
 
-	             $('.overlay-project').append('<div class="overlay-project-url"><a class="btn-default btn" href="//' + data[index].url + '" target="_blank">View Site</a></div>');
+	            if(data[index].url){
+	            	$('.overlay-project').append('<div class="overlay-project-url"><a class="btn-default btn" href="//' + data[index].url + '" target="_blank">View Site</a></div>');
+	            }
 	            if(data[index].thumbnail_1){
 	            	$('.overlay-project').append('<div class="overlay-project-thumb" style="min-height: ' + data[index].thumbnail_1.height + 'px">' + '<img src="' + data[index].thumbnail_1.src + '" />' + '</div>');
 	        	}
@@ -103,6 +109,7 @@ $(function(){
     function closeDetails(){
     	$('.overlay-results').fadeOut(100); 
     	$('.overlay-project').html(' ');  
+    	$('.overlay-project').attr('id', '');  
     }
 
 

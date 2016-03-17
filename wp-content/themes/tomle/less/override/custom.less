@@ -13,6 +13,7 @@ body {
 a {	
 	color: @gray-base;
 	outline: none;
+	transition: all .2s ease-in-out;
 	&:hover {
 		text-decoration: none;
 	}
@@ -72,7 +73,7 @@ p {margin-bottom: 20px;}
 			max-width: 1260px;
 			min-height: 400px;
 			overflow: hidden;
-			width: 75%;
+			width: 85%;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
@@ -125,23 +126,39 @@ p {margin-bottom: 20px;}
 				overflow: hidden;
 
 				h2 {
-					font-size: 24px;
+					font-size: 30px;
+					padding-bottom: 10px;
+					border-bottom: 1px solid #333;
+					span {
+						font-size: 18px;
+						display: inline-block;
+						margin-left: 20px;
+					}
 				}
 				p {
 					font-size: 18px;
 				}
+				a {
+					color: #fff;
+					&:hover {
+						color: @brand-primary;
+					}
+				}
+				.overlay-project-date {
+					font-size: 14px;	
+				}
 				.overlay-project-url {
 					clear: both;
 					overflow: hidden;
+					margin: auto; 
+					text-align: center;
 					.btn-default {
 						border-color: #fff;
 						color: #fff;
 						margin: 40px auto;
 						text-align: center;
-						width: 200px;
-						display: block;
 						font-size: 18px;
-						padding: 10px 5px;
+						padding: 10px 80px;
 						
 						&:hover {
 							background-color: rgba(255,255,255, 1);
@@ -155,6 +172,7 @@ p {margin-bottom: 20px;}
 					width: 20%;
 
 					ul.tags {
+						padding: 20px 0;
 						li {
 							font-size: 16px;
 						}
@@ -163,6 +181,10 @@ p {margin-bottom: 20px;}
 				.overlay-project-main {
 					float: left;
 					width: 79%;
+					border-right: 1px solid #333;
+					.overlay-project-description {
+						padding: 20px;
+					}
 				}
 				.overlay-project-thumb {
 					clear: both;
@@ -473,6 +495,16 @@ nav.navbar {
 			}
 		}
 	}
+	@media (max-width: @screen-xs) {
+		.container {
+			padding: 0 (@jumbotron-padding - 20);
+			h1 {
+				span {
+					font-size: (@font-size-h1 - 8);
+				}
+			}
+		}
+	}
 	
 }
 // Toggles
@@ -646,8 +678,7 @@ nav.navbar {
 				a {
 					right: -220px;
 					&:hover {
-						right: -220px;
-						
+						right: -220px;						
 					}
 				}
 			}
@@ -705,6 +736,9 @@ nav.navbar {
 				p {
 					font-size: @font-size-large;
 				}
+				img {
+
+				}
 			}
 		}
 	}
@@ -746,7 +780,7 @@ nav.navbar {
 			margin-left: auto;
 			margin-right: auto;
 			&.large {
-				font-size: (@font-size-large + 6);     
+				font-size: (@font-size-large + 4);     
 			}
 		}	
 		.btn {
@@ -758,6 +792,11 @@ nav.navbar {
 			font-size: 18px;
 		}
 	}	
+	@media (max-width: @screen-sm) {
+		.container {
+			width: 90%;
+		}
+	}
 }
 
 /* About */
@@ -776,6 +815,11 @@ nav.navbar {
 			margin-left: auto; 
 			margin-right: auto;
 		}	
+	}
+	@media (max-width: @screen-sm) {
+		.container {
+			width: 90%;
+		}
 	}
 }
 
@@ -833,7 +877,12 @@ nav.navbar {
  		}
  		.container {
  			margin: 20px auto;
+ 			.copyright {
+ 				float: left;
+ 				line-height: 2;
+ 			}
  			.social-icons {
+ 				float: right;
  				span {
  					vertical-align: top;
  					display: inline-block;
@@ -851,6 +900,22 @@ nav.navbar {
 				 		} 		
 				 	}
  				}
+ 			}
+ 		}
+ 		@media (max-width: @screen-sm) {
+ 			.container {
+ 				.copyright, .social-icons  {
+	 				float: none;
+	 				width: auto;
+	 				margin: 10px auto;
+	 				text-align: center;
+	 			}
+	 			.social-icons {
+	 				span {
+	 					display: block;
+	 					margin: auto;
+	 				}
+	 			}
  			}
  		}
  	}

@@ -71,12 +71,52 @@
                 <p><a class="btn btn-default" href="javascript:void(0);" role="button" data-id="thedancesocks">View details</a></p>
               </div>
             </div>
+
+            <div class="item">
+              <div class="item-inner">
+                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-bsasi.png" />
+                <h2>Bay State Alarm Security Integrators</h2>
+                <p>BSA Security Integrators is a provider in professional security solutions for their customers ranging from small commercial systems to major industries.</p>
+                <ul class="tags">
+                  
+                  <li>HTML</li>
+                  
+                  <li>CSS</li>
+                  
+                  <li>Magento</li>             
+
+                  <li>Photoshop</li>             
+                  
+                </ul>
+                <p><a class="btn btn-default" href="javascript:void(0);" role="button" data-id="bsasi">View details</a></p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="item-inner">
+                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-tribalhollywood.png" />
+                <h2>Tribal Hollywood</h2>
+                <p>Tribal Hollywood is a Men's Jewelry store based out of Los Angeles, California. They specialize in selling designer men's jewelry and accessories.</p>
+                <ul class="tags">
+                  
+                  <li>UI/UX Design</li>   
+
+                  <li>Graphic Design</li>             
+
+                  <li>Photoshop</li>             
+                  
+                </ul>
+                <p><a class="btn btn-default" href="javascript:void(0);" role="button" data-id="tribalhollywood">View details</a></p>
+              </div>
+            </div>
           </div>
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
             <li data-target="#carousel" data-slide-to="1"></li>
             <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+            <li data-target="#carousel" data-slide-to="4"></li>
           </ol>
           <!-- Controls -->
           <div class="left carousel-control" data-target="#carousel" role="button" data-slide="prev">
@@ -100,7 +140,7 @@
           <h1>Contact</h1>
           <p>Get in touch with me about any projects you have in mind. I am available to take on new work and to help in any way I can to get goals accomplished. </p>
           <p class="large">Let’s work together and create something.</p>
-          <a class="btn btn-default" href="mailto:tomle444@gmail.com">Send</a>
+          <a class="btn btn-default" href="mailto:hello@tomle.me">Get in Touch</a>
         </div>      
       </div>
 
