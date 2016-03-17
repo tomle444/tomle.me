@@ -146,12 +146,12 @@ module.exports = function (grunt) {
       }
     },
 
-    qunit: {
+    /*qunit: {
       options: {
         inject: 'js/tests/unit/phantom.js'
       },
       files: 'js/tests/index.html'
-    },
+    },*/
 
     less: {
       compileCore: {
@@ -360,11 +360,11 @@ module.exports = function (grunt) {
     watch: {
       src: {
         files: '<%= jshint.core.src %>',
-        tasks: ['jshint:core', 'qunit', 'concat']
+        tasks: ['jshint:core', /*'qunit'*/, 'concat']
       },
       test: {
         files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test', 'qunit']
+        //tasks: ['jshint:test', 'qunit']
       },
       less: {
         files: 'less/**/*.less',
@@ -391,7 +391,7 @@ module.exports = function (grunt) {
       }
     },
 
-    'saucelabs-qunit': {
+    /*'saucelabs-qunit': {
       all: {
         options: {
           build: process.env.TRAVIS_JOB_ID,
@@ -402,7 +402,7 @@ module.exports = function (grunt) {
           browsers: grunt.file.readYAML('grunt/sauce_browsers.yml')
         }
       }
-    },
+    },*/
 
     exec: {
       npmUpdate: {
@@ -467,10 +467,10 @@ module.exports = function (grunt) {
       // Skip Sauce on Travis when [skip sauce] is in the commit message
       isUndefOrNonZero(process.env.TWBS_DO_SAUCE)) {
     testSubtasks.push('connect');
-    testSubtasks.push('saucelabs-qunit');
+    //testSubtasks.push('saucelabs-qunit');
   }
   grunt.registerTask('test', testSubtasks);
-  grunt.registerTask('test-js', ['jshint:core', 'jshint:test', 'jshint:grunt', 'jscs:core', 'jscs:test', 'jscs:grunt', 'qunit']);
+  grunt.registerTask('test-js', ['jshint:core', 'jshint:test', 'jshint:grunt', 'jscs:core', 'jscs:test', 'jscs:grunt', /*'qunit'*/]);
 
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
