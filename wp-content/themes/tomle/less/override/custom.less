@@ -172,7 +172,7 @@ p {margin-bottom: 20px;}
 					width: 20%;
 
 					ul.tags {
-						padding: 20px 0;
+						padding-top: 20px;
 						li {
 							font-size: 16px;
 						}
@@ -205,6 +205,7 @@ p {margin-bottom: 20px;}
 					.overlay-project-main {
 						float: none;
 						width: 100%;
+						border-right: 0px;
 					}
 					.overlay-project-tags {
 						float: none;
@@ -213,7 +214,8 @@ p {margin-bottom: 20px;}
 						ul.tags {
 							list-style-type: none;
 							margin: 0 auto;
-							padding: 0;
+							padding: 0px;
+							
 							li {
 								display: inline-block;
 								margin: 2px 2px;
@@ -544,14 +546,15 @@ nav.navbar {
 		width: 100%;
 		.carousel-inner {
 			width: 100%;
-			padding-bottom: 80px;			
+			padding-bottom: 80px;	
+			min-height: 1050px;		
 		}
 		.carousel-indicators {	
 			bottom: 8%;		
 			.active {
 				background-color: @gray-base;
-				width: 14px;
-				height: 14px;
+				width: 20px;
+				height: 20px;
 				
 			}
 			li {
@@ -560,7 +563,8 @@ nav.navbar {
 				height: 14px;
 				transition: all .2s ease-in-out;
 				background-color: #ccc;
-				margin:0 2px;
+				margin:0 5px;
+				border-radius: 20px;
 			}
 		}
 		.carousel-control.left, .carousel-control.right {
@@ -634,6 +638,9 @@ nav.navbar {
 			}
 		}
 		@media (max-width: @screen-sm) {
+			.carousel-inner {
+				min-height: 897px;
+			}
 			.carousel-control {
 				a {
 					span {
@@ -689,7 +696,26 @@ nav.navbar {
 				right: 45%;
 			}
 		}
-		
+		@media (max-width: (@screen-xs)){
+			.carousel-inner {
+				min-height: 739px;
+			}
+			.carousel-indicators {	
+				
+				.active {				
+					width: 24px;
+					height: 24px;
+				}
+				li {
+					border:0px solid #ddd;
+					width: 20px;
+					height: 20px;
+					transition: all .2s ease-in-out;
+					background-color: #ccc;
+					margin:0 10px;
+				}
+			}
+		}
 	}
 	.item {
 		text-align: center;
@@ -731,10 +757,10 @@ nav.navbar {
 			}
 			@media (max-width: @screen-sm-min) {
 				h2 {
-					font-size: @font-size-h2;
+					font-size: @font-size-h3;
 				}
 				p {
-					font-size: @font-size-large;
+					font-size: (@font-size-large - 2);
 				}
 				img {
 
