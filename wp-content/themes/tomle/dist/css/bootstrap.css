@@ -7374,16 +7374,16 @@ nav.navbar.navbar-fixed-top {
     color: #333333;
   }
   .portfolio .container .carousel-control.left a {
-    left: -160px;
+    left: -140px;
   }
   .portfolio .container .carousel-control.left a:hover {
-    left: -160px;
+    left: -140px;
   }
   .portfolio .container .carousel-control.right a {
-    right: -160px;
+    right: -140px;
   }
   .portfolio .container .carousel-control.right a:hover {
-    right: -160px;
+    right: -140px;
   }
   .portfolio .container .icon-prev,
   .portfolio .container .glyphicon-menu-left {
