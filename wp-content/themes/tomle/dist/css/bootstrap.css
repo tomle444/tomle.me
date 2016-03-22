@@ -6950,11 +6950,20 @@ p {
   .main-container .overlay-results .overlay-modal {
     width: 95%;
   }
+  .main-container .overlay .overlay-modal .overlay-project .overlay-project-title span,
+  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-title span {
+    display: block;
+    margin-left: 0;
+  }
   .main-container .overlay .overlay-modal .overlay-project .overlay-project-main,
   .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main {
     float: none;
     width: 100%;
     border-right: 0px;
+  }
+  .main-container .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
+  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
+    padding: 0;
   }
   .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags,
   .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags {
@@ -7331,7 +7340,10 @@ nav.navbar.navbar-fixed-top {
 }
 @media (max-width: 769px) {
   .portfolio .container .carousel-inner {
-    min-height: 897px;
+    min-height: 917px;
+  }
+  .portfolio .container .carousel-control {
+    width: 20%;
   }
   .portfolio .container .carousel-control a span {
     color: #666666;
@@ -7344,6 +7356,7 @@ nav.navbar.navbar-fixed-top {
   }
   .portfolio .container .carousel-control.left a,
   .portfolio .container .carousel-control.right a {
+    width: 220px;
     border: 0;
   }
   .portfolio .container .carousel-control.left a:hover,
@@ -7361,16 +7374,16 @@ nav.navbar.navbar-fixed-top {
     color: #333333;
   }
   .portfolio .container .carousel-control.left a {
-    left: -220px;
+    left: -160px;
   }
   .portfolio .container .carousel-control.left a:hover {
-    left: -220px;
+    left: -160px;
   }
   .portfolio .container .carousel-control.right a {
-    right: -220px;
+    right: -160px;
   }
   .portfolio .container .carousel-control.right a:hover {
-    right: -220px;
+    right: -160px;
   }
   .portfolio .container .icon-prev,
   .portfolio .container .glyphicon-menu-left {
@@ -7379,11 +7392,6 @@ nav.navbar.navbar-fixed-top {
   .portfolio .container .icon-next,
   .portfolio .container .glyphicon-menu-right {
     right: 45%;
-  }
-}
-@media (max-width: 480px) {
-  .portfolio .container .carousel-inner {
-    min-height: 739px;
   }
   .portfolio .container .carousel-indicators .active {
     width: 24px;
@@ -7396,6 +7404,32 @@ nav.navbar.navbar-fixed-top {
     transition: all 0.2s ease-in-out;
     background-color: #ccc;
     margin: 0 10px;
+  }
+}
+@media (max-width: 480px) {
+  .portfolio .container .carousel-inner {
+    min-height: 693px;
+    padding-bottom: 0;
+  }
+  .portfolio .container .carousel-control {
+    width: 16%;
+  }
+  .portfolio .container .carousel-control.left a,
+  .portfolio .container .carousel-control.right a {
+    width: 190px;
+  }
+  .portfolio .container .carousel-indicators .active {
+    width: 24px;
+    height: 24px;
+  }
+  .portfolio .container .carousel-indicators li {
+    border: 0px solid #ddd;
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s ease-in-out;
+    background-color: #ccc;
+    margin: 0 10px;
+    border-radius: 0;
   }
 }
 .portfolio .item {
@@ -7502,7 +7536,7 @@ nav.navbar.navbar-fixed-top {
 }
 /* About */
 .about .container {
-  padding: 100px 0;
+  padding: 60px 0 80px;
   margin: auto;
   width: 60%;
   text-align: center;

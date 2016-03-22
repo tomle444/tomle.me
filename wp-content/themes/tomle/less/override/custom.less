@@ -202,10 +202,19 @@ p {margin-bottom: 20px;}
 			.overlay-modal {
 				width: 95%;
 				.overlay-project {
+					.overlay-project-title {
+						span {
+							display: block;
+							margin-left:0;
+						}						
+					}
 					.overlay-project-main {
 						float: none;
 						width: 100%;
 						border-right: 0px;
+						.overlay-project-description {
+							padding: 0;
+						}
 					}
 					.overlay-project-tags {
 						float: none;
@@ -639,9 +648,10 @@ nav.navbar {
 		}
 		@media (max-width: @screen-sm) {
 			.carousel-inner {
-				min-height: 897px;
+				min-height: 917px;
 			}
 			.carousel-control {
+				width: 20%;
 				a {
 					span {
 						color: @gray;
@@ -654,7 +664,9 @@ nav.navbar {
 				}
 			}
 			.carousel-control.left, .carousel-control.right {
+				
 				a {
+					width: 220px;
 					border: 0;
 					&:hover {
 						background-color: transparent;
@@ -674,18 +686,18 @@ nav.navbar {
 			}
 			.carousel-control.left {
 				a {
-					left: -220px;
+					left: -160px;
 					&:hover {
-						left: -220px;
+						left: -160px;
 						
 					}
 				}
 			}
 			.carousel-control.right {
 				a {
-					right: -220px;
+					right: -160px;
 					&:hover {
-						right: -220px;						
+						right: -160px;						
 					}
 				}
 			}
@@ -695,10 +707,36 @@ nav.navbar {
 			.icon-next, .glyphicon-menu-right {
 				right: 45%;
 			}
+
+			.carousel-indicators {	
+				
+				.active {				
+					width: 24px;
+					height: 24px;
+				}
+				li {
+					border:0px solid #ddd;
+					width: 20px;
+					height: 20px;
+					transition: all .2s ease-in-out;
+					background-color: #ccc;
+					margin:0 10px;
+					
+				}
+			}
 		}
 		@media (max-width: (@screen-xs)){
 			.carousel-inner {
-				min-height: 739px;
+				min-height: 693px;
+				padding-bottom: 0;
+			}
+			.carousel-control {
+				width: 16%;
+			}
+			.carousel-control.left, .carousel-control.right {
+				a {
+					width: 190px;
+				}
 			}
 			.carousel-indicators {	
 				
@@ -713,6 +751,7 @@ nav.navbar {
 					transition: all .2s ease-in-out;
 					background-color: #ccc;
 					margin:0 10px;
+					border-radius: 0;
 				}
 			}
 		}
@@ -828,7 +867,7 @@ nav.navbar {
 /* About */
 .about {
 	.container {
-		padding: 100px 0;
+		padding: 60px 0 80px;
 		margin: auto;
 		width: 60%;
 		text-align: center;

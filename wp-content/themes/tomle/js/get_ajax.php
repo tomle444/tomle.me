@@ -16,9 +16,9 @@
 				"title" 		=> "GoZolt",
 				"description" 	=> "<p>A startup company that has created the world's smallest, lightest laptop charger.</p>
 
-				<p>GoZolt collaborated with the Evolve marketing team to create an e-commerce site built with Magento.</p>
+				<p>GoZolt collaborated with a local marketing team to create an e-commerce site built with Magento.</p>
 
-				<p>Our responsibilities were mainly involved with Front End Development requiring frequent updates and consultation.</p>",
+				<p>My responsibilities were mainly involved with Front End Development requiring frequent updates and consultation.</p>",
 				"tags"			=> "<ul class=\"tags\">
             
 						            <li>Responsive Web Design</li>
@@ -129,7 +129,7 @@
 				"description" 	=> "<p>Tribal Hollywood is a Men's Jewelry store based out of Los Angeles, California. They specialize in selling designer men's jewelry and accessories.</p>
 
 				<p>A longtime client of ours, Tribal Hollywood had a distinct look and feel that they wanted to maintain. Their emphasis was on targeting the night club, rockstar, trendy, party-goers that frequent the night life scene that is found the in Hollywood area.</p>
-				<p>Working closely with the client, I created a set of wireframes and then a set of highly detailed Photoshop mockups which was then implemented into a Magento theme by another development team. I also created the original category images and graphic imagery.</p>",
+				<p>Working closely with the client, I was responsible for creating a set of wireframes and then a set of highly detailed Photoshop mockups which was then implemented into a Magento theme by another development team. I also created the original category images and graphic imagery.</p>",
 				"tags"			=> "<ul class=\"tags\">							    		
 							    	
 							    		<li>UI/UX Design</li>
