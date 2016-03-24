@@ -89,7 +89,7 @@
     			<div class="container">
     				<h1>Hello, <span>my name is Tom Le</span></h1>
     				<p>I am a <span>web designer</span> and <span>front-end developer</span> who lives in San Diego.</p>
-    				<p><a class="btn btn-primary btn-lg portfolio-link" href="#" role="button">Continue</a></p>
+    				<p class="last"><a class="btn btn-primary btn-lg portfolio-link" href="#" role="button"><i class="fa fa-angle-down"></i></a></p>
     			</div>
     		</div>
     		

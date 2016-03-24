@@ -481,7 +481,7 @@ nav.navbar {
 		top: 0;
 	}
 	.container{
-		padding: 0 @jumbotron-padding;
+		padding: 0 @jumbotron-padding 0 80px;
 		text-align: center;
 		position: relative;
 		z-index: 2;
@@ -496,24 +496,34 @@ nav.navbar {
 				margin: 0 6px;
 				border-bottom: 2px dotted rgba(255,255,255,0.25);
 			}
+			&.last {
+				margin-bottom: 0px;
+			}
 		}
 		
 		.btn {
-			border-color: #fff;
+			border: 0;
 			padding: 10px 30px;
+			transition: all 0.3s ease-in-out;
+			font-size: 54px;
+			position: relative;
+			top: 0px;
+			&:hover, &:active, &:focus {				
+				background-color: transparent;				
+			}
 			&:hover {
-				background-color: rgba(0,0,0,0.25);
+				top: 5px;
 			}
 		}
 	}
 	@media (max-width: @screen-xs) {
 		.container {
-			padding: 0 (@jumbotron-padding - 20);
+			padding: 0 (@jumbotron-padding - 20) 0 60px; 
 			h1 {
-				span {
+				span { 
 					font-size: (@font-size-h1 - 8);
 				}
-			}
+			} 
 		}
 	}
 	
@@ -708,7 +718,7 @@ nav.navbar {
 				right: 45%;
 			}
 
-			.carousel-indicators {	
+			.carousel-indicators {	 
 				
 				.active {				
 					width: 24px;
@@ -751,7 +761,7 @@ nav.navbar {
 					transition: all .2s ease-in-out;
 					background-color: #ccc;
 					margin:0 10px;
-					border-radius: 0;
+					
 				}
 			}
 		}
@@ -767,8 +777,9 @@ nav.navbar {
 				font-size: (@font-size-h2 + 12);
 				margin: auto auto 20px;
 			}
-			img {
+			img.portfolio-image {
 				display: inline-block;
+				cursor: pointer;
 				transitiion: all 0.3s;
 			}
 			p {

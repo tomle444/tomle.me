@@ -7188,7 +7188,7 @@ nav.navbar.navbar-fixed-top {
   top: 0;
 }
 .jumbotron .container {
-  padding: 0 80px;
+  padding: 0 80px 0 80px;
   text-align: center;
   position: relative;
   z-index: 2;
@@ -7201,16 +7201,28 @@ nav.navbar.navbar-fixed-top {
   margin: 0 6px;
   border-bottom: 2px dotted rgba(255, 255, 255, 0.25);
 }
+.jumbotron .container p.last {
+  margin-bottom: 0px;
+}
 .jumbotron .container .btn {
-  border-color: #fff;
+  border: 0;
   padding: 10px 30px;
+  transition: all 0.3s ease-in-out;
+  font-size: 54px;
+  position: relative;
+  top: 0px;
+}
+.jumbotron .container .btn:hover,
+.jumbotron .container .btn:active,
+.jumbotron .container .btn:focus {
+  background-color: transparent;
 }
 .jumbotron .container .btn:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+  top: 5px;
 }
 @media (max-width: 480px) {
   .jumbotron .container {
-    padding: 0 60px;
+    padding: 0 60px 0 60px;
   }
   .jumbotron .container h1 span {
     font-size: 28px;
@@ -7429,7 +7441,6 @@ nav.navbar.navbar-fixed-top {
     transition: all 0.2s ease-in-out;
     background-color: #ccc;
     margin: 0 10px;
-    border-radius: 0;
   }
 }
 .portfolio .item {
@@ -7445,8 +7456,9 @@ nav.navbar.navbar-fixed-top {
   font-size: 42px;
   margin: auto auto 20px;
 }
-.portfolio .item .item-inner img {
+.portfolio .item .item-inner img.portfolio-image {
   display: inline-block;
+  cursor: pointer;
   transitiion: all 0.3s;
 }
 .portfolio .item .item-inner p {
