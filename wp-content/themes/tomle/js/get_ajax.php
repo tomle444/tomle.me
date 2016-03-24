@@ -5,7 +5,6 @@
 
 	$id = strtolower($_POST["portfolio_id"]); 
 	$path = "/wordpress/wp-content/themes/tomle";
-	//echo $title;
 
 	switch($id){
 		case "gozolt":

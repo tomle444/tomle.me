@@ -5,27 +5,31 @@ $(function(){
  	/***
  	**	Scroll to Navigation
  	***/
+ 	scrollToNavigation();
+ 	function scrollToNavigation(){
+ 		$('.portfolio-link').click(function(){
+			$('html, body').stop().animate({
+				scrollTop: $('.portfolio').offset().top -46 
+			}, 800);
+			return false;
+		});
 
- 	$('.portfolio-link').click(function(){
-		$('html, body').stop().animate({
-			scrollTop: $('.portfolio').offset().top -46
-		}, 800);
-		return false;
-	});
+		$('.about-link').click(function(){
+			$('html, body').stop().animate({
+				scrollTop: $('.about').offset().top -46
+			}, 800);
+			return false;
+		});
 
-	$('.about-link').click(function(){
-		$('html, body').stop().animate({
-			scrollTop: $('.about').offset().top -46
-		}, 800);
-		return false;
-	});
+		$('.contact-link').click(function(){
+			$('html, body').stop().animate({
+				scrollTop: $('.contact').offset().top -46
+			}, 800);
+			return false;
+		});
+ 	}
 
-	$('.contact-link').click(function(){
-		$('html, body').stop().animate({
-			scrollTop: $('.contact').offset().top -46
-		}, 800);
-		return false;
-	});
+ 	
  	
 	$('.overlay-project').html(' ');  
 
@@ -33,7 +37,7 @@ $(function(){
 	 	/***
 	 	**	Ajax Get Info - Portfolio
 	 	***/
-	 	$('.item .btn-default').bind('click', function(){ 
+	 	$('.item .btn-default, .portfolio-image').bind('click', function(){ 
  			//alert($(this).data('id'));
 			$.ajax({
 				url : '/wordpress/wp-content/themes/tomle/js/get_ajax.php',
@@ -123,7 +127,7 @@ $(function(){
 	var $overlayDiv = $('.overlay');
 	var $navBar = $('#navbar');
 	var $mainContainer = $('.main-container');
-	var $navbarToggle = $('.navbar-toggle');
+	var $navbarToggle = $('.touch .navbar-toggle');
 	//$('#navbar').css('display', 'none' );
  
 	function initDesktopNav(){ 
@@ -143,21 +147,7 @@ $(function(){
 				$overlayDiv.stop().fadeIn();
 			}
 		});	
-		$('.navbar-nav li a').bind('click', function(){
-			$navBar.delay( 800 ).queue(function(next){
-				$(this).css('right', -navigationWidth ).removeClass('active');	
-				next();
-			});				
-			$mainContainer.delay( 800 ).queue(function(next1){
-				$(this).css('right', 0 );	
-				next1();
-			});
-			$overlayDiv.delay( 800 ).queue(function(next2){
-				$(this).stop().fadeOut(100);
-				next2();	
-			});
-
-		});
+		
 	}
 	function clickMobileNav(){
 
@@ -177,30 +167,49 @@ $(function(){
 		
 	}
 
-	enquire.register("screen and (max-width:769px)", {
+	enquire.register("screen and (max-width:769px)", { 
 
 		match : function(){			
-			$('body').addClass('touch');
+			$('body').addClass('touch');  
 			initDesktopNav();
 			clickDesktopNav();
+			$('.navbar-nav li a').bind('click', function(){
+				$navBar.delay( 800 ).queue(function(next){
+					$(this).css('right', -navigationWidth ).removeClass('active');	
+					next();
+				});				
+				$mainContainer.delay( 800 ).queue(function(next1){
+					$(this).css('right', 0 );	
+					next1();
+				});
+				$overlayDiv.delay( 800 ).queue(function(next2){ 
+					$(this).stop().fadeOut(100); 
+					next2();	
+				});
+
+			});
 		}, 
-		unmatch : function(){
+		unmatch : function(){ 
+			
 			$('.navbar-toggle, .nav-close, .overlay').unbind('click');
 			$('body').removeClass('touch');
 			$overlayDiv.css('display', 'none' );
 			$mainContainer.removeAttr('style' );
 			$navBar.css({'display': 'block', 'right': 0, 'position': 'absolute', 'width' : 'auto' });
+			$('.navbar-nav li a').unbind('click');
+			scrollToNavigation();
+ 
 		} 
 	});	
 
 	enquire.register("screen and (max-width:400px)", {
 
-		match : function(){		
+		match : function(){		 
 			$('body').addClass('touch');	
 			clickMobileNav();
 		},
 		unmatch : function(){
-			$('body').removeClass('touch');
+			
 			//$('.navbar-toggle, .nav-close, .overlay').unbind('click');
 			$navBar.css({'display': 'block', 'right': -windowWidth, 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
 			$mainContainer.removeAttr('style' );

@@ -1,8 +1,7 @@
 (function ($, root, undefined) {
-	
-	$(function () {
+	'use strict';
+	$(function () {		
 		
-		'use strict';
 		
 		// DOM ready, take it away
 		

@@ -7,7 +7,7 @@
           <div class="carousel-inner" role="listbox">
             <div class="item active">
               <div class="item-inner">
-                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-gozolt.png" />
+                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-gozolt.png" class="portfolio-image" data-id="gozolt"/>
                 <h2>GoZolt</h2>
                 <p>A startup company that has created the world's smallest, lightest laptop charger.</p>
                 <ul class="tags">
@@ -32,7 +32,7 @@
             </div>
             <div class="item">
               <div class="item-inner">
-                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-fpdatasolutions.png" />
+                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-fpdatasolutions.png" class="portfolio-image" data-id="fpdatasolutions"/>
                 <h2>Focal Pointe Data Solutions</h2>
                 <p>A service technology company providing data management, analytics and business intelligence solutions for hospital pharmacies. </p>
                 <ul class="tags">
@@ -54,7 +54,7 @@
 
             <div class="item">
               <div class="item-inner">
-                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-thedancesocks.png" />
+                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-thedancesocks.png" class="portfolio-image" data-id="thedancesocks"/>
                 <h2>The Dance Socks</h2>
                 <p>A product that lets you dance using a sock that goes over your regular shoes.</p>
                 <ul class="tags">
@@ -74,12 +74,12 @@
 
             <div class="item">
               <div class="item-inner">
-                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-bsasi.png" />
+                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-bsasi.png" class="portfolio-image" data-id="bsasi"/>
                 <h2>Bay State Alarm Security Integrators</h2>
                 <p>BSA Security Integrators is a provider in professional security solutions for their customers ranging from small commercial systems to major industries.</p>
                 <ul class="tags">
                   
-                  <li>HTML</li>
+                  <li>HTML</li> 
                   
                   <li>CSS</li>
                   
@@ -94,7 +94,7 @@
 
             <div class="item">
               <div class="item-inner">
-                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-tribalhollywood.png" />
+                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-tribalhollywood.png" class="portfolio-image" data-id="tribalhollywood"/>
                 <h2>Tribal Hollywood</h2>
                 <p>Tribal Hollywood is a Men's Jewelry store based out of Los Angeles, California. They specialize in selling designer men's jewelry and accessories.</p>
                 <ul class="tags">
