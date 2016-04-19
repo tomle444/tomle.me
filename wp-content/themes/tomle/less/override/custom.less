@@ -867,8 +867,34 @@ nav.navbar {
 			padding: 12px 80px;
 			font-size: 18px;
 		}
+		#status {
+			display: none;
+		}
+		.contact-form {
+
+		}
+		.form-group {
+			label {
+				float: left;
+			}
+			input, textarea {
+				&.form-control {
+					border-color: rgba(202, 60, 60, 0.5);
+					background-color: lighten(#ca3c3c, 20%);
+					transition: all .2s ease-in-out;
+					
+					&:focus {
+						background-color: #fff;
+					}
+				}				
+			}
+			::-webkit-input-placeholder {
+				color: #fff;				
+			}
+		}
 	}	
 	@media (max-width: @screen-sm) {
+		background-image: url('../../images/contact-mobile.jpg');
 		.container {
 			width: 90%;
 		}

@@ -140,7 +140,29 @@
           <h1>Contact</h1>
           <p>Get in touch with me about any projects you have in mind. I am available to take on new work and to help in any way I can to get goals accomplished. </p>
           <p class="large">Let’s work together and create something.</p>
-          <a class="btn btn-default" href="mailto:hello@tomle.me">Get in Touch</a>
+          <div id="status"></div>     
+          <form action="<?php echo get_template_directory_uri(); ?>/js/contact.php" method="POST" class="contact-form col-md-12">
+                  <div class="form-group ">
+                      <label for="message">Name</label>
+                      <input type="text" name="name" class="form-control " placeholder="Your Name" value=""/>
+                  </div>
+                  <div class="form-group">
+                      <label for="message">Email</label>
+                      <input type="text" name="email" class="form-control" placeholder="you@email.com" value=""/>
+                  </div>
+                  <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea name="message" class="form-control" placeholder="Your Message..." value=""></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="message">Human Test (5 + 3 = ?)</label>
+                      <input name="spam" class="form-control" value="" />
+                  </div>
+                  <div>
+                      <input type="submit" class="btn btn-default" value="Get in Touch" />
+                  </div>
+              </form>
+          <!--<a class="btn btn-default" href="mailto:hello@tomle.me">Get in Touch</a>-->
         </div>      
       </div>
 
