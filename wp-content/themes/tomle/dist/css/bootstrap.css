@@ -7541,7 +7541,29 @@ nav.navbar.navbar-fixed-top {
   padding: 12px 80px;
   font-size: 18px;
 }
+.call-to-action .container #status {
+  display: none;
+}
+.call-to-action .container .form-group label {
+  float: left;
+}
+.call-to-action .container .form-group input.form-control,
+.call-to-action .container .form-group textarea.form-control {
+  border-color: rgba(202, 60, 60, 0.5);
+  background-color: #e08c8c;
+  transition: all 0.2s ease-in-out;
+}
+.call-to-action .container .form-group input.form-control:focus,
+.call-to-action .container .form-group textarea.form-control:focus {
+  background-color: #fff;
+}
+.call-to-action .container .form-group ::-webkit-input-placeholder {
+  color: #fff;
+}
 @media (max-width: 769px) {
+  .call-to-action {
+    background-image: url('../../images/contact-mobile.jpg');
+  }
   .call-to-action .container {
     width: 90%;
   }
