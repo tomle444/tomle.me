@@ -32,6 +32,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript" rel="JavaScript"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/all.js" type="text/javascript" rel="JavaScript"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/SmoothScroll.js" type="text/JavaScript" rel="JavaScript"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.transit.min.js" type="text/JavaScript" rel="JavaScript"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/enquire.js" type="text/JavaScript" rel="JavaScript"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/contact.js" type="text/JavaScript" rel="JavaScript"></script>
     <script type="text/javascript">

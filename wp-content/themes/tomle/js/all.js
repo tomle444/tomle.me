@@ -132,18 +132,18 @@ $(function(){
  
 	function initDesktopNav(){ 
 		$overlayDiv.css('display', 'none' );
-		$navBar.css({'display': 'block', 'right': -navigationWidth, 'position': 'fixed', 'width': '100%'}).removeClass('active');
-		$mainContainer.css('right', 0 );
+		$navBar.css({'display': 'block', '-webkit-transform': "translateX("+ (windowWidth) +"px)", 'position': 'fixed', 'width': '100%'}).removeClass('active');
+		$mainContainer.css('-webkit-transform', 'translateX(0)' );
 	}
 	function clickDesktopNav(){
 		$('.navbar-toggle, .nav-close, .overlay').bind('click', function(){
 			if($navBar.hasClass('active')){					
-				$navBar.css('right', -navigationWidth ).removeClass('active');					
-				$mainContainer.css('right', 0 );
+				$navBar.css('transform', "translateX("+ (windowWidth) +"px)").removeClass('active');					
+				$mainContainer.css('transform', 'translateX(0)' );
 				$overlayDiv.stop().fadeOut(100); 
 			} else {				
-				$navBar.css({'right': 0, 'position': 'fixed'}).addClass('active'); 
-				$mainContainer.css('right', navigationWidth );		 			
+				$navBar.css({'transform': 'translateX(0)', 'position': 'fixed'}).addClass('active'); 
+				$mainContainer.css('transform', "translateX(0)" );		 			
 				$overlayDiv.stop().fadeIn();
 			}
 		});	
@@ -151,16 +151,16 @@ $(function(){
 	}
 	function clickMobileNav(){
 
-		$navBar.css({'display': 'block', 'right': -windowWidth, 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
+		$navBar.css({'display': 'block', 'transform': 'translateX(-windowWidth)', 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
 		$mainContainer.removeAttr('style' );
 
 		$('.navbar-toggle, .nav-close, .overlay').bind('click', function(){
 			if($navBar.hasClass('active')){
-				$navBar.css('right', '0' );
-				$mainContainer.css('right', windowWidth );	
+				$navBar.css('transform', 'translateX(0)' );
+				$mainContainer.css('transform', "translateX(" + (-navigationWidth) + "px)" );	
 			} else {
-				$navBar.css('right', -windowWidth );
-				$mainContainer.css('right', 0 );	
+				$navBar.css('transform', "translateX(" + (navigationWidth) + "px)" );
+				$mainContainer.css('transform', 'translateX(0)' );	 
 			}
 		});
 
@@ -175,11 +175,11 @@ $(function(){
 			clickDesktopNav();
 			$('.navbar-nav li a').bind('click', function(){
 				$navBar.delay( 800 ).queue(function(next){
-					$(this).css('right', -navigationWidth ).removeClass('active');	
+					$(this).css({'transform' : "translateX(" + (navigationWidth) +"px)", 'transformY' : "0"} ).removeClass('active');	
 					next();
 				});				
 				$mainContainer.delay( 800 ).queue(function(next1){
-					$(this).css('right', 0 );	
+					$(this).css('transform', 'translateX(0)' );	
 					next1();
 				});
 				$overlayDiv.delay( 800 ).queue(function(next2){ 
@@ -195,7 +195,7 @@ $(function(){
 			$('body').removeClass('touch');
 			$overlayDiv.css('display', 'none' );
 			$mainContainer.removeAttr('style' );
-			$navBar.css({'display': 'block', 'right': 0, 'position': 'absolute', 'width' : 'auto' });
+			$navBar.css({'display': 'block', 'transform': 'translateX(0)', 'position': 'absolute', 'width' : 'auto' });
 			$('.navbar-nav li a').unbind('click');
 			scrollToNavigation();
  
@@ -211,9 +211,9 @@ $(function(){
 		unmatch : function(){
 			
 			//$('.navbar-toggle, .nav-close, .overlay').unbind('click');
-			$navBar.css({'display': 'block', 'right': -windowWidth, 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
+			$navBar.css({'display': 'block', 'transform': "translateX(" + (-windowWidth) + "px)", 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
 			$mainContainer.removeAttr('style' );
-		}
+		} 
 	});
 }); 
 

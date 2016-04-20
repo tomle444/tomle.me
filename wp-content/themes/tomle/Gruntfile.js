@@ -358,14 +358,14 @@ module.exports = function (grunt) {
     },
 
     watch: {
-      src: {
+      /*src: {
         files: '<%= jshint.core.src %>',
-        tasks: ['jshint:core', /*'qunit',*/ 'concat']
+        tasks: ['jshint:core', /*'qunit', 'concat']
       },
       test: {
         files: '<%= jshint.test.src %>'
         //tasks: ['jshint:test', 'qunit']
-      },
+      },*/
       less: {
         files: 'less/**/*.less',
         tasks: 'less'

@@ -25,6 +25,8 @@ a {
 	background-color: rgba(255,255,255,0);
 	font-family: @font-family-secondary;
 	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
 	border-width: 2px;
 	.button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-large;);
 }
@@ -49,6 +51,8 @@ p {margin-bottom: 20px;}
     float: none;
 }
 
+
+
 /* Main Container  */
 .main-container {
 	/* Critical position and size styles */
@@ -60,8 +64,16 @@ p {margin-bottom: 20px;}
 	bottom: 100%;
 	right: 0;
 	z-index: 1;
-	transition: right 0.3s ease-in-out;
-	.overlay, .overlay-results {
+	transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+	
+
+}
+
+.overlay, .overlay-results {
 		display: none;
 		position: absolute;
 		background: rgba(0,0,0,0.5);
@@ -77,6 +89,8 @@ p {margin-bottom: 20px;}
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
 			.overlay-close {
 				top: 0;
 				right: 0;
@@ -237,8 +251,9 @@ p {margin-bottom: 20px;}
 			}
 		}
 	}
-
-}
+	.overlay-results {
+		z-index: 103;
+	}
 
 /* Navigation */
 nav.navbar {
@@ -246,14 +261,17 @@ nav.navbar {
 	position:fixed;
 	box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
 	font-family: @font-family-secondary;
-	z-index: 99;
+	z-index: 101;
 	margin-bottom: 0;
 	border: 0;
 	width: 100%;
 	height: 25px;
 	min-height: 25px;
 	-webkit-backface-visibility:hidden; /* fixes pixel movement bug on scroll */
-	transition: all 0.3s ease-in-out;	
+	
+	-webkit-transition: all 0.3s ease-in-out;	
+	-moz-transition: all 0.3s ease-in-out;	
+ 	transition: all 0.3s ease-in-out;	 
 	.container {
 		position: relative;
 	
@@ -264,6 +282,8 @@ nav.navbar {
 			height: 74px;
 			padding: 8px;
 			transition: all 0.3s ease-in-out;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
 			box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
 			top: 0;
 			opacity: 1;
@@ -273,6 +293,8 @@ nav.navbar {
 				box-shadow: 2px 3px 2px -1px rgba(0, 0, 0, 0.2);
 				border: 1px solid #fff; 
 				transition: all .3s ease-in-out;
+				-webkit-transition: all .3s ease-in-out;
+				-moz-transition: all .3s ease-in-out;
 				polygon {
 					fill: lighten(@gray-base, 0%);
 					transition: fill .3s ease-in-out;
@@ -291,7 +313,9 @@ nav.navbar {
 			position: absolute;
 			right: 0;
 			top: 25px;
-			transition: top 0.3s ease-in-out, right .3s ease-in-out;
+			-webkit-transition: all .5s ease-in-out;	
+			-moz-transition: all .5s ease-in-out;	
+		 	transition: all .5s ease-in-out;	 
 		}
 		ul.nav {
 			
@@ -494,7 +518,7 @@ nav.navbar {
 			span {
 				font-size: 25px;
 				margin: 0 6px;
-				border-bottom: 2px dotted rgba(255,255,255,0.25);
+				border-bottom: 2px dotted rgba(255,255,255,0.25); 
 			}
 			&.last {
 				margin-bottom: 0px;
@@ -517,6 +541,7 @@ nav.navbar {
 		}
 	}
 	@media (max-width: @screen-xs) {
+		background-image: url('../../images/hero-mobile.jpg');
 		.container {
 			padding: 0 (@jumbotron-padding - 20) 0 60px; 
 			h1 {
@@ -544,12 +569,16 @@ nav.navbar {
     left: 50%;
     margin-left: 80px;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
   }
   .icon-next,
   .glyphicon-menu-right {
     right: 50%;
     margin-right: 80px;
     transform: translate(50%, -50%);
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
   }
   .icon-prev,
   .icon-next {
@@ -581,6 +610,8 @@ nav.navbar {
 				width: 14px;
 				height: 14px;
 				transition: all .2s ease-in-out;
+				-webkit-transition: all .2s ease-in-out;
+				-moz-transistion: all .2s ease-in-out;
 				background-color: #ccc;
 				margin:0 5px;
 				border-radius: 20px;
@@ -589,9 +620,13 @@ nav.navbar {
 		.carousel-control.left, .carousel-control.right {
 			background-image: none;
 			transition: all .5s ease;
+			-webkit-transition: all .5s ease;
+			-moz-transition: all .5s ease;
 			a{
 				background-image: none;
 				transition: all .2s ease;				
+				-webkit-transition: all .2s ease;				
+				-moz-transition: all .2s ease;				
 				opacity:1;
 				border-radius: 350px;				
 				height:350px;
@@ -729,6 +764,8 @@ nav.navbar {
 					width: 20px;
 					height: 20px;
 					transition: all .2s ease-in-out;
+					-webkit-transition: all .2s ease-in-out;
+					-moz-transition: all .2s ease-in-out;
 					background-color: #ccc;
 					margin:0 10px;
 					
@@ -759,6 +796,8 @@ nav.navbar {
 					width: 20px;
 					height: 20px;
 					transition: all .2s ease-in-out;
+					-webkit-transition: all .2s ease-in-out;
+					-moz-transistion: all .2s ease-in-out;
 					background-color: #ccc;
 					margin:0 10px;
 					
@@ -781,6 +820,8 @@ nav.navbar {
 				display: inline-block;
 				cursor: pointer;
 				transitiion: all 0.3s;
+				-webkit-transitiion: all 0.3s;
+				-moz-transitiion: all 0.3s;
 			}
 			p {
 				font-size: (@font-size-large + 4);
@@ -882,6 +923,8 @@ nav.navbar {
 					border-color: rgba(202, 60, 60, 0.5);
 					background-color: lighten(#ca3c3c, 20%);
 					transition: all .2s ease-in-out;
+					-webkit-transition: all .2s ease-in-out;
+					-moz-transition: all .2s ease-in-out;
 					
 					&:focus {
 						background-color: #fff;
