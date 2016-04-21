@@ -1,6 +1,13 @@
 // jshint ignore: start 
 $(function(){
-	
+	$(window).on('scroll', function () {
+		console.log($(window).scrollTop());
+	 	if($(window).scrollTop() > 400) {
+	 		$('.scroll-top').css({"opacity": 1});
+	 	} else {
+	 		$('.scroll-top').css({"opacity": 0});
+	 	}
+	 });
 
  	/***
  	**	Scroll to Navigation
@@ -8,27 +15,33 @@ $(function(){
  	scrollToNavigation();
  	function scrollToNavigation(){
  		$('.portfolio-link').click(function(){
-			$('html, body').stop().animate({
+			/*$('html, body').stop().animate({
 				scrollTop: $('.portfolio').offset().top -46 
 			}, 800);
-			return false;
+			return false;*/
+			$('html, body').stop().scrollTo($('.portfolio').offset().top - 46, {duration:'slow', easing: 'easeInCubic'});
 		});
 
 		$('.about-link').click(function(){
-			$('html, body').stop().animate({
+			/*$('html, body').stop().animate({
 				scrollTop: $('.about').offset().top -46
 			}, 800);
-			return false;
+			return false;*/
+			$('html, body').stop().scrollTo($('.about').offset().top - 46, {duration:'slow', easing: 'easeInCubic'});
 		});
 
 		$('.contact-link').click(function(){
-			$('html, body').stop().animate({
+			/*$('html, body').stop().animate({
 				scrollTop: $('.contact').offset().top -46
 			}, 800);
-			return false;
+			return false;*/
+			$('html, body').stop().scrollTo($('.contact').offset().top - 46, {duration:'slow', easing: 'easeInCubic'});
+		});
+		$('.site-logo, .scroll-top').click(function(){
+			
+			$('html, body').stop().scrollTo(0, {duration:'slow', easing: 'easeInCubic'});
 		});
  	}
-
  	
  	
 	$('.overlay-project').html(' ');  
@@ -114,6 +127,9 @@ $(function(){
     	$('.overlay-results').fadeOut(100); 
     	$('.overlay-project').html(' ');  
     	$('.overlay-project').attr('id', '');  
+    	$('html, body').stop().animate({
+			scrollTop: $('.portfolio').offset().top -46 
+		}, 800);
     }
 
 

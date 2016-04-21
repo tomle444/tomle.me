@@ -6732,6 +6732,7 @@ button.close {
 html,
 body {
   overflow-x: hidden;
+  transition: all 0.2s ease-in-out;
 }
 body {
   position: relative;
@@ -7528,6 +7529,7 @@ nav.navbar.navbar-fixed-top {
   }
   .portfolio .item .item-inner p {
     font-size: 16px;
+    max-width: 85%;
   }
 }
 /* Call to Action */
@@ -7638,6 +7640,39 @@ nav.navbar.navbar-fixed-top {
 /**
  * Footer
  */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  z-index: 9999;
+  opacity: 0;
+  padding: 10px 10px 16px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  line-height: 1;
+  width: 68px;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+}
+.scroll-top .glyphicon {
+  font-size: 36px;
+  text-align: center;
+  display: block;
+  margin-left: 3px;
+}
+.scroll-top:hover {
+  color: #eee;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 24px;
+}
 footer {
   background: #232526 url('../../images/bg-footer.png') no-repeat bottom;
   color: #ddd;
