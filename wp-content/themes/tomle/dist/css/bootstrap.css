@@ -7648,7 +7648,7 @@ nav.navbar.navbar-fixed-top {
   color: #fff;
   font-size: 10px;
   text-transform: uppercase;
-  z-index: 9999;
+  z-index: 99;
   opacity: 0;
   padding: 10px 10px 16px;
   -webkit-border-radius: 60px;

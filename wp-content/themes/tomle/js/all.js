@@ -1,13 +1,5 @@
 // jshint ignore: start 
 $(function(){
-	$(window).on('scroll', function () {
-		console.log($(window).scrollTop());
-	 	if($(window).scrollTop() > 400) {
-	 		$('.scroll-top').css({"opacity": 1});
-	 	} else {
-	 		$('.scroll-top').css({"opacity": 0});
-	 	}
-	 });
 
  	/***
  	**	Scroll to Navigation
@@ -148,7 +140,7 @@ $(function(){
  
 	function initDesktopNav(){ 
 		$overlayDiv.css('display', 'none' );
-		$navBar.css({'display': 'block', '-webkit-transform': "translateX("+ (windowWidth) +"px)", 'position': 'fixed', 'width': '100%'}).removeClass('active');
+		$navBar.css({'display': 'block', 'transform': "translateX("+ (windowWidth) +"px)", 'position': 'fixed', 'width': '100%'}).removeClass('active');
 		$mainContainer.css('-webkit-transform', 'translateX(0)' );
 	}
 	function clickDesktopNav(){
@@ -244,18 +236,17 @@ $(window).scroll(function(){
  	
 	if(scrollTop > 200){
 		navbar.addClass('nav-height');
-		//console.log(scrollTop);	
 	} 
 	 else {
 		navbar.removeClass('nav-height');
 	}
 
-	enquire.register("screen and (max-width:768px)", {
-		match : function(){
-			//$('.navbar-fixed-top').css('position', 'fixed');
-		},
-		unmatch : function(){
+	// Scroll to Top of Page functionality
+ 	if(scrollTop > 400) {
+ 		$('.scroll-top').css({"opacity": 1});
+ 	} else {
+ 		$('.scroll-top').css({"opacity": 0});
+ 	}
 
-		}
-	});
+	
 });
