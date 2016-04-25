@@ -1,0 +1,179 @@
+.main-container {
+	.overlay, .overlay-results {
+		display: none;
+		position: absolute;
+		background: rgba(0,0,0,0.5);
+		height: 100%; 
+		width: 100%;
+		z-index: 100;
+		.overlay-modal {			
+			position: relative; 
+			max-width: 1260px;
+			min-height: 400px;
+			overflow: hidden;
+			width: 85%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			.overlay-close {
+				top: 0;
+				right: 0;
+				padding: 10px;
+				color:#fff;
+				position: absolute;
+				float: right;
+				margin-right: 0;
+				padding: 9px 10px;
+				.navbar-vertical-align(34px);
+				background-color: transparent;
+				background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+				border: 1px solid transparent;
+				border-radius: @border-radius-base;
+				-webkit-perspective: 1000;
+                -webkit-backface-visibility: hidden;
+                perspective: 1000;
+				span.icon-bar {
+					transition:all 0.3s ease-in-out;
+					background-color: #fff;
+					display: block;
+				    width: 20px;
+				    height: 2px;
+				    border-radius: 1px;
+					&:nth-of-type(2n) {
+						 transform: rotate(45deg);
+					}
+					&:nth-of-type(3n) { 
+						margin-top: -2px;
+						transform: rotate(135deg);
+						
+					}
+					&:nth-of-type(4n) {  
+						display: none;  
+					}
+				}
+				&:hover {
+					span.icon-bar {
+						background-color: @brand-primary;
+					}
+				}
+			}
+			.overlay-project {
+				color: #fff;
+				width: 85%;
+				margin: auto;
+				overflow: hidden;
+
+				h2 {
+					font-size: 30px;
+					padding-bottom: 10px;
+					border-bottom: 1px solid #333;
+					span {
+						font-size: 18px;
+						display: inline-block;
+						margin-left: 20px;
+					}
+				}
+				p {
+					font-size: 18px;
+				}
+				a {
+					color: #fff;
+					&:hover {
+						color: @brand-primary;
+					}
+				}
+				.overlay-project-date {
+					font-size: 14px;	
+				}
+				.overlay-project-url {
+					clear: both;
+					overflow: hidden;
+					margin: auto; 
+					text-align: center;
+					.btn-default {
+						border-color: #fff;
+						color: #fff;
+						margin: 40px auto;
+						text-align: center;
+						font-size: 18px;
+						padding: 10px 80px;
+						
+						&:hover {
+							background-color: rgba(255,255,255, 1);
+							color: #000;
+						}
+					}
+				}
+				
+				.overlay-project-tags {
+					float: left;
+					width: 20%;
+
+					ul.tags {
+						padding-top: 20px;
+						li {
+							font-size: 16px;
+						}
+					}
+				}
+				.overlay-project-main {
+					float: left;
+					width: 79%;
+					border-right: 1px solid #333;
+					.overlay-project-description {
+						padding: 20px;
+					}
+				}
+				.overlay-project-thumb {
+					clear: both;
+					text-align: center;
+					margin:auto;
+				}
+			}
+		}
+	}
+	.overlay-results {
+		background: rgba(0,0,0,0.95);
+	}
+	@media (max-width: (@screen-sm + 200)) {
+		.overlay, .overlay-results {
+			.overlay-modal {
+				width: 95%;
+				.overlay-project {
+					.overlay-project-title {
+						span {
+							display: block;
+							margin-left:0;
+						}						
+					}
+					.overlay-project-main {
+						float: none;
+						width: 100%;
+						border-right: 0px;
+						.overlay-project-description {
+							padding: 0;
+						}
+					}
+					.overlay-project-tags {
+						float: none;
+						width: 100%;
+						text-align: center;
+						ul.tags {
+							list-style-type: none;
+							margin: 0 auto;
+							padding: 0px;
+							
+							li {
+								display: inline-block;
+								margin: 2px 2px;
+								padding: 4px 8px;
+								background-color: rgba(255,255,255,0.1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}
