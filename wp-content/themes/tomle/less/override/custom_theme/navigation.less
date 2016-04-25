@@ -1,0 +1,214 @@
+/* Navigation */
+nav.navbar {
+	background-color: #fff;
+	position:fixed;
+	box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
+	font-family: @font-family-secondary;
+	z-index: 99;
+	margin-bottom: 0;
+	border: 0;
+	width: 100%;
+	height: 25px;
+	min-height: 25px;
+	-webkit-backface-visibility:hidden; /* fixes pixel movement bug on scroll */
+	transition: all 0.3s ease-in-out;	
+	.container {
+		position: relative;
+	
+		a.site-logo {
+			background-color: #fff;
+			position: absolute;
+			z-index: 9999;
+			height: 74px;
+			padding: 8px;
+			transition: all 0.3s ease-in-out;
+			box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
+			top: 0;
+			opacity: 1;
+			.border-bottom-radius(4px);
+			svg {
+				width: 58px;
+				box-shadow: 2px 3px 2px -1px rgba(0, 0, 0, 0.2);
+				border: 1px solid #fff; 
+				transition: all .3s ease-in-out;
+				polygon {
+					fill: lighten(@gray-base, 0%);
+					transition: fill .3s ease-in-out;
+				}
+			}
+			&:hover {
+				svg {
+					box-shadow: 2px 3px 2px -1px #fff;
+					polygon {
+						fill: lighten(@gray-base, 35%);
+					}
+				}
+			}
+		}
+		#navbar {
+			position: absolute;
+			right: 0;
+			top: 25px;
+			transition: top 0.3s ease-in-out, right .3s ease-in-out;
+		}
+		ul.nav {
+			
+			li {
+				a {
+					font-family: @font-family-secondary;
+					color: #fff;
+					transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+					border-bottom: 2px solid ;
+					border-color: rgba(0,0,0,0);
+					&:hover {
+						background-color: rgba(0,0,0,0.2); 
+						///color: #fff;
+					}
+					&:active, &:focus {
+						background-color: rgba(0,0,0,0); 
+						border-bottom: 2px solid ;
+						border-color: #fff;
+					}
+				}
+			}
+		}
+	}
+	&.nav-height {
+		height: 50px;
+		background-color: rgba(255,255,255, 1);
+		.container {
+			a.site-logo {
+				height: 68px;
+				padding: 8px;
+				svg {
+					width: 52px;
+					box-shadow: none;
+					polygon {}
+				}
+			}
+			#navbar {
+				top: 0px;
+			}
+			ul.nav { 
+				li {
+					a {
+						color: @gray-base;
+						&:hover {
+							background-color: @brand-primary; 
+							color: #fff;
+						}
+						&:active, &:focus {
+							background-color: rgba(0,0,0,0); 
+							border-bottom: 2px solid;
+							border-color: @brand-primary;
+							&:hover {
+								background-color: @brand-primary; 
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.navbar-fixed-top {
+		
+	}
+	.navbar-toggle .icon-bar {
+		background-color: @gray-base;
+	}
+	&.navbar-fixed-top {
+		border:0;
+	}
+}
+
+@media (max-width: @screen-sm) {
+	nav.navbar {
+		height: 50px;
+		&.nav-height {
+			.container { 
+				ul.nav {
+					li {
+						a {
+							color:#fff;
+						}
+					}
+				}
+			}
+		}
+		.container {
+			#navbar {
+				margin: 0;
+				display: none;
+				position: fixed;
+				top: 0px;
+				height: 100%;
+				width: 100%;
+				max-width: 400px;
+				max-height: 100%;
+				right: 0%;			
+				background-color: #222;
+				overflow-y: auto;
+				z-index: 9999;
+
+				&.active {
+
+				}
+			} 
+			ul.nav { 
+				padding-top: 80px;
+				margin: 0;
+				li {
+					a {
+						color: #fff;
+						font-size: (@font-size-large + 6);
+						padding: 20px 30px;
+						&:hover {
+							background-color: @brand-primary; 
+							color: #fff;
+						}
+						&:active, &:focus {
+							background-color: rgba(0,0,0,0); 
+							border-bottom: 2px solid;
+							border-color: @brand-primary;
+							&:hover {
+								background-color: @brand-primary; 
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+			.navbar-toggle {
+				margin-right: 0;
+				&.nav-close {
+					top: 5px;
+					padding: 10px;
+					-webkit-perspective: 1000;
+	                -webkit-backface-visibility: hidden;
+	                perspective: 1000;
+					span.icon-bar {
+						transition:all 0.3s ease-in-out;
+						background-color: #fff;
+						&:nth-of-type(2n) {
+							 transform: rotate(45deg);
+						}
+						&:nth-of-type(3n) { 
+							margin-top: -2px;
+							transform: rotate(135deg);
+							
+						}
+						&:nth-of-type(4n) {  
+							display: none;  
+						}
+					}
+					&:hover {
+						span.icon-bar {
+							background-color: @brand-primary;
+						}
+					}
+				}				
+			}
+		}		
+	}
+} 

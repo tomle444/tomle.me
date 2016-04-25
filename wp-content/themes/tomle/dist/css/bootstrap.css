@@ -6729,262 +6729,6 @@ button.close {
 /**
  * Overriding styles for custom theme of Bootstrap
  */
-html,
-body {
-  overflow-x: hidden;
-}
-body {
-  position: relative;
-}
-a {
-  color: #111;
-  outline: none;
-  transition: all 0.2s ease-in-out;
-}
-a:hover {
-  text-decoration: none;
-}
-/* Buttons */
-.btn {
-  text-transform: uppercase;
-  background-color: rgba(255, 255, 255, 0);
-  font-family: "Cabin", Helvetica, Arial, sans-serif;
-  transition: all 0.2s ease-in-out;
-  border-width: 2px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  border-radius: 6px;
-}
-.btn-default {
-  border-color: #111;
-}
-.btn-default:focus {
-  background: none;
-}
-.btn-default:hover {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.25);
-}
-img {
-  max-width: 100%;
-}
-p {
-  margin-bottom: 20px;
-}
-.vcenter {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
-}
-/* Main Container  */
-.main-container {
-  /* Critical position and size styles */
-  min-height: 100%;
-  min-width: 100%;
-  background-color: #f9f9f9;
-  /* Needs a background or else the nav will show through */
-  position: relative;
-  top: 0;
-  bottom: 100%;
-  right: 0;
-  z-index: 1;
-  transition: right 0.3s ease-in-out;
-}
-.main-container .overlay,
-.main-container .overlay-results {
-  display: none;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  z-index: 100;
-}
-.main-container .overlay .overlay-modal,
-.main-container .overlay-results .overlay-modal {
-  position: relative;
-  max-width: 1260px;
-  min-height: 400px;
-  overflow: hidden;
-  width: 85%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.main-container .overlay .overlay-modal .overlay-close,
-.main-container .overlay-results .overlay-modal .overlay-close {
-  top: 0;
-  right: 0;
-  padding: 10px;
-  color: #fff;
-  position: absolute;
-  float: right;
-  margin-right: 0;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  -webkit-perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  perspective: 1000;
-}
-.main-container .overlay .overlay-modal .overlay-close span.icon-bar,
-.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar {
-  transition: all 0.3s ease-in-out;
-  background-color: #fff;
-  display: block;
-  width: 20px;
-  height: 2px;
-  border-radius: 1px;
-}
-.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n),
-.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n) {
-  transform: rotate(45deg);
-}
-.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n),
-.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n) {
-  margin-top: -2px;
-  transform: rotate(135deg);
-}
-.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n),
-.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n) {
-  display: none;
-}
-.main-container .overlay .overlay-modal .overlay-close:hover span.icon-bar,
-.main-container .overlay-results .overlay-modal .overlay-close:hover span.icon-bar {
-  background-color: #00cbff;
-}
-.main-container .overlay .overlay-modal .overlay-project,
-.main-container .overlay-results .overlay-modal .overlay-project {
-  color: #fff;
-  width: 85%;
-  margin: auto;
-  overflow: hidden;
-}
-.main-container .overlay .overlay-modal .overlay-project h2,
-.main-container .overlay-results .overlay-modal .overlay-project h2 {
-  font-size: 30px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #333;
-}
-.main-container .overlay .overlay-modal .overlay-project h2 span,
-.main-container .overlay-results .overlay-modal .overlay-project h2 span {
-  font-size: 18px;
-  display: inline-block;
-  margin-left: 20px;
-}
-.main-container .overlay .overlay-modal .overlay-project p,
-.main-container .overlay-results .overlay-modal .overlay-project p {
-  font-size: 18px;
-}
-.main-container .overlay .overlay-modal .overlay-project a,
-.main-container .overlay-results .overlay-modal .overlay-project a {
-  color: #fff;
-}
-.main-container .overlay .overlay-modal .overlay-project a:hover,
-.main-container .overlay-results .overlay-modal .overlay-project a:hover {
-  color: #00cbff;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-date,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-date {
-  font-size: 14px;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-url,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url {
-  clear: both;
-  overflow: hidden;
-  margin: auto;
-  text-align: center;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-url .btn-default,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default {
-  border-color: #fff;
-  color: #fff;
-  margin: 40px auto;
-  text-align: center;
-  font-size: 18px;
-  padding: 10px 80px;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-url .btn-default:hover,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default:hover {
-  background-color: #ffffff;
-  color: #000;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags {
-  float: left;
-  width: 20%;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
-  padding-top: 20px;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
-  font-size: 16px;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-main,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main {
-  float: left;
-  width: 79%;
-  border-right: 1px solid #333;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
-  padding: 20px;
-}
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-thumb,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-thumb {
-  clear: both;
-  text-align: center;
-  margin: auto;
-}
-.main-container .overlay-results {
-  background: rgba(0, 0, 0, 0.95);
-}
-@media (max-width: 969px) {
-  .main-container .overlay .overlay-modal,
-  .main-container .overlay-results .overlay-modal {
-    width: 95%;
-  }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-title span,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-title span {
-    display: block;
-    margin-left: 0;
-  }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-main,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main {
-    float: none;
-    width: 100%;
-    border-right: 0px;
-  }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
-    padding: 0;
-  }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags {
-    float: none;
-    width: 100%;
-    text-align: center;
-  }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0px;
-  }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
-    display: inline-block;
-    margin: 2px 2px;
-    padding: 4px 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
 /* Navigation */
 nav.navbar {
   background-color: #fff;
@@ -7204,21 +6948,34 @@ nav.navbar.navbar-fixed-top {
 .jumbotron .container p.last {
   margin-bottom: 0px;
 }
+@-webkit-keyframes arrow-jump {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -0-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+}
 .jumbotron .container .btn {
   border: 0;
   padding: 10px 30px;
   transition: all 0.3s ease-in-out;
-  font-size: 54px;
+  font-size: 30px;
   position: relative;
-  top: 0px;
+  bottom: -50px;
+  -webkit-animation: arrow-jump 1s infinite;
+  -moz-animation: arrow-jump 1s infinite;
+  -o-animation: arrow-jump 1s infinite;
+  animation: arrow-jump 1s infinite;
 }
 .jumbotron .container .btn:hover,
 .jumbotron .container .btn:active,
 .jumbotron .container .btn:focus {
   background-color: transparent;
-}
-.jumbotron .container .btn:hover {
-  top: 5px;
 }
 @media (max-width: 480px) {
   .jumbotron .container {
@@ -7595,6 +7352,200 @@ nav.navbar.navbar-fixed-top {
   margin: auto;
   width: 80%;
 }
+.main-container .overlay,
+.main-container .overlay-results {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+.main-container .overlay .overlay-modal,
+.main-container .overlay-results .overlay-modal {
+  position: relative;
+  max-width: 1260px;
+  min-height: 400px;
+  overflow: hidden;
+  width: 85%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-container .overlay .overlay-modal .overlay-close,
+.main-container .overlay-results .overlay-modal .overlay-close {
+  top: 0;
+  right: 0;
+  padding: 10px;
+  color: #fff;
+  position: absolute;
+  float: right;
+  margin-right: 0;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000;
+}
+.main-container .overlay .overlay-modal .overlay-close span.icon-bar,
+.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar {
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+}
+.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n),
+.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n) {
+  transform: rotate(45deg);
+}
+.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n),
+.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n) {
+  margin-top: -2px;
+  transform: rotate(135deg);
+}
+.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n),
+.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n) {
+  display: none;
+}
+.main-container .overlay .overlay-modal .overlay-close:hover span.icon-bar,
+.main-container .overlay-results .overlay-modal .overlay-close:hover span.icon-bar {
+  background-color: #00cbff;
+}
+.main-container .overlay .overlay-modal .overlay-project,
+.main-container .overlay-results .overlay-modal .overlay-project {
+  color: #fff;
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+}
+.main-container .overlay .overlay-modal .overlay-project h2,
+.main-container .overlay-results .overlay-modal .overlay-project h2 {
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.main-container .overlay .overlay-modal .overlay-project h2 span,
+.main-container .overlay-results .overlay-modal .overlay-project h2 span {
+  font-size: 18px;
+  display: inline-block;
+  margin-left: 20px;
+}
+.main-container .overlay .overlay-modal .overlay-project p,
+.main-container .overlay-results .overlay-modal .overlay-project p {
+  font-size: 18px;
+}
+.main-container .overlay .overlay-modal .overlay-project a,
+.main-container .overlay-results .overlay-modal .overlay-project a {
+  color: #fff;
+}
+.main-container .overlay .overlay-modal .overlay-project a:hover,
+.main-container .overlay-results .overlay-modal .overlay-project a:hover {
+  color: #00cbff;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-date,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-date {
+  font-size: 14px;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-url,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url {
+  clear: both;
+  overflow: hidden;
+  margin: auto;
+  text-align: center;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-url .btn-default,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default {
+  border-color: #fff;
+  color: #fff;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 80px;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-url .btn-default:hover,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags {
+  float: left;
+  width: 20%;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
+  padding-top: 20px;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
+  font-size: 16px;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-main,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main {
+  float: left;
+  width: 79%;
+  border-right: 1px solid #333;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
+  padding: 20px;
+}
+.main-container .overlay .overlay-modal .overlay-project .overlay-project-thumb,
+.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-thumb {
+  clear: both;
+  text-align: center;
+  margin: auto;
+}
+.main-container .overlay-results {
+  background: rgba(0, 0, 0, 0.95);
+}
+@media (max-width: 969px) {
+  .main-container .overlay .overlay-modal,
+  .main-container .overlay-results .overlay-modal {
+    width: 95%;
+  }
+  .main-container .overlay .overlay-modal .overlay-project .overlay-project-title span,
+  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-title span {
+    display: block;
+    margin-left: 0;
+  }
+  .main-container .overlay .overlay-modal .overlay-project .overlay-project-main,
+  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main {
+    float: none;
+    width: 100%;
+    border-right: 0px;
+  }
+  .main-container .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
+  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
+    padding: 0;
+  }
+  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags,
+  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
+  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0px;
+  }
+  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
+  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
+    display: inline-block;
+    margin: 2px 2px;
+    padding: 4px 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
 /**
  * Footer
  */
@@ -7700,5 +7651,67 @@ footer .bottom .container .social-icons a .fa:hover {
     display: block;
     margin: auto;
   }
+}
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+a {
+  color: #111;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  text-decoration: none;
+}
+/* Buttons */
+.btn {
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0);
+  font-family: "Cabin", Helvetica, Arial, sans-serif;
+  transition: all 0.2s ease-in-out;
+  border-width: 2px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 6px;
+}
+.btn-default {
+  border-color: #111;
+}
+.btn-default:focus {
+  background: none;
+}
+.btn-default:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+img {
+  max-width: 100%;
+}
+p {
+  margin-bottom: 20px;
+}
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+/* Main Container  */
+.main-container {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-color: #f9f9f9;
+  /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  right: 0;
+  z-index: 1;
+  transition: right 0.3s ease-in-out;
 }
 /*# sourceMappingURL=bootstrap.css.map */
