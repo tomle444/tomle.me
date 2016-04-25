@@ -6781,7 +6781,7 @@ nav.navbar .container #navbar {
   position: absolute;
   right: 0;
   top: 25px;
-  transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
+  transition: all 0.3s linear;
 }
 nav.navbar .container ul.nav li a {
   font-family: "Cabin", Helvetica, Arial, sans-serif;
@@ -7352,8 +7352,8 @@ nav.navbar.navbar-fixed-top {
   margin: auto;
   width: 80%;
 }
-.main-container .overlay,
-.main-container .overlay-results {
+.overlay,
+.overlay-results {
   display: none;
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
@@ -7361,8 +7361,8 @@ nav.navbar.navbar-fixed-top {
   width: 100%;
   z-index: 100;
 }
-.main-container .overlay .overlay-modal,
-.main-container .overlay-results .overlay-modal {
+.overlay .overlay-modal,
+.overlay-results .overlay-modal {
   position: relative;
   max-width: 1260px;
   min-height: 400px;
@@ -7372,8 +7372,8 @@ nav.navbar.navbar-fixed-top {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.main-container .overlay .overlay-modal .overlay-close,
-.main-container .overlay-results .overlay-modal .overlay-close {
+.overlay .overlay-modal .overlay-close,
+.overlay-results .overlay-modal .overlay-close {
   top: 0;
   right: 0;
   padding: 10px;
@@ -7392,8 +7392,8 @@ nav.navbar.navbar-fixed-top {
   -webkit-backface-visibility: hidden;
   perspective: 1000;
 }
-.main-container .overlay .overlay-modal .overlay-close span.icon-bar,
-.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar {
+.overlay .overlay-modal .overlay-close span.icon-bar,
+.overlay-results .overlay-modal .overlay-close span.icon-bar {
   transition: all 0.3s ease-in-out;
   background-color: #fff;
   display: block;
@@ -7401,67 +7401,67 @@ nav.navbar.navbar-fixed-top {
   height: 2px;
   border-radius: 1px;
 }
-.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n),
-.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n) {
+.overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n),
+.overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n) {
   transform: rotate(45deg);
 }
-.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n),
-.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n) {
+.overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n),
+.overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n) {
   margin-top: -2px;
   transform: rotate(135deg);
 }
-.main-container .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n),
-.main-container .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n) {
+.overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n),
+.overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n) {
   display: none;
 }
-.main-container .overlay .overlay-modal .overlay-close:hover span.icon-bar,
-.main-container .overlay-results .overlay-modal .overlay-close:hover span.icon-bar {
+.overlay .overlay-modal .overlay-close:hover span.icon-bar,
+.overlay-results .overlay-modal .overlay-close:hover span.icon-bar {
   background-color: #00cbff;
 }
-.main-container .overlay .overlay-modal .overlay-project,
-.main-container .overlay-results .overlay-modal .overlay-project {
+.overlay .overlay-modal .overlay-project,
+.overlay-results .overlay-modal .overlay-project {
   color: #fff;
   width: 85%;
   margin: auto;
   overflow: hidden;
 }
-.main-container .overlay .overlay-modal .overlay-project h2,
-.main-container .overlay-results .overlay-modal .overlay-project h2 {
+.overlay .overlay-modal .overlay-project h2,
+.overlay-results .overlay-modal .overlay-project h2 {
   font-size: 30px;
   padding-bottom: 10px;
   border-bottom: 1px solid #333;
 }
-.main-container .overlay .overlay-modal .overlay-project h2 span,
-.main-container .overlay-results .overlay-modal .overlay-project h2 span {
+.overlay .overlay-modal .overlay-project h2 span,
+.overlay-results .overlay-modal .overlay-project h2 span {
   font-size: 18px;
   display: inline-block;
   margin-left: 20px;
 }
-.main-container .overlay .overlay-modal .overlay-project p,
-.main-container .overlay-results .overlay-modal .overlay-project p {
+.overlay .overlay-modal .overlay-project p,
+.overlay-results .overlay-modal .overlay-project p {
   font-size: 18px;
 }
-.main-container .overlay .overlay-modal .overlay-project a,
-.main-container .overlay-results .overlay-modal .overlay-project a {
+.overlay .overlay-modal .overlay-project a,
+.overlay-results .overlay-modal .overlay-project a {
   color: #fff;
 }
-.main-container .overlay .overlay-modal .overlay-project a:hover,
-.main-container .overlay-results .overlay-modal .overlay-project a:hover {
+.overlay .overlay-modal .overlay-project a:hover,
+.overlay-results .overlay-modal .overlay-project a:hover {
   color: #00cbff;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-date,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-date {
+.overlay .overlay-modal .overlay-project .overlay-project-date,
+.overlay-results .overlay-modal .overlay-project .overlay-project-date {
   font-size: 14px;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-url,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url {
+.overlay .overlay-modal .overlay-project .overlay-project-url,
+.overlay-results .overlay-modal .overlay-project .overlay-project-url {
   clear: both;
   overflow: hidden;
   margin: auto;
   text-align: center;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-url .btn-default,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default {
+.overlay .overlay-modal .overlay-project .overlay-project-url .btn-default,
+.overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default {
   border-color: #fff;
   color: #fff;
   margin: 40px auto;
@@ -7469,77 +7469,77 @@ nav.navbar.navbar-fixed-top {
   font-size: 18px;
   padding: 10px 80px;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-url .btn-default:hover,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default:hover {
+.overlay .overlay-modal .overlay-project .overlay-project-url .btn-default:hover,
+.overlay-results .overlay-modal .overlay-project .overlay-project-url .btn-default:hover {
   background-color: #ffffff;
   color: #000;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags {
+.overlay .overlay-modal .overlay-project .overlay-project-tags,
+.overlay-results .overlay-modal .overlay-project .overlay-project-tags {
   float: left;
   width: 20%;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
+.overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
+.overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
   padding-top: 20px;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
+.overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
+.overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
   font-size: 16px;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-main,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main {
+.overlay .overlay-modal .overlay-project .overlay-project-main,
+.overlay-results .overlay-modal .overlay-project .overlay-project-main {
   float: left;
   width: 79%;
   border-right: 1px solid #333;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
+.overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
+.overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
   padding: 20px;
 }
-.main-container .overlay .overlay-modal .overlay-project .overlay-project-thumb,
-.main-container .overlay-results .overlay-modal .overlay-project .overlay-project-thumb {
+.overlay .overlay-modal .overlay-project .overlay-project-thumb,
+.overlay-results .overlay-modal .overlay-project .overlay-project-thumb {
   clear: both;
   text-align: center;
   margin: auto;
 }
-.main-container .overlay-results {
+.overlay-results {
   background: rgba(0, 0, 0, 0.95);
 }
 @media (max-width: 969px) {
-  .main-container .overlay .overlay-modal,
-  .main-container .overlay-results .overlay-modal {
+  .overlay .overlay-modal,
+  .overlay-results .overlay-modal {
     width: 95%;
   }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-title span,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-title span {
+  .overlay .overlay-modal .overlay-project .overlay-project-title span,
+  .overlay-results .overlay-modal .overlay-project .overlay-project-title span {
     display: block;
     margin-left: 0;
   }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-main,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main {
+  .overlay .overlay-modal .overlay-project .overlay-project-main,
+  .overlay-results .overlay-modal .overlay-project .overlay-project-main {
     float: none;
     width: 100%;
     border-right: 0px;
   }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
+  .overlay .overlay-modal .overlay-project .overlay-project-main .overlay-project-description,
+  .overlay-results .overlay-modal .overlay-project .overlay-project-main .overlay-project-description {
     padding: 0;
   }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags {
+  .overlay .overlay-modal .overlay-project .overlay-project-tags,
+  .overlay-results .overlay-modal .overlay-project .overlay-project-tags {
     float: none;
     width: 100%;
     text-align: center;
   }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
+  .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags,
+  .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags {
     list-style-type: none;
     margin: 0 auto;
     padding: 0px;
   }
-  .main-container .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
-  .main-container .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
+  .overlay .overlay-modal .overlay-project .overlay-project-tags ul.tags li,
+  .overlay-results .overlay-modal .overlay-project .overlay-project-tags ul.tags li {
     display: inline-block;
     margin: 2px 2px;
     padding: 4px 8px;
@@ -7712,6 +7712,6 @@ p {
   bottom: 100%;
   right: 0;
   z-index: 1;
-  transition: right 0.3s ease-in-out;
+  transition: all 0.3s linear;
 }
 /*# sourceMappingURL=bootstrap.css.map */
