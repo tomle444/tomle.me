@@ -7517,6 +7517,7 @@ nav.navbar.navbar-fixed-top {
 }
 .overlay-results {
   background: rgba(0, 0, 0, 0.95);
+  z-index: 102;
 }
 @media (max-width: 969px) {
   .overlay .overlay-modal,
