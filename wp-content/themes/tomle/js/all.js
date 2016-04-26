@@ -257,9 +257,9 @@ $(window).scroll(function(){
 
 	// Scroll to Top of Page functionality
  	if(scrollTop > 400) {
- 		$('.scroll-top').css({"opacity": 1});
+ 		$('.scroll-top').css({"opacity": 1, "display": "none"});
  	} else {
- 		$('.scroll-top').css({"opacity": 0});
+ 		$('.scroll-top').css({"opacity": 0, "display": "block"});
  	}
 
 	

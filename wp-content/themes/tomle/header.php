@@ -28,7 +28,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     </head>
     <body <?php body_class(); ?>>
-            <a class="scroll-top"><span class="glyphicon glyphicon-chevron-up"></span>Top</a>
+
+        <a class="scroll-top"><span class="glyphicon glyphicon-chevron-up"></span>Top</a>
             <div class="overlay"></div>
             <div class="overlay-results">
                 <div class="overlay-modal vcenter">
@@ -51,7 +52,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand site-logo" href="javascript:void(0);">
+                        <a class="navbar-brand site-logo" href="#">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 90 612 612" enable-background="new 0 90 612 612" xml:space="preserve">
                             <polygon points="487,508 194,215 257.8,151.2 489.6,381.7 612,259.3 612,140.8 612,90 561.2,90 50.8,90 0,90 0,140.8 0,409 
@@ -76,10 +77,10 @@
                 </div><!--/.navbar-collapse -->
             </div>
         </nav>
-        <!-- /nav -->
     	<!-- wrapper -->
     	<div class="main-container">
-    		
+
+    	<!-- /nav -->
 
     	<!-- header -->
     	<header class="header clear" role="banner">
