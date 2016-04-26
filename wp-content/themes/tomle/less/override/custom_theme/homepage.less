@@ -122,6 +122,11 @@
 		}
 		.carousel-indicators {	
 			bottom: 8%;		
+			margin-left: 0;
+			transform: translateX(-50%);
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
 			.active {
 				background-color: @gray-base;
 				width: 20px;
@@ -301,7 +306,7 @@
 				}
 			}
 			.carousel-indicators {	
-				
+				width: 68%;
 				.active {				
 					width: 24px;
 					height: 24px;
@@ -449,6 +454,10 @@
 		background-image: url('../../images/contact-mobile.jpg');
 		.container {
 			width: 90%;
+			.btn {
+				width: 100%;
+				padding: 12px;
+			}
 		}
 	}
 }

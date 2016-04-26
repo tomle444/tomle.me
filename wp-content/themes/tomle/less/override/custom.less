@@ -19,18 +19,26 @@ body {
 
 a {	
 	color: @gray-base;
-	outline: none;
+	outline: 0;
 	transition: all .2s ease-in-out;
 	&:hover {
 		text-decoration: none;
 	}
+	&:focus, &:active {
+		outline: 0;
+	}
+}
+
+/* FF dotted outline */
+input::-moz-focus-inner { 
+  border: 0; 
 }
 
 /* Buttons */
 .btn {
 	text-transform: uppercase;
 	background-color: rgba(255,255,255,0);
-	font-family: @font-family-secondary;
+	font-family: @font-family-secondary; 
 	transition: all .2s ease-in-out;
 	border-width: 2px;
 	.button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-large;);

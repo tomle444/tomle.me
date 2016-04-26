@@ -29,55 +29,57 @@
     </head>
     <body <?php body_class(); ?>>
 
+        <a class="scroll-top"><span class="glyphicon glyphicon-chevron-up"></span>Top</a>
+            <div class="overlay"></div>
+            <div class="overlay-results">
+                <div class="overlay-modal vcenter">
+                    <a href="javascript:void(0);" class="overlay-close" >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div class="overlay-project"></div>
+                </div>
+            </div>
+            <!-- nav -->
+            <nav class="navbar navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" >
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand site-logo" href="#">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 90 612 612" enable-background="new 0 90 612 612" xml:space="preserve">
+                            <polygon points="487,508 194,215 257.8,151.2 489.6,381.7 612,259.3 612,140.8 612,90 561.2,90 50.8,90 0,90 0,140.8 0,409 
+                            169.3,239.7 231.8,302.2 187.5,346.5 418,577 354.2,642.1 122.4,410.3 0,534 0,651.2 0,702 50.8,702 561.2,702 612,702 612,651.2 
+                            612,383 "/>
+                        </svg>
+
+                    </a>
+                </div>
+                <div id="navbar" class="pull-right">
+                    <button type="button" class="nav-close navbar-toggle" >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <ul class="nav navbar-nav">
+                        <li><a href="javascript:void(0);" class="portfolio-link">Portfolio</a></li>
+                        <li><a href="javascript:void(0);" class="about-link">About</a></li>
+                        <li><a href="javascript:void(0);" class="contact-link">Contact</a></li>
+                    </ul>          
+                </div><!--/.navbar-collapse -->
+            </div>
+        </nav>
     	<!-- wrapper -->
     	<div class="main-container">
-    		<div class="overlay"></div>
-    		<div class="overlay-results">
-    			<div class="overlay-modal vcenter">
-    				<a href="javascript:void(0);" class="overlay-close" >
-    					<span class="sr-only">Toggle navigation</span>
-    					<span class="icon-bar"></span>
-    					<span class="icon-bar"></span>
-    					<span class="icon-bar"></span>
-    				</a>
-    				<div class="overlay-project"></div>
-    			</div>
-    		</div>
-    		<!-- nav -->
-    		<nav class="navbar navbar-fixed-top">
-    			<div class="container">
-    				<div class="navbar-header">
-    					<button type="button" class="navbar-toggle" >
-    						<span class="sr-only">Toggle navigation</span>
-    						<span class="icon-bar"></span>
-    						<span class="icon-bar"></span>
-    						<span class="icon-bar"></span>
-    					</button>
-    					<a class="navbar-brand site-logo" href="#">
-    						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    						viewBox="0 90 612 612" enable-background="new 0 90 612 612" xml:space="preserve">
-    						<polygon points="487,508 194,215 257.8,151.2 489.6,381.7 612,259.3 612,140.8 612,90 561.2,90 50.8,90 0,90 0,140.8 0,409 
-    						169.3,239.7 231.8,302.2 187.5,346.5 418,577 354.2,642.1 122.4,410.3 0,534 0,651.2 0,702 50.8,702 561.2,702 612,702 612,651.2 
-    						612,383 "/>
-    					</svg>
 
-    				</a>
-    			</div>
-    			<div id="navbar" class="pull-right">
-    				<button type="button" class="nav-close navbar-toggle" >
-    					<span class="sr-only">Toggle navigation</span>
-    					<span class="icon-bar"></span>
-    					<span class="icon-bar"></span>
-    					<span class="icon-bar"></span>
-    				</button>
-    				<ul class="nav navbar-nav">
-    					<li><a href="javascript:void(0);" class="portfolio-link">Portfolio</a></li>
-    					<li><a href="javascript:void(0);" class="about-link">About</a></li>
-    					<li><a href="javascript:void(0);" class="contact-link">Contact</a></li>
-    				</ul>          
-    			</div><!--/.navbar-collapse -->
-    		</div>
-    	</nav>
     	<!-- /nav -->
 
     	<!-- header -->
