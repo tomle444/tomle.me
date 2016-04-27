@@ -4,88 +4,90 @@ $(function(){
  	/***
  	**	Scroll to Navigation
  	***/
+ 	
+ 	// init scrollTo Navigation function
  	scrollToNavigation();
+
+ 	// section location variables
+ 	var homeSection = 0;
+ 	var portfolioSection = $('.portfolio').offset().top - 46;
+ 	var aboutSection = $('.about').offset().top - 46;
+ 	var contactSection = $('.contact').offset().top - 46;
+ 	//console.log(parseInt(contactSection));
  	function scrollToNavigation(){
  		$('.portfolio-link').click(function(){
-			/*$('html, body').stop().animate({
-				scrollTop: $('.portfolio').offset().top -46 
-			}, 800);
-			return false;*/
-			$('html, body').stop().scrollTo($('.portfolio').offset().top - 46, {duration:'slow', easing: 'easeInCubic'});
+			$('html, body').stop().scrollTo(portfolioSection, {duration:'slow', easing: 'easeInCubic'});
 		});
 
 		$('.about-link').click(function(){
-			/*$('html, body').stop().animate({
-				scrollTop: $('.about').offset().top -46
-			}, 800);
-			return false;*/
-			$('html, body').stop().scrollTo($('.about').offset().top - 46, {duration:'slow', easing: 'easeInCubic'});
+			$('html, body').stop().scrollTo(aboutSection, {duration:'slow', easing: 'easeInCubic'});
 		});
 
 		$('.contact-link').click(function(){
-			/*$('html, body').stop().animate({
-				scrollTop: $('.contact').offset().top -46
-			}, 800);
-			return false;*/
-			$('html, body').stop().scrollTo($('.contact').offset().top - 46, {duration:'slow', easing: 'easeInCubic'});
+			$('html, body').stop().scrollTo(contactSection, {duration:'slow', easing: 'easeInCubic'});
 		});
-		$('.site-logo, .scroll-top').click(function(){
-			
-			$('html, body').stop().scrollTo(0, {duration:'slow', easing: 'easeInCubic'});
+		$('.site-logo, .scroll-top').click(function(){			
+			$('html, body').stop().scrollTo(homeSection, {duration:'slow', easing: 'easeInCubic'});
 		});
  	}
  	
- 	
-	$('.overlay-project').html(' ');  
-
- 	
-	 	/***
-	 	**	Ajax Get Info - Portfolio
-	 	***/
-	 	$('.item .btn-default, .portfolio-image').bind('click', function(){ 
- 			//alert($(this).data('id'));
-			$.ajax({
-				url : '/wordpress/wp-content/themes/tomle/js/get_ajax.php',
-				async: false,   // asynchronous request? (synchronous requests are discouraged...)
-				cache: true,   // with this, you can force the browser to not make cache of the retrieved data
-				data: {
-					portfolio_id: $(this).data('id')
-				},
-				dataType: "json",  // jQuery will infer this, but you can set explicitly
-				type: 'POST',
-				success: function( data, textStatus, jqXHR ) {
-					var resourceContent = data; // can be a global variable too...
-					// process the content...
-					showDetails(data);					
-				},
-				complete: function(data){
-					console.log($('.overlay-modal').position().top );
-					$('html, body').animate({
-						scrollTop: $('.overlay-modal').position().top - 80
-					}, 800);
-
-				},
-				error: function(jqXHR, textStatus, errorThrown){
-					alert('error: ' + textStatus + ': ' + errorThrown);
-				}
-			});
-	 	});
-
-	 	$('.overlay-results .overlay-close').on('click', function(){
-	 		closeDetails();
-	 	});
-	 	$('.navbar-toggle').on('click', function(){
-	 		if($('.overlay-results').hasClass('active')){
-	 			$('.overlay-results').removeClass('active'); 
-	 			$('.overlay-results').fadeOut(100); 
-		    	$('.overlay-project').html(' ');  
-		    	$('.overlay-project').attr('id', '');
-	 		}
-	 		
-	 	});
-
-
  		
+ 	/***
+ 	**	Ajax Get Info - Portfolio
+ 	***/
+
+ 	// create blank html container for Ajax content
+	$('.overlay-project').html(' ');  
+ 	$('.item .btn-default, .portfolio-image').bind('click', function(){ 
+			//alert($(this).data('id'));
+		$.ajax({
+			url : '/wordpress/wp-content/themes/tomle/js/get_ajax.php',
+			async: false,   // asynchronous request? (synchronous requests are discouraged...)
+			cache: true,   // with this, you can force the browser to not make cache of the retrieved data
+			data: {
+				portfolio_id: $(this).data('id')
+			},
+			dataType: "json",  // jQuery will infer this, but you can set explicitly
+			type: 'POST',
+			success: function( data, textStatus, jqXHR ) {
+				var resourceContent = data; // can be a global variable too...
+				// process the content...
+				showDetails(data);					
+			},
+			complete: function(data){
+				console.log($('.overlay-modal').position().top );
+				$('html, body').animate({
+					scrollTop: $('.overlay-modal').position().top - 80
+				}, 800);
+
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				alert('error: ' + textStatus + ': ' + errorThrown);
+			}
+		});
+ 	});
+
+ 	$('.overlay-results .overlay-close').on('click', function(){
+ 		closeDetails();
+ 	});
+ 	$('.navbar-toggle').on('click', function(){
+ 		if($('.overlay-results').hasClass('active')){
+ 			$('.overlay-results').removeClass('active'); 
+ 			$('.overlay-results').fadeOut(100); 
+	    	$('.overlay-project').html(' ');  
+	    	$('.overlay-project').attr('id', '');
+ 		}
+ 		
+ 	});
+
+
+ 	/**
+ 	 * showDetails() function:
+ 	 * Action after clicking View Details button using Ajax to pull from
+ 	 * - js/get_ajax.php - file contains an array of portfolio data 
+ 	 */
+ 		
+ 	
  	function showDetails(data){
  		$('.overlay-project').html(' ');
 		
@@ -117,9 +119,7 @@ $(function(){
 	        	}
 	        	if(data[index].thumbnail_3){
 	            	$('.overlay-project').append('<div class="overlay-project-thumb">' + '<img src="' + data[index].thumbnail_3 + '" />' + '</div>');
-	        	}
-
-	         
+	        	}	         
         });       	
 		
 		//return false;
@@ -130,9 +130,10 @@ $(function(){
     function closeDetails(){
     	$('.overlay-results').fadeOut(100); 
     	$('.overlay-project').html(' ');  
-    	$('.overlay-project').attr('id', '');  
+    	$('.overlay-project').attr('id', '');
+    	// scroll back to the top of Portfolio section on Overlay close  
     	$('html, body').stop().animate({
-			scrollTop: $('.portfolio').offset().top -46 
+			scrollTop: portfolioSection 
 		}, 800, function(){
 			$('.overlay-results').removeClass('active'); 
 		});
@@ -152,10 +153,11 @@ $(function(){
 	var $navbarToggle = $('.touch .navbar-toggle');
 	//$('#navbar').css('display', 'none' );
  
+ 	// switched to css transform: translateX animations to fix animation choppyness/layout thrashing on mobile
 	function initDesktopNav(){ 
 		$overlayDiv.css('display', 'none' );
 		$navBar.css({'display': 'block', 'transform': "translateX("+ (windowWidth) +"px)", 'position': 'fixed', 'width': '100%'}).removeClass('active');
-		$mainContainer.css('-webkit-transform', 'translateX(0)' );
+		$mainContainer.css('transform', 'translateX(0)' );
 	}
 	function clickDesktopNav(){
 		$('.navbar-toggle, .nav-close, .overlay').bind('click', function(){
@@ -172,8 +174,23 @@ $(function(){
 		
 	}
 	function clickMobileNav(){
+		$navBar.css({'display': 'block', 'transform': 'translateX(windowWidth)', 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
+		$mainContainer.removeAttr('style' );
 
-		$navBar.css({'display': 'block', 'transform': 'translateX(-windowWidth)', 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
+		$('.navbar-toggle, .nav-close, .overlay').bind('click', function(){
+			if($navBar.hasClass('active')){
+				$navBar.css('transform', 'translateX(0)' );
+				$mainContainer.css('transform', "translateX(" + (-windowWidth) + "px)" );	
+			} else {
+				$navBar.css('transform', "translateX(" + (windowWidth) + "px)" );
+				$mainContainer.css('transform', 'translateX(0)' );	 
+			}
+		});
+	}
+
+	function clickMobileLandscape(){
+
+		$navBar.css({'display': 'block', 'transform': 'translateX(windowWidth)', 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
 		$mainContainer.removeAttr('style' );
 
 		$('.navbar-toggle, .nav-close, .overlay').bind('click', function(){
@@ -184,9 +201,7 @@ $(function(){
 				$navBar.css('transform', "translateX(" + (navigationWidth) + "px)" );
 				$mainContainer.css('transform', 'translateX(0)' );	 
 			}
-		});
-
-		
+		});		
 	}
 
 	enquire.register("screen and (max-width:769px)", { 
@@ -208,7 +223,6 @@ $(function(){
 					$(this).stop().fadeOut(100); 
 					next2();	
 				});
-
 			});
 		}, 
 		unmatch : function(){ 
@@ -223,18 +237,34 @@ $(function(){
  
 		} 
 	});	
+	
+	/* Mobile Phone Portrait Size */
+	enquire.register("screen and (max-width:420px) and (orientation: portrait)", {
 
-	enquire.register("screen and (max-width:400px)", {
-
-		match : function(){		 
+		match : function(){	 
+			
 			$('body').addClass('touch');	
 			clickMobileNav();
+			// reset styles of navigation links on orientation change
+			$navBar.css({'display': 'block', 'transform': "translateX(" + (windowWidth) + "px)", 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
 		},
 		unmatch : function(){
 			
-			//$('.navbar-toggle, .nav-close, .overlay').unbind('click');
-			$navBar.css({'display': 'block', 'transform': "translateX(" + (-windowWidth) + "px)", 'position': 'fixed', 'max-width' : windowWidth, 'width' : windowWidth }).removeClass('active');
+			
 			$mainContainer.removeAttr('style' );
+		} 
+	});
+	/* Mobile Landscape Size */
+	enquire.register("screen and (max-width:769px) and (orientation: landscape)", {
+
+		match : function(){		 
+			clickMobileLandscape();
+			// reset styles of navigation links on orientation change
+			$navBar.css({'display': 'block', 'transform': "translateX(" + (navigationWidth) + "px)", 'position': 'fixed', 'max-width' : navigationWidth, 'width' : navigationWidth }).removeClass('active');
+		},
+		unmatch : function(){
+			$mainContainer.removeAttr('style' );
+			
 		} 
 	});
 }); 
@@ -247,6 +277,7 @@ $(window).scroll(function(){
 	var sitelogo = $('a.site-logo');
 	var windowHeight = $(window).innerHeight();
 	var scrollTop = $(window).scrollTop();	
+	var contactSection = $('.contact').offset().top - 46;
  	
 	if(scrollTop > 200){
 		navbar.addClass('nav-height');
@@ -256,10 +287,10 @@ $(window).scroll(function(){
 	}
 
 	// Scroll to Top of Page functionality
- 	if(scrollTop > 400) {
- 		$('.scroll-top').css({"opacity": 1, "display": "none"});
+ 	if(scrollTop > parseInt(contactSection)) {
+ 		$('.scroll-top').css({  "opacity": 1});
  	} else {
- 		$('.scroll-top').css({"opacity": 0, "display": "block"});
+ 		$('.scroll-top').css({"opacity": 0});
  	}
 
 	

@@ -52,7 +52,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand site-logo" href="#">
+                        <a class="navbar-brand site-logo" href="javascript:void(0);">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 90 612 612" enable-background="new 0 90 612 612" xml:space="preserve">
                             <polygon points="487,508 194,215 257.8,151.2 489.6,381.7 612,259.3 612,140.8 612,90 561.2,90 50.8,90 0,90 0,140.8 0,409 
