@@ -29,7 +29,7 @@
     </head>
     <body <?php body_class(); ?>>
 
-        <a class="scroll-top"><span class="glyphicon glyphicon-chevron-up"></span>Top</a>
+        <a class="scroll-top"><span class="glyphicon glyphicon-chevron-up"></span></a>
             <div class="overlay"></div>
             <div class="overlay-results">
                 <div class="overlay-modal vcenter">
