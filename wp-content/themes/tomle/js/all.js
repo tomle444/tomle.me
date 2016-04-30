@@ -55,9 +55,9 @@ $(function(){
 				showDetails(data);					
 			},
 			complete: function(data){
-				console.log($('.overlay-modal').position().top );
+				//console.log($('.overlay-modal').position().top );
 				$('html, body').animate({
-					scrollTop: $('.overlay-modal').position().top - 80
+					scrollTop: $('.overlay-modal').position().top - 40
 				}, 800);
 
 			},

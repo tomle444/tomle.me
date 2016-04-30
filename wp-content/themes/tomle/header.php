@@ -29,7 +29,7 @@
     </head>
     <body <?php body_class(); ?>>
 
-        <a class="scroll-top"><span class="glyphicon glyphicon-chevron-up"></span>Top</a>
+        <a class="scroll-top"><span class="glyphicon glyphicon-chevron-up"></span></a>
             <div class="overlay"></div>
             <div class="overlay-results">
                 <div class="overlay-modal vcenter">
@@ -91,7 +91,7 @@
     			<div class="container">
     				<h1>Hello, <span>my name is Tom Le</span></h1>
     				<p>I am a <span>web designer</span> and <span>front-end developer</span> who lives in San Diego.</p>
-    				<p class="last"><a class="btn btn-primary btn-lg portfolio-link" href="#" role="button"><i class="fa fa-angle-down"></i></a></p>
+    				<p class="last"><a class="btn btn-primary btn-lg portfolio-link" href="javascript:void(0);" role="button"><i class="fa fa-angle-down"></i></a></p>
     			</div>
     		</div>
     		

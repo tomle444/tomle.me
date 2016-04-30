@@ -7014,6 +7014,9 @@ nav.navbar.navbar-fixed-top {
   line-height: 1;
   font-family: serif;
 }
+.portfolio {
+  overflow: hidden;
+}
 .portfolio .container {
   width: 100%;
 }
@@ -7572,12 +7575,13 @@ nav.navbar.navbar-fixed-top {
   text-transform: uppercase;
   z-index: 99;
   opacity: 0;
-  padding: 10px 10px 16px;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  border-radius: 60px;
+  padding: 14px 10px 16px;
+  -webkit-border-radius: 68px;
+  -moz-border-radius: 68px;
+  border-radius: 68px;
   line-height: 1;
   width: 68px;
+  height: 68px;
   background-color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -7585,7 +7589,7 @@ nav.navbar.navbar-fixed-top {
   -moz-transition: all 0.2s ease-in-out;
 }
 .scroll-top .glyphicon {
-  font-size: 36px;
+  font-size: 30px;
   text-align: center;
   display: block;
   margin-left: 3px;
@@ -7597,20 +7601,19 @@ nav.navbar.navbar-fixed-top {
 }
 @media (max-width: 769px) {
   .scroll-top {
-    width: 28px;
-    height: 28px;
+    width: 48px;
+    height: 48px;
     bottom: 10px;
-    right: 50%;
-    border-radius: 28px;
-    padding: 0;
+    right: 20px;
+    border-radius: 48px;
+    padding: 10px;
     font-size: 8px;
-    transform: translateX(50%);
-    -webkit-transform: translateX(50%);
-    -moz-transform: translateX(50%);
-    -o-transform: translateX(50%);
   }
   .scroll-top .glyphicon {
-    font-size: 18px;
+    font-size: 20px;
+  }
+  .scroll-top:hover {
+    bottom: 10px;
   }
 }
 footer {
