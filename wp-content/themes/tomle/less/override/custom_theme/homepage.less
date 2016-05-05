@@ -8,7 +8,7 @@
 @jumbotron-padding: 80px;
 .jumbotron {
 	background-image: url('../../images/hero.jpg');
-	background-size: cover;
+	background-size: cover;	
 	position: relative; 
 	overflow: hidden;
 	margin-bottom: 0;
@@ -62,12 +62,14 @@
 			-o-animation:      arrow-jump 1s infinite;
 			animation:         arrow-jump 1s infinite;
 			&:hover, &:active, &:focus {				
-				background-color: transparent;				
+				background-color: transparent;	
+				box-shadow: none;			
 			}
 			
 		}
 
 	}
+
 	@media (max-width: @screen-xs) {
 		.container {
 			padding: 0 (@jumbotron-padding - 20) 0 60px; 
@@ -77,6 +79,9 @@
 				}
 			} 
 		}
+	}
+	@media (min-width: 600px) {
+		background-attachment: fixed;
 	}
 	
 }
@@ -130,8 +135,8 @@
 			-o-transform: translateX(-50%);
 			.active {
 				background-color: @gray-base;
-				width: 20px;
-				height: 20px;
+				//width: 20px;
+				//height: 20px;
 				
 			}
 			li {
@@ -279,8 +284,8 @@
 			.carousel-indicators {	 
 				
 				.active {				
-					width: 24px;
-					height: 24px;
+					//width: 24px;
+					//height: 24px;
 				}
 				li {
 					border:0px solid #ddd;
@@ -309,8 +314,8 @@
 			.carousel-indicators {	
 				width: 68%;
 				.active {				
-					width: 24px;
-					height: 24px;
+					//width: 24px;
+					//height: 24px;
 				}
 				li {
 					border:0px solid #ddd;
@@ -381,10 +386,10 @@
 /* Call to Action */
 .call-to-action {
 	background-image: url('../../images/contact.jpg');
-	background-size: cover;
+	background-size: cover;	
 	position: relative; 
 	overflow: hidden;
-	margin-bottom: 0;
+	margin-bottom: 0; 
 	width: 100%;
 	.call-to-action-overlay {
 		width: 100%;
@@ -424,6 +429,9 @@
 			margin: 40px auto;
 			padding: 12px 80px;
 			font-size: 18px;
+			&:active, &:focus {
+				box-shadow: none;
+			}
 		}
 		#status {
 			display: none;
@@ -460,6 +468,9 @@
 				padding: 12px;
 			}
 		}
+	}
+	@media (min-width: 600px) {
+		background-attachment: fixed;
 	}
 }
 

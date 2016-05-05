@@ -16,18 +16,18 @@ $(function(){
  	//console.log(parseInt(contactSection));
  	function scrollToNavigation(){
  		$('.portfolio-link').click(function(){
-			$('html, body').stop().scrollTo(portfolioSection, {duration:'slow', easing: 'easeInCubic'});
+			$('body').stop().scrollTo(portfolioSection, {duration:600, easing: 'easeInCubic', onAfter: function(){} } );
 		});
 
 		$('.about-link').click(function(){
-			$('html, body').stop().scrollTo(aboutSection, {duration:'slow', easing: 'easeInCubic'});
+			$('body').stop().scrollTo(aboutSection, {duration:600, easing: 'easeInCubic'});
 		});
 
 		$('.contact-link').click(function(){
-			$('html, body').stop().scrollTo(contactSection, {duration:'slow', easing: 'easeInCubic'});
+			$('body').stop().scrollTo(contactSection, {duration:600, easing: 'easeInCubic'});
 		});
 		$('.site-logo, .scroll-top').click(function(){			
-			$('html, body').stop().scrollTo(homeSection, {duration:'slow', easing: 'easeInCubic'});
+			$('body').stop().scrollTo(homeSection, {duration:600, easing: 'easeInCubic'});
 		});
  	}
  	

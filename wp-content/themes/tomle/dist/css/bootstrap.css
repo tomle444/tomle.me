@@ -6976,6 +6976,7 @@ nav.navbar.navbar-fixed-top {
 .jumbotron .container .btn:active,
 .jumbotron .container .btn:focus {
   background-color: transparent;
+  box-shadow: none;
 }
 @media (max-width: 480px) {
   .jumbotron .container {
@@ -6983,6 +6984,11 @@ nav.navbar.navbar-fixed-top {
   }
   .jumbotron .container h1 span {
     font-size: 28px;
+  }
+}
+@media (min-width: 600px) {
+  .jumbotron {
+    background-attachment: fixed;
   }
 }
 .icon-prev,
@@ -7035,8 +7041,6 @@ nav.navbar.navbar-fixed-top {
 }
 .portfolio .container .carousel-indicators .active {
   background-color: #111;
-  width: 20px;
-  height: 20px;
 }
 .portfolio .container .carousel-indicators li {
   border: 0px solid #ddd;
@@ -7170,10 +7174,6 @@ nav.navbar.navbar-fixed-top {
   .portfolio .container .glyphicon-menu-right {
     right: 45%;
   }
-  .portfolio .container .carousel-indicators .active {
-    width: 24px;
-    height: 24px;
-  }
   .portfolio .container .carousel-indicators li {
     border: 0px solid #ddd;
     width: 20px;
@@ -7197,10 +7197,6 @@ nav.navbar.navbar-fixed-top {
   }
   .portfolio .container .carousel-indicators {
     width: 68%;
-  }
-  .portfolio .container .carousel-indicators .active {
-    width: 24px;
-    height: 24px;
   }
   .portfolio .container .carousel-indicators li {
     border: 0px solid #ddd;
@@ -7309,6 +7305,10 @@ nav.navbar.navbar-fixed-top {
   padding: 12px 80px;
   font-size: 18px;
 }
+.call-to-action .container .btn:active,
+.call-to-action .container .btn:focus {
+  box-shadow: none;
+}
 .call-to-action .container #status {
   display: none;
 }
@@ -7338,6 +7338,11 @@ nav.navbar.navbar-fixed-top {
   .call-to-action .container .btn {
     width: 100%;
     padding: 12px;
+  }
+}
+@media (min-width: 600px) {
+  .call-to-action {
+    background-attachment: fixed;
   }
 }
 /* About */
