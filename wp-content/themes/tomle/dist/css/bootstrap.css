@@ -6986,11 +6986,6 @@ nav.navbar.navbar-fixed-top {
     font-size: 28px;
   }
 }
-@media (min-width: 600px) {
-  .jumbotron {
-    background-attachment: fixed;
-  }
-}
 .icon-prev,
 .icon-next,
 .glyphicon-menu-left,
@@ -7598,6 +7593,7 @@ nav.navbar.navbar-fixed-top {
   text-align: center;
   display: block;
   margin-left: 3px;
+  top: 3px;
 }
 .scroll-top:hover {
   color: #eee;
