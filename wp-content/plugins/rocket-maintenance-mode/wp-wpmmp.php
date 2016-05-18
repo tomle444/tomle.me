@@ -1,17 +1,21 @@
 <?php
 /**
 Plugin Name: Maintenance Mode
-Plugin URI: http://rocketplugins.com/wordpress-maintenance-mode-plugin/
-Description: Adds a responsive maintenance page to your site that lets visitors know your site is down. 
+Plugin URI: http://web-settler.com/maintenance-mode/
+Description: Adds a responsive maintenance page to your site that lets visitors know your site is down.
 Author: Muneeb
-Author URI: http://rocketplugins.com/wordpress-maintenance-mode-plugin/
-Version: 2.1
-Copyright: 2013 Muneeb ur Rehman http://muneeb.me
+Author URI: http://web-settler.com/maintenance-mode/
+Version: 3.3
+Copyright: 2016 Muneeb ur Rehman http://muneeb.me
 **/
 
 require plugin_dir_path( __FILE__ ) . 'config.php';
 
 require WPMMP_PLUGIN_INCLUDE_DIRECTORY . 'functions.php';
+
+define( 'WPMMP_PRO_VERSION_ENABLED', true );
+
+add_option( 'wpmmp_install_version', WPMMP_PLUGIN_VERSION );
 
 load_wpmmp();
 

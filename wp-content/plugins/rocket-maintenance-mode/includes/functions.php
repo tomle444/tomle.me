@@ -14,6 +14,16 @@ function wpmmp_when_plugins_loaded() {
 	//Register and init the default theme
 	new Wpmmp_Default_Theme();
 
+	new Wpmmp_Alissa_Theme();
+
+	new Wpmmp_Cs_Simple_Theme();
+
+	new Wpmmp_Minimal_Theme();
+
+	new Wpmmp_Mmone_Theme();
+
+	new Wpmmp_Launch_Theme();
+
 }
 
 
@@ -22,6 +32,11 @@ function load_wpmmp_classes() {
 	wpmmp_include( 'classes/class-wpmmp-settings.php' );
 	wpmmp_include( 'classes/class-wpmmp-theme-handler.php' );
 	wpmmp_include( 'classes/class-wpmmp-default-theme.php' );
+	wpmmp_include( 'classes/class-wpmmp-alissa-theme.php' );
+	wpmmp_include( 'classes/class-wpmmp-cs-simple-theme.php' );
+	wpmmp_include( 'classes/class-wpmmp-minimal-theme.php' );
+	wpmmp_include( 'classes/class-wpmmp-mmone-theme.php' );
+	wpmmp_include( 'classes/class-wpmmp-launch-theme.php' );
 
 	new Wpmmp_Settings();
 
@@ -49,7 +64,12 @@ function wpmmp_view_path( $view_name, $is_php = true ) {
 
 function wpmmp_settings_part( $view_name, $is_php = true ) {
 
-	return wpmmp_view_path( 'admin-settings/' . $view_name, $is_php );
+	$path = wpmmp_view_path( 'admin-settings/' . $view_name, $is_php );
+
+	if ( file_exists( $path ) )
+		return $path;
+
+	return $view_name;
 
 }
 
@@ -79,6 +99,8 @@ function wpmmp_get_settings() {
 
 }
 
+
+
 function wpmmp_get_single_setting( $key ) {
 
 	$settings = wpmmp_get_settings();
@@ -92,7 +114,7 @@ function wpmmp_get_single_setting( $key ) {
 
 function wpmmp_get_active_theme() {
 
-	$theme = wpmmp_get_single_setting( 'theme' );
+	$theme = get_option('mmp_themes');
 
 	return apply_filters( 'wpmmp_get_active_theme', $theme );
 

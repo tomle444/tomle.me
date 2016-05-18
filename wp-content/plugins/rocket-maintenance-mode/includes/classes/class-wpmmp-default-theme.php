@@ -12,6 +12,8 @@ class Wpmmp_Default_Theme extends Wpmmp_Theme_Handler {
 
 	protected $template_name = 'default';
 
+	protected $use_styles = true;
+
 	function init() {
 
 		$this->path =  WPMMP_PLUGIN_VIEW_DIRECTORY . 'themes/default/template.php';

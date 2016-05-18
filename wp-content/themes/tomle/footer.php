@@ -16,7 +16,7 @@
               <div class="social-icons">
                 <span>Keep in Touch </span>
                 <a href="mailto:hello@tomle.me"><i class="fa fa-envelope"></i></a>
-                <a href="//www.linkedin.com/tomle44"><i class="fa fa-linkedin-square"></i></a>
+                <a href="//www.linkedin.com/in/tomle44"><i class="fa fa-linkedin-square"></i></a>
                 <a href="//www.github.com/tomle444"><i class="fa fa-github-square"></i></a>
               </div>
               <div class="copyright">&copy; 2016 tomle.me </div>

@@ -4,19 +4,15 @@ class Wpmmp_Settings {
 
 	function __construct() {
 
-		if ( ! get_option( 'wpmmp_settings' ) ) {
+		$this->previous_default_settings();
+		
+		if ( ! get_option( 'mmp_favicon' ) ) {
 
-			$settings = $this->default_settings();
-
-			add_option( 'wpmmp_settings', $settings, '', 'yes' );
-
-		}
-
-		if ( ! get_option( 'wpmmp_theme_settings' ) ) {
-
-			add_option( 'wpmmp_theme_settings', array(), '', 'yes' );
+			$this->default_settings();
 
 		}
+
+
 
 		$this->hooks();
 
@@ -33,6 +29,8 @@ class Wpmmp_Settings {
 		add_action( 'wp_ajax_wpmmp_reset_settings', array( $this, 'reset_settings' ) );
 
 		add_action( 'init', array( $this, 'plugin_activation_notice' ) );
+
+		add_action( 'admin_init', array( $this, 'tabs_register_settings' ) );
 
 	}
 
@@ -54,19 +52,7 @@ class Wpmmp_Settings {
 
 		$menu_slug = 'wpmmp-settings';
 
-		add_object_page( $page_title, $menu_title, $capability, $menu_slug, array( $this, 'settings_page' ), 'dashicons-hammer' );
-
-	}
-
-	function add_meta_boxes() {
-		
-		add_meta_box( 
-			'general-settings',
-			__( 'General', 'wpmmp' ),
-			array( $this, 'general_settings_meta_box' ),
-			'wpmmp_settings_page',
-			'normal'
-		);
+		add_menu_page( $page_title, $menu_title, $capability, $menu_slug, array( $this, 'settings_page' ), 'dashicons-hammer' );
 
 	}
 
@@ -75,18 +61,25 @@ class Wpmmp_Settings {
 		if ( ! isset( $_GET['page'] ) )
 			return FALSE;
 
-		if ( ! $_GET['page'] == 'wpmmp-settings' )
+		if ( $_GET['page'] !== 'wpmmp-settings' )
 			return FALSE;
 
+		wp_enqueue_script( 'wp-color-picker'  );
+		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_style( 'thickbox' );
-
 		wp_enqueue_script( 'thickbox' );
+		wp_enqueue_script( 'media-upload' );
+		wp_enqueue_script( 'jquery-ui-core' );
+		wp_enqueue_script( 'jquery-ui-widget' );
+		wp_enqueue_script( 'jquery-ui-accordion' );
+
+		wp_enqueue_media();
 
 		wp_enqueue_style( 'wpmp-settings', 
 			plugins_url( 'css/admin-settings.css', WPMMP_PLUGIN_MAIN_FILE ) );
 
 		wp_enqueue_script( 'wpmp-settings', 
-			plugins_url( 'js/admin-settings.js', WPMMP_PLUGIN_MAIN_FILE ) );
+			plugins_url( 'js/admin-settings.js', WPMMP_PLUGIN_MAIN_FILE ), array( 'wp-color-picker' ) );
 
 		$translation_array = array( 
 				'confirm_reset' => __( 'Are you sure you want to reset the settings ?', 'wpmmp' ),
@@ -101,28 +94,11 @@ class Wpmmp_Settings {
 
 	function settings_page() {
 
-		if ( isset( $_POST['submit'] ) )
-			$this->save_settings();
-
-		if ( ! isset( $_GET['tab'] ) )
-			$this->admin_tabs();
-		else
-			$this->admin_tabs( $_GET['tab'] );
-
 		$nonce = wp_create_nonce( 'wpmmp_settings_page_nonce' );
-
-		$settings = $this->get_settings();
 
 		$themes = wpmmp_get_themes();
 
-		echo "<a target='_blank' href='http://rocketplugins.com/wordpress-maintenance-mode-plugin/'><img class='wpmmp-banner-paid-image' src='". wpmmp_image_url( 'banner.png' ). "'/></a>";
-
-		$this->add_meta_boxes();
-
-		if ( ! isset( $_GET['tab'] ) )
-			include wpmmp_settings_part( 'settings' );
-		else
-			include wpmmp_settings_part( $_GET['tab'] );
+		include wpmmp_settings_part( 'premiumui' );
 
 	}
 
@@ -131,74 +107,9 @@ class Wpmmp_Settings {
 		if ( ! current_user_can( 'manage_options' ) )
 			wp_die( 'You are not allowed to change plugin options' );
 
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'wpmmp_settings_page_nonce' ) )
-			wp_die( 'Invalid Nonce' );
 
-		$tab = 'settings';
 
-		if ( ! isset( $_GET['tab'] ) )
-			$_GET['tab'] = 'settings';
-
-		if ( $_GET['tab'] == 'tab-advanced-settings' )
-			$tab = 'tab-advanced-settings';
-
-		$settings = wpmmp_get_settings();
-
-		if ( $tab == 'settings' ) {
-
-			$settings['status'] = stripslashes($_POST['settings']['status']);
-
-			$theme = stripslashes($_POST['settings']['theme']);
-
-			$settings['theme'] = $theme;
-
-			$settings['title'] = stripslashes($_POST['settings']['title']);
-
-			$settings['heading1'] = stripslashes($_POST['settings']['heading1']);
-
-			$settings['heading2'] = stripcslashes($_POST['settings']['heading2']);
-
-			$settings['content'] = stripcslashes($_POST['settings']['content']);
-
-			if ( isset( $_POST['settings']['countdown_timer'] ) )
-				$settings['countdown_timer'] = true;
-			else
-				$settings['countdown_timer'] = false;
-  			
-  			if ( isset( $_POST['settings']['progress_bar'] ) )
-				$settings['progress_bar'] = true;
-			else
-				$settings['progress_bar'] = false;
-
-			$settings['progress_bar_range'] = stripslashes($_POST['settings']['progress_bar_range']);
-
-			$settings['countdown_time'] = stripslashes($_POST['settings']['countdown_time']);
-
-			$settings = apply_filters( 'wpmmp_settings_before_save', $settings );
-			
-			update_option( 'wpmmp_settings', $settings );
-
-			if ( function_exists('w3tc_pgcache_flush') ) {
-			  w3tc_pgcache_flush();
-			} else if ( function_exists('wp_cache_clear_cache') ) {
-			  wp_cache_clear_cache();
-			}
-
-		}
-
-		if ( $tab == 'tab-advanced-settings' ) {
-
-			$settings['http_503_header'] = $_POST['settings']['http_503_header'];
-
-			$settings['feed'] = $_POST['settings']['feed'];
-
-			$settings = apply_filters( 'wpmmp_settings_before_save', $settings );
-			
-			update_option( 'wpmmp_settings', $settings );
-			
-		}
-
-		include wpmmp_settings_part( 'settings-saved' );;
+		include wpmmp_settings_part( 'settings-saved' );
 	}
 
 	function reset_settings() {
@@ -209,36 +120,160 @@ class Wpmmp_Settings {
 		if ( ! wp_verify_nonce( $_REQUEST['nonce'], 'wpmmp_reset_nonce' ) )
 			exit( '2' );
 
-		if ( ! isset( $_REQUEST['which-settings'] ) )
-			$_REQUEST['which-settings'] = 'settings';
-
-		$which_settings = $_REQUEST['which-settings'];
-
-		if ( $which_settings == 'settings' )
-			update_option( 'wpmmp_settings', $this->default_settings() );
+		delete_option('mmp_on_off');
+		delete_option('mmp_favicon');
+		delete_option('mmp_title');
+		delete_option('mmp_seo_meta');
+		delete_option('mmp_analytics');
+		delete_option('mmp_logo');
+		delete_option('mmp_headline');
+		delete_option('mmp_message');
+		delete_option('mmp_bgcolor');
+		delete_option('mmp_text_color');
+		delete_option('mmp_links_color');
+		delete_option('mmp_links_hover_color');
+		delete_option('mmp_background_image');
+		delete_option('mmp_res_bg');
+		delete_option('mmp_fft');
+		delete_option('mmp_ffht');
+		delete_option('mmp_custom_css');
+		delete_option('mmp_custom_header_script');
+		delete_option('mmp_custom_footrt_script');
+		delete_option('mmp_fb_page');
+		delete_option('mmp_tw_page');
+		delete_option('mmp_lkin_page');
+		delete_option('mmp_pin_page');
+		delete_option('mmp_insta_page');
+		delete_option('mmp_show_fb');
+		delete_option('mmp_show_tw');
+		delete_option('mmp_show_lk');
+		delete_option('mmp_show_pin');
+		delete_option('mmp_show_insta');
+		delete_option('mmp_on_off_countdown');
+		delete_option('mmp_on_off_progress');
+		delete_option('mmp_set_dateTime');
+		delete_option('mmp_set_progress');
+		delete_option('mmp_on_off_subscribe');
+		delete_option('mmp_http_503');
+		delete_option('mmp_feed_access');
+		delete_option('mmp_themes');
+		delete_option('mmp_mc_api');
+	    delete_option('mmp_mc_listid'); 
+	    delete_option('mmp_mc_optin');
+	    delete_option('mmp_mc_sbt');
+	    delete_option('mmp_mc_pt');
+	    delete_option('mmp_subheading');
+	    delete_option('mmp_headingcolor');
+	    delete_option('mmp_userroles');
 
 		exit( '10' );
 
 	}
 
+	function previous_default_settings() {
+
+		if ( ! get_option( 'wpmmp_settings' ) )
+			return false;
+
+		if ( get_option( 'wpmmp_preToNewDone' ) )
+			return false;
+
+		$options = get_option( 'wpmmp_settings' );
+
+		if ( $options['status'] == 'enabled' )
+			update_option( 'mmp_on_off', 1 );
+		else
+			update_option( 'mmp_on_off', 0 );
+
+		update_option( 'mmp_themes' , 'default' );
+
+		update_option('mmp_title', $options['title'] );
+
+		update_option( 'mmp_headline' , $options['heading1'] );
+
+		update_option( 'mmp_subheading' , $options['heading2'] );
+
+		update_option( 'mmp_message' , $options['content'] );
+
+		if ( $options['countdown_timer'] )
+			update_option( 'mmp_on_off_countdown' , 1 );
+		else
+			update_option( 'mmp_on_off_countdown' , 0 );
+
+		update_option( 'mmp_set_dateTime' , $options['countdown_time'] );
+
+		if ( $options['progress_bar'] )
+			update_option( 'mmp_on_off_progress' , 1 );
+		else
+			update_option( 'mmp_on_off_progress' , 0 );
+
+		update_option( 'mmp_set_progress' , $options['progress_bar_range'] );
+
+		if ( $options['http_503_header'] == 'enabled' )
+			update_option( 'mmp_http_503' , 1 );
+		else
+			update_option( 'mmp_http_503' , 0 );
+
+		if ( $options['feed'] == 'enabled' )
+			update_option( 'mmp_feed_access' , 1 );
+		else
+			update_option( 'mmp_feed_access' , 0 );
+
+		update_option( 'wpmmp_preToNewDone', true );
+
+	}
+
 	function default_settings() {
 
-		$default_settings = array(
-				'status' => 'disabled',
-				'theme' => 'default-4',
-				'title' => get_bloginfo( 'blogname' ) . ' is down',
-				'heading1' => 'We are down for maintenance',
-				'heading2' => 'We will be here soon',
-				'content' => 'Add Maintenance/Coming Soon Message here',
-				'countdown_timer' => false,
-				'countdown_time' => date('Y/m/d H:i a', time() ),
-				'progress_bar' => false,
-				'progress_bar_range' => 50,
-				'http_503_header' => 'enabled',
-				'feed' => 'disabled'
-			);
+	  add_option('mmp_on_off' , 0);
+	  add_option('mmp_favicon', '');
+	  add_option('mmp_title', 'Site is Down');
+	  add_option('mmp_seo_meta', '');
+	  add_option('mmp_analytics', '');
+	  add_option('mmp_logo' , '');
+	  add_option('mmp_headline' , 'We are down for maintenance');
+	  add_option('mmp_message' , 'Ad your message here');
+	  add_option('mmp_bgcolor' , '');
+	  add_option('mmp_text_color', '');
+	  add_option('mmp_links_color' ,'');
+	  add_option('mmp_links_hover_color','');
+	  add_option('mmp_background_image' , '');
+	  add_option('mmp_res_bg' , '0');
+	  add_option('mmp_fft' , ' ');
+	  add_option('mmp_ffht' , '');
+	  add_option('mmp_custom_css' , '');
+	  add_option('mmp_custom_header_script' , '');
+	  add_option('mmp_custom_footrt_script', '');
+	  add_option('mmp_fb_page' , '');
+	  add_option('mmp_tw_page' , '');
+	  add_option('mmp_lkin_page' , '');
+	  add_option('mmp_pin_page' ,'');
+	  add_option('mmp_insta_page', '');
+	  add_option('mmp_show_fb' , 0);
+	  add_option('mmp_show_tw' , 0);
+	  add_option('mmp_show_lk' , 0);
+	  add_option('mmp_show_pin' , 0);
+	  add_option('mmp_show_insta' , 0);
+	  add_option('mmp_on_off_countdown' , 0);
+	  add_option('mmp_on_off_progress' , 0);
+	  add_option('mmp_set_dateTime', date('m/d/Y'));
+	  add_option('mmp_set_progress' , '');
+	  add_option('mmp_on_off_subscribe' , 0);
+	  add_option('mmp_http_503' , 0);
+	  add_option('mmp_feed_access' , 0);
+	  
+	  add_option('mmp_themes' , 'default');
+	  add_option('mmp_mc_api' , '');
+	  add_option('mmp_mc_listid' , '' ); 
+	  add_option('mmp_mc_optin' ,  1);
+	  add_option('mmp_mc_sbt' ,  'Subscribe');
+	  add_option('mmp_mc_pt' ,  'Enter Email');
 
-		return apply_filters( 'wpmmp_default_settings', $default_settings );
+	  add_option('mmp_subheading', '');
+	  add_option( 'mmp_headingcolor', '' );
+
+	  add_option( 'mmp_userroles', array( 'administrator' ) );
+
 
 	}
 
@@ -250,11 +285,28 @@ class Wpmmp_Settings {
 
 	}
 
-	function admin_tabs( $current = 'settings' ) {
+	function admin_tabs( $current = 'general-settings' ) {
 	    
 	    $tabs = array( 
-	    		'settings' => __( 'Settings', 'wpmmp' ), 
-	    		'tab-advanced-settings' => __( 'Advanced Settings', 'wpmmp' )
+	    		'general-settings' => __( 'General Settings', 'wpmmp' ), 
+	    		
+	    		'theme-settings' => __( 'Themes', 'wpmmp' ),
+	    		
+	    		'page-settings' => __( 'Page', 'wpmmp' ), 
+	    		
+	    		'header-settings' => __( 'Header', 'wpmmp' ),
+	    		
+	    		'design-settings' => __( 'Design', 'wpmmp' ),
+	    		
+	    		'social-settings' => __( 'Social Icons', 'wpmmp' ),
+
+	    		'email-settings' => __( 'Email Settings', 'wpmmp' ),
+	    		
+	    		
+	    		
+	    		'script-settings' => __( 'Scripts', 'wpmmp' ),
+	    		
+	    		'advanced-settings' => __( 'Advanced', 'wpmmp' ),
 	    	);
 
 	    echo '<div id="icon-themes" class="icon32"><br></div>';
@@ -313,6 +365,58 @@ class Wpmmp_Settings {
 		return array_merge( $links, array( 
 				'settings' => $settings_link
 		 	) );
+
+	}
+
+
+	function tabs_register_settings(){
+
+	  register_setting('mmp-settings-group','mmp_on_off');
+	  register_setting('mmp-settings-group','mmp_favicon');
+	  register_setting('mmp-settings-group','mmp_title');
+	  register_setting('mmp-settings-group','mmp_seo_meta');
+	  register_setting('mmp-settings-group','mmp_analytics');
+	  register_setting('mmp-settings-group','mmp_logo');
+	  register_setting('mmp-settings-group','mmp_headline');
+	  register_setting('mmp-settings-group','mmp_message');
+	  register_setting('mmp-settings-group','mmp_bgcolor');
+	  register_setting('mmp-settings-group','mmp_text_color');
+	  register_setting('mmp-settings-group','mmp_links_color');
+	  register_setting('mmp-settings-group','mmp_links_hover_color');
+	  register_setting('mmp-settings-group','mmp_background_image');
+	  register_setting('mmp-settings-group','mmp_res_bg');
+	  register_setting('mmp-settings-group','mmp_fft');
+	  register_setting('mmp-settings-group','mmp_ffht');
+	  register_setting('mmp-settings-group','mmp_custom_css');
+	  register_setting('mmp-settings-group','mmp_custom_header_script');
+	  register_setting('mmp-settings-group','mmp_custom_footrt_script');
+	  register_setting('mmp-settings-group','mmp_fb_page');
+	  register_setting('mmp-settings-group','mmp_tw_page');
+	  register_setting('mmp-settings-group','mmp_lkin_page');
+	  register_setting('mmp-settings-group','mmp_pin_page');
+	  register_setting('mmp-settings-group','mmp_insta_page');
+	  register_setting('mmp-settings-group','mmp_show_fb');
+	  register_setting('mmp-settings-group','mmp_show_tw');
+	  register_setting('mmp-settings-group','mmp_show_lk');
+	  register_setting('mmp-settings-group','mmp_show_pin');
+	  register_setting('mmp-settings-group','mmp_show_insta');
+	  register_setting('mmp-settings-group','mmp_on_off_countdown');
+	  register_setting('mmp-settings-group','mmp_on_off_progress');
+	  register_setting('mmp-settings-group','mmp_set_dateTime');
+	  register_setting('mmp-settings-group','mmp_set_progress');
+	  register_setting('mmp-settings-group','mmp_on_off_subscribe');
+	  register_setting('mmp-settings-group','mmp_http_503');
+	  register_setting('mmp-settings-group','mmp_feed_access');
+	  register_setting('mmp-settings-group','mmp_themes');
+	  register_setting('mmp-settings-group','mmp_mc_api');
+	  register_setting('mmp-settings-group','mmp_mc_listid'); 
+	  register_setting('mmp-settings-group','mmp_mc_optin');
+	  register_setting('mmp-settings-group','mmp_mc_sbt');
+	  register_setting('mmp-settings-group','mmp_mc_pt');
+	  register_setting('mmp-settings-group','mmp_subheading');
+	  register_setting('mmp-settings-group','mmp_headingcolor');
+	  register_setting('mmp-settings-group','mmp_userroles');
+	  register_setting('mmp-settings-group','');
 
 	}
 

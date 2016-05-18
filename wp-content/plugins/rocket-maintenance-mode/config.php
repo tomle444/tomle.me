@@ -32,4 +32,4 @@ define( 'WPMMP_PLUGIN_JS_DIRECTORY', WPMMP_PLUGIN_PATH .
 
 define( 'WPMMP_PLUGIN_MAIN_FILE', WPMMP_PLUGIN_PATH . 'wp-wpmmp.php' );
 
-define( 'WPMMP_PLUGIN_VERSION', '2.1' );
+define( 'WPMMP_PLUGIN_VERSION', '3.2' );
