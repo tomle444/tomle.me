@@ -71,8 +71,10 @@
                     </button>
                     <ul class="nav navbar-nav">
                         <li><a href="javascript:void(0);" class="portfolio-link">Portfolio</a></li>
-                        <li><a href="javascript:void(0);" class="about-link">About</a></li>
                         <li><a href="javascript:void(0);" class="contact-link">Contact</a></li>
+                        <li><a href="javascript:void(0);" class="about-link">About</a></li>
+                        <li><a href="javascript:void(0);" class="work-link">Work</a></li>
+                        
                     </ul>          
                 </div><!--/.navbar-collapse -->
             </div>

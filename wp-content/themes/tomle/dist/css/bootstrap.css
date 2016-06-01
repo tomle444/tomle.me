@@ -7392,10 +7392,29 @@ nav.navbar.navbar-fixed-top {
   }
 }
 /* Other Work */
+.other-work {
+  background-color: #e6ecef;
+}
 .other-work .container {
   padding: 80px 0;
   margin: auto;
   width: 80%;
+  text-align: center;
+}
+.other-work .container .website-list {
+  overflow: hidden;
+}
+.other-work .container .website-list ul {
+  padding: 40px 0;
+  list-style-type: none;
+}
+.other-work .container .website-list ul li {
+  display: inline-block;
+  padding: 4px;
+  font-size: 14px;
+  text-align: left;
+  float: left;
+  width: 25%;
 }
 .overlay,
 .overlay-results {
