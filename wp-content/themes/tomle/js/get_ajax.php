@@ -1,6 +1,6 @@
 <?php 
 	/***
-	**	Get Ajax Information
+	**	Get Ajax Information for Portfolio
 	***/
 
 	$id = strtolower($_POST["portfolio_id"]); 
@@ -12,7 +12,7 @@
 			"id" => $id  = 
 			array(
 				"id"			=> $id,
-				"title" 		=> "GoZolt",
+				"title" 		=> "Zolt",
 				"description" 	=> "<p>A startup company that has created the world's smallest, lightest laptop charger.</p>
 
 				<p>GoZolt collaborated with a local marketing team to create an e-commerce site built with Magento.</p>
@@ -127,7 +127,7 @@
 				"title" 		=> "Tribal Hollywood",
 				"description" 	=> "<p>Tribal Hollywood is a Men's Jewelry store based out of Los Angeles, California. They specialize in selling designer men's jewelry and accessories.</p>
 
-				<p>A longtime client of ours, Tribal Hollywood had a distinct look and feel that they wanted to maintain. Their emphasis was on targeting the night club, rockstar, trendy, party-goers that frequent the night life scene that is found the in Hollywood area.</p>
+				<p>Tribal Hollywood had a distinct look and feel that they wanted to maintain. Their emphasis was on targeting the night club, rockstar, trendy, party-goers that frequent the night life scene that is found the in Hollywood area.</p>
 				<p>Working closely with the client, I was responsible for creating a set of wireframes and then a set of highly detailed Photoshop mockups which was then implemented into a Magento theme by another development team. I also created the original category images and graphic imagery.</p>",
 				"tags"			=> "<ul class=\"tags\">							    		
 							    	
@@ -140,6 +140,32 @@
 							    </ul>",
 				"date" 			=> "2012", 
 				"url" 			=> "www.tribalhollywood.com", 
+				"thumbnail_1" 			=> array("src" => $path . "/images/portfolio/project-" . $id . "-1.png", "height" => 468),
+				)
+			);
+		break;
+		case "thebeamstore":
+		$arr = array(	        
+			"id" => $id  = 
+			array(
+				"id"			=> $id,
+				"title" 		=> "The Beam Store",
+				"description" 	=> "<p>The Beam Store is an international supplier and manufacturer of gymnastics and dance equipment based out of Oklahoma City. They have been operating since 2002 and have taken their business both online and internationally since then due to their success.</p>",
+				"tags"			=> "<ul class=\"tags\">							    		
+							    	
+							    		<li>Responsive Web Design</li>
+
+							    		<li>HTML</li>
+
+							    		<li>CSS</li>
+
+							    		<li>Magento</li>
+
+							    		<li>Photoshop</li>
+							    	
+							    </ul>",
+				"date" 			=> "2012", 
+				"url" 			=> "www.thebeamstore.com", 
 				"thumbnail_1" 			=> array("src" => $path . "/images/portfolio/project-" . $id . "-1.png", "height" => 468),
 				)
 			);

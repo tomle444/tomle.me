@@ -8,7 +8,7 @@
             <div class="item active">
               <div class="item-inner">
                 <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-gozolt.png" class="portfolio-image" data-id="gozolt"/>
-                <h2>GoZolt</h2>
+                <h2>Zolt</h2>
                 <p>A startup company that has created the world's smallest, lightest laptop charger.</p>
                 <ul class="tags">
 
@@ -109,6 +109,28 @@
                 <p><a class="btn btn-default" href="javascript:void(0);" role="button" data-id="tribalhollywood">View details</a></p>
               </div>
             </div>
+
+            <div class="item">
+              <div class="item-inner">
+                <img src="<?php bloginfo('template_directory'); ?>/images/portfolio/project-thebeamstore.png" class="portfolio-image" data-id="thebeamstore"/>
+                <h2>The Beam Store</h2>
+                <p>The Beam Store is an international supplier and manufacturer of gymnastics and dance equipment.</p>
+                <ul class="tags">
+                  
+                  <li>Responsive Web Design</li>
+
+                  <li>HTML</li>
+                  
+                  <li>CSS</li>
+
+                  <li>Magento</li>
+
+                  <li>Photoshop</li>           
+                  
+                </ul>
+                <p><a class="btn btn-default" href="javascript:void(0);" role="button" data-id="thebeamstore">View details</a></p>
+              </div>
+            </div>
           </div>
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -117,6 +139,7 @@
             <li data-target="#carousel" data-slide-to="2"></li>
             <li data-target="#carousel" data-slide-to="3"></li>
             <li data-target="#carousel" data-slide-to="4"></li>
+            <li data-target="#carousel" data-slide-to="5"></li>
           </ol>
           <!-- Controls -->
           <div class="left carousel-control" data-target="#carousel" role="button" data-slide="prev">
@@ -175,6 +198,15 @@
         </div>
       </div>
 
-
+      <div id="otherwork" class="other-work">
+        <div class="container">
+          <h1>Other Work</h1>
+          <p>Here are some other clientele that I have been involved with in either a web design or support role.</p>
+          <a href="javascript:void(0)" class="btn btn-default view-website-list">View List</a>
+          <div class="website-list">
+            
+          </div>
+        </div>
+      </div>
 
 <?php get_footer(); ?>
