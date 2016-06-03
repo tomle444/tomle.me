@@ -7416,6 +7416,17 @@ nav.navbar.navbar-fixed-top {
   float: left;
   width: 25%;
 }
+@media (max-width: 769px) {
+  .other-work .container {
+    width: 90%;
+  }
+  .other-work .container .website-list {
+    overflow: hidden;
+  }
+  .other-work .container .website-list ul li {
+    width: 49%;
+  }
+}
 .overlay,
 .overlay-results {
   display: none;
