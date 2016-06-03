@@ -528,8 +528,7 @@
 		margin: auto;
 		width: 80%;
 		text-align: center; 
-		.website-list {
-			
+		.website-list {			
 			overflow: hidden;
 			ul {
 				padding: 40px 0;
@@ -541,6 +540,19 @@
 					text-align: left;
 					float: left;
 					width: 25%;
+				}
+			}
+		}
+	}
+	@media (max-width: @screen-sm) {
+		.container {
+			width: 90%;
+			.website-list {			
+				overflow: hidden;
+				ul {
+					li {						
+						width: 49%;
+					}
 				}
 			}
 		}
