@@ -544,14 +544,37 @@
 			}
 		}
 	}
-	@media (max-width: @screen-sm) {
+	@media (max-width: 1024px) {
 		.container {
-			width: 90%;
 			.website-list {			
-				overflow: hidden;
 				ul {
 					li {						
-						width: 49%;
+						width: 33%;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: @screen-sm) {
+		.container {
+			width: 95%;
+			.website-list {			
+				ul {
+					li {						
+						width: 49%; 
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: @screen-xs) {
+		.container {
+			.website-list {			
+				ul {
+					li {		
+						word-break: break-word;
+						word-wrap: break-word;
+						font-size: 11px;
 					}
 				}
 			}
