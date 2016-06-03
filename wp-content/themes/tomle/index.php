@@ -203,9 +203,11 @@
           <h1>Other Work</h1>
           <p>Here are some other clientele that I have been involved with in either a web design or support role.</p>
           <a href="javascript:void(0)" class="btn btn-default view-website-list">View List</a>
+          <!--googleoff: index-->
           <div class="website-list">
             
           </div>
+          <!--googleon: all-->
         </div>
       </div>
 
