@@ -12,6 +12,9 @@ nav.navbar {
 	min-height: 25px;
 	-webkit-backface-visibility:hidden; /* fixes pixel movement bug on scroll */
 	transition: all 0.3s ease-in-out;	
+	-webkit-transition: all 0.3s ease-in-out;	
+	-moz-transition: all 0.3s ease-in-out;	
+	-o-transition: all 0.3s ease-in-out;	
 	.container {
 		position: relative;
 	
@@ -22,6 +25,9 @@ nav.navbar {
 			height: 74px;
 			padding: 8px;
 			transition: all 0.3s ease-in-out;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
 			box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
 			top: 0;
 			opacity: 1;
@@ -31,18 +37,36 @@ nav.navbar {
 				box-shadow: 2px 3px 2px -1px rgba(0, 0, 0, 0.2);
 				border: 1px solid #fff; 
 				transition: all .3s ease-in-out;
+				-webkit-transition: all .3s ease-in-out;
+				-moz-transition: all .3s ease-in-out;
+				-o-transition: all .3s ease-in-out;
 				polygon {
 					fill: lighten(@gray-base, 0%);
 					transition: fill .3s ease-in-out;
+					-webkit-transition: fill .3s ease-in-out;
+					-moz-transition: fill .3s ease-in-out;
+					-o-transition: fill .3s ease-in-out;
 				}
 			}
 			&:hover {  
 				svg {
 					box-shadow: 2px 3px 2px -1px #fff;
 					polygon {
-						fill: lighten(@gray-base, 35%);
+						fill: lighten(@gray-base, 35%); 
 					}
 				}
+			}
+		}
+		.navbar-headline {			
+			opacity: 0;
+			margin-left: 0px;
+			transition: all 0.3s ease-in-out;	
+			-webkit-transition: all 0.3s ease-in-out;	
+			-moz-transition: all 0.3s ease-in-out;	
+			-o-transition: all 0.3s ease-in-out;	
+			h2 {
+				font-family: "Shadows Into Light Two", "Cabin", Tahoma, sans-serif;
+				font-size: 16px;
 			}
 		}
 		#navbar {
@@ -50,6 +74,9 @@ nav.navbar {
 			right: 0;
 			top: 25px;
 			transition: all 0.3s linear; 
+			-webkit-transition: all 0.3s linear; 
+			-moz-transition: all 0.3s linear; 
+			-o-transition: all 0.3s linear; 
 		}
 		ul.nav {
 			
@@ -58,6 +85,9 @@ nav.navbar {
 					font-family: @font-family-secondary;
 					color: #fff;
 					transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+					-webkit-transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+					-moz-transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+					-o-transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
 					border-bottom: 2px solid ;
 					border-color: rgba(0,0,0,0);
 					&:hover {
@@ -85,6 +115,10 @@ nav.navbar {
 					box-shadow: none;
 					polygon {}
 				}
+			}
+			.navbar-headline {				
+				opacity: 1;
+				margin-left: 66px;
 			}
 			#navbar {
 				top: 0px;
@@ -127,6 +161,9 @@ nav.navbar {
 		height: 50px;
 		&.nav-height {
 			.container { 
+				.navbar-headline {
+					margin-left: 78px; 
+				}
 				ul.nav {
 					li {
 						a {
@@ -212,3 +249,13 @@ nav.navbar {
 		}		
 	}
 } 
+
+@media (max-width: @screen-xs) {
+	nav.navbar {	
+		.container { 
+			.navbar-headline {
+				display: none; 
+			}
+		}		
+	}
+}
