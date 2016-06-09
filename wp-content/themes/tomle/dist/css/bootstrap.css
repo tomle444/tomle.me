@@ -7238,9 +7238,10 @@ nav.navbar.navbar-fixed-top {
   }
   .portfolio .container .carousel-indicators li {
     border: 0px solid #ddd;
-    width: 20px;
-    height: 20px;
     transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     background-color: #ccc;
     margin: 0 10px;
   }
@@ -7259,14 +7260,6 @@ nav.navbar.navbar-fixed-top {
   }
   .portfolio .container .carousel-indicators {
     width: 68%;
-  }
-  .portfolio .container .carousel-indicators li {
-    border: 0px solid #ddd;
-    width: 20px;
-    height: 20px;
-    transition: all 0.2s ease-in-out;
-    background-color: #ccc;
-    margin: 0 10px;
   }
 }
 .portfolio .item {
