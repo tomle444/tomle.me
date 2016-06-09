@@ -58,10 +58,13 @@
                             <polygon points="487,508 194,215 257.8,151.2 489.6,381.7 612,259.3 612,140.8 612,90 561.2,90 50.8,90 0,90 0,140.8 0,409 
                             169.3,239.7 231.8,302.2 187.5,346.5 418,577 354.2,642.1 122.4,410.3 0,534 0,651.2 0,702 50.8,702 561.2,702 612,702 612,651.2 
                             612,383 "/>
-                        </svg>
-
+                        </svg>                        
                     </a>
+                    <div class="navbar-headline">
+                        <h2>Hello, my name is Tom Le</h2>
+                    </div>
                 </div>
+
                 <div id="navbar" class="pull-right">
                     <button type="button" class="nav-close navbar-toggle" >
                         <span class="sr-only">Toggle navigation</span>

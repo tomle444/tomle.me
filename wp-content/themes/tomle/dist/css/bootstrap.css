@@ -6,6 +6,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,600italic,700,700italic,400italic,300italic,300');
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,400italic,600,600italic,700,700italic');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6744,6 +6745,9 @@ nav.navbar {
   -webkit-backface-visibility: hidden;
   /* fixes pixel movement bug on scroll */
   transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 nav.navbar .container {
   position: relative;
@@ -6755,6 +6759,9 @@ nav.navbar .container a.site-logo {
   height: 74px;
   padding: 8px;
   transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
   top: 0;
   opacity: 1;
@@ -6766,10 +6773,16 @@ nav.navbar .container a.site-logo svg {
   box-shadow: 2px 3px 2px -1px rgba(0, 0, 0, 0.2);
   border: 1px solid #fff;
   transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 nav.navbar .container a.site-logo svg polygon {
   fill: #111111;
   transition: fill 0.3s ease-in-out;
+  -webkit-transition: fill 0.3s ease-in-out;
+  -moz-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
 }
 nav.navbar .container a.site-logo:hover svg {
   box-shadow: 2px 3px 2px -1px #fff;
@@ -6777,16 +6790,34 @@ nav.navbar .container a.site-logo:hover svg {
 nav.navbar .container a.site-logo:hover svg polygon {
   fill: #6a6a6a;
 }
+nav.navbar .container .navbar-headline {
+  opacity: 0;
+  margin-left: 0px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+nav.navbar .container .navbar-headline h2 {
+  font-family: "Shadows Into Light Two", "Cabin", Tahoma, sans-serif;
+  font-size: 16px;
+}
 nav.navbar .container #navbar {
   position: absolute;
   right: 0;
   top: 25px;
   transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
 }
 nav.navbar .container ul.nav li a {
   font-family: "Cabin", Helvetica, Arial, sans-serif;
   color: #fff;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   border-bottom: 2px solid ;
   border-color: rgba(0, 0, 0, 0);
 }
@@ -6810,6 +6841,10 @@ nav.navbar.nav-height .container a.site-logo {
 nav.navbar.nav-height .container a.site-logo svg {
   width: 52px;
   box-shadow: none;
+}
+nav.navbar.nav-height .container .navbar-headline {
+  opacity: 1;
+  margin-left: 66px;
 }
 nav.navbar.nav-height .container #navbar {
   top: 0px;
@@ -6841,6 +6876,9 @@ nav.navbar.navbar-fixed-top {
 @media (max-width: 769px) {
   nav.navbar {
     height: 50px;
+  }
+  nav.navbar.nav-height .container .navbar-headline {
+    margin-left: 78px;
   }
   nav.navbar.nav-height .container ul.nav li a {
     color: #fff;
@@ -6909,6 +6947,11 @@ nav.navbar.navbar-fixed-top {
   }
   nav.navbar .container .navbar-toggle.nav-close:hover span.icon-bar {
     background-color: #00cbff;
+  }
+}
+@media (max-width: 480px) {
+  nav.navbar .container .navbar-headline {
+    display: none;
   }
 }
 /**
