@@ -6,6 +6,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,600italic,700,700italic,400italic,300italic,300');
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,400italic,600,600italic,700,700italic');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -95,7 +96,9 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
 }
 pre {
@@ -145,7 +148,9 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -154,7 +159,9 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
@@ -190,7 +197,8 @@ th {
   *:after {
     background: transparent !important;
     color: #000 !important;
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
     text-shadow: none !important;
   }
   a,
@@ -1538,13 +1546,15 @@ kbd {
   color: #fff;
   background-color: #333;
   border-radius: 3px;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 kbd kbd {
   padding: 0;
   font-size: 100%;
   font-weight: bold;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 pre {
   display: block;
@@ -2551,7 +2561,7 @@ output {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
@@ -2997,7 +3007,8 @@ select[multiple].input-lg {
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
-  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -3481,11 +3492,14 @@ tbody.collapse.in {
   height: 0;
   overflow: hidden;
   -webkit-transition-property: height, visibility;
-  transition-property: height, visibility;
+  -o-transition-property: height, visibility;
+     transition-property: height, visibility;
   -webkit-transition-duration: 0.35s;
-  transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+     transition-duration: 0.35s;
   -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+     transition-timing-function: ease;
 }
 .caret {
   display: inline-block;
@@ -3524,7 +3538,8 @@ tbody.collapse.in {
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
 }
 .dropdown-menu.pull-right {
   right: 0;
@@ -4171,7 +4186,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-right: 15px;
   padding-left: 15px;
   border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
 }
 .navbar-collapse.in {
@@ -4181,7 +4197,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-collapse {
     width: auto;
     border-top: 0;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .navbar-collapse.collapse {
     display: block !important;
@@ -4321,7 +4338,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-top: 0;
     background-color: transparent;
     border: 0;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .navbar-nav .open .dropdown-menu > li > a,
   .navbar-nav .open .dropdown-menu .dropdown-header {
@@ -5091,6 +5109,14 @@ a.thumbnail.active {
     background-position: 0 0;
   }
 }
+@-o-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
 @keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
@@ -5128,7 +5154,8 @@ a.thumbnail.active {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-size: 40px 40px;
+  -webkit-background-size: 40px 40px;
+          background-size: 40px 40px;
 }
 .progress.active .progress-bar,
 .progress-bar.active {
@@ -5859,7 +5886,6 @@ button.close {
   -o-transform: translate(0, -25%);
   transform: translate(0, -25%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
@@ -5886,7 +5912,8 @@ button.close {
   border-radius: 6px;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
   outline: 0;
 }
 .modal-backdrop {
@@ -6100,7 +6127,8 @@ button.close {
   word-wrap: normal;
   font-size: 14px;
   background-color: #fff;
-  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -6228,14 +6256,11 @@ button.close {
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
     -webkit-transition: -webkit-transform 0.6s ease-in-out;
-    -moz-transition: -moz-transform 0.6s ease-in-out;
     -o-transition: -o-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
     -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
     perspective: 1000px;
   }
   .carousel-inner > .item.next,
@@ -6305,6 +6330,7 @@ button.close {
 .carousel-control.left {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
@@ -6314,6 +6340,7 @@ button.close {
   right: 0;
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
@@ -6733,7 +6760,8 @@ button.close {
 nav.navbar {
   background-color: #fff;
   position: fixed;
-  box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
   font-family: "Cabin", Helvetica, Arial, sans-serif;
   z-index: 101;
   margin-bottom: 0;
@@ -6744,6 +6772,9 @@ nav.navbar {
   -webkit-backface-visibility: hidden;
   /* fixes pixel movement bug on scroll */
   transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 nav.navbar .container {
   position: relative;
@@ -6755,7 +6786,11 @@ nav.navbar .container a.site-logo {
   height: 74px;
   padding: 8px;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 2px -1px rgba(0, 0, 0, 0.2);
   top: 0;
   opacity: 1;
   border-bottom-right-radius: 4px;
@@ -6763,30 +6798,56 @@ nav.navbar .container a.site-logo {
 }
 nav.navbar .container a.site-logo svg {
   width: 58px;
-  box-shadow: 2px 3px 2px -1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 2px 3px 2px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 3px 2px -1px rgba(0, 0, 0, 0.2);
   border: 1px solid #fff;
   transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 nav.navbar .container a.site-logo svg polygon {
   fill: #111111;
   transition: fill 0.3s ease-in-out;
+  -webkit-transition: fill 0.3s ease-in-out;
+  -moz-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
 }
 nav.navbar .container a.site-logo:hover svg {
-  box-shadow: 2px 3px 2px -1px #fff;
+  -webkit-box-shadow: 2px 3px 2px -1px #fff;
+          box-shadow: 2px 3px 2px -1px #fff;
 }
 nav.navbar .container a.site-logo:hover svg polygon {
   fill: #6a6a6a;
+}
+nav.navbar .container .navbar-headline {
+  opacity: 0;
+  margin-left: 0px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+nav.navbar .container .navbar-headline h2 {
+  font-family: "Shadows Into Light Two", "Cabin", Tahoma, sans-serif;
+  font-size: 16px;
 }
 nav.navbar .container #navbar {
   position: absolute;
   right: 0;
   top: 25px;
   transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
 }
 nav.navbar .container ul.nav li a {
   font-family: "Cabin", Helvetica, Arial, sans-serif;
   color: #fff;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   border-bottom: 2px solid ;
   border-color: rgba(0, 0, 0, 0);
 }
@@ -6809,7 +6870,12 @@ nav.navbar.nav-height .container a.site-logo {
 }
 nav.navbar.nav-height .container a.site-logo svg {
   width: 52px;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+nav.navbar.nav-height .container .navbar-headline {
+  opacity: 1;
+  margin-left: 66px;
 }
 nav.navbar.nav-height .container #navbar {
   top: 0px;
@@ -6841,6 +6907,9 @@ nav.navbar.navbar-fixed-top {
 @media (max-width: 769px) {
   nav.navbar {
     height: 50px;
+  }
+  nav.navbar.nav-height .container .navbar-headline {
+    margin-left: 78px;
   }
   nav.navbar.nav-height .container ul.nav li a {
     color: #fff;
@@ -6891,18 +6960,27 @@ nav.navbar.navbar-fixed-top {
     padding: 10px;
     -webkit-perspective: 1000;
     -webkit-backface-visibility: hidden;
-    perspective: 1000;
+    -webkit-perspective: 1000;
+            perspective: 1000;
   }
   nav.navbar .container .navbar-toggle.nav-close span.icon-bar {
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
     background-color: #fff;
   }
   nav.navbar .container .navbar-toggle.nav-close span.icon-bar:nth-of-type(2n) {
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
   nav.navbar .container .navbar-toggle.nav-close span.icon-bar:nth-of-type(3n) {
     margin-top: -2px;
-    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+         -o-transform: rotate(135deg);
+            transform: rotate(135deg);
   }
   nav.navbar .container .navbar-toggle.nav-close span.icon-bar:nth-of-type(4n) {
     display: none;
@@ -6911,13 +6989,19 @@ nav.navbar.navbar-fixed-top {
     background-color: #00cbff;
   }
 }
+@media (max-width: 480px) {
+  nav.navbar .container .navbar-headline {
+    display: none;
+  }
+}
 /**
  * Homepage
  */
 /* Jumbotron Bootstrap module */
 .jumbotron {
   background-image: url('../../images/hero.jpg');
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   position: relative;
   overflow: hidden;
   margin-bottom: 0;
@@ -6955,21 +7039,20 @@ nav.navbar.navbar-fixed-top {
   100% {
     opacity: 1;
     -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
     -0-transform: translateY(10px);
     transform: translateY(10px);
   }
 }
-@-moz-keyframes arrow-jump {
+@-o-keyframes arrow-jump {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
     -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
     -0-transform: translateY(10px);
-    transform: translateY(10px);
+    -o-transform: translateY(10px);
+       transform: translateY(10px);
   }
 }
 @keyframes arrow-jump {
@@ -6979,20 +7062,21 @@ nav.navbar.navbar-fixed-top {
   100% {
     opacity: 1;
     -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
     -0-transform: translateY(10px);
-    transform: translateY(10px);
+    -o-transform: translateY(10px);
+       transform: translateY(10px);
   }
 }
 .jumbotron .container .btn {
   border: 0;
   padding: 10px 30px;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+       -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
   font-size: 30px;
   position: relative;
   bottom: -50px;
   -webkit-animation: arrow-jump 1s infinite;
-  -moz-animation: arrow-jump 1s infinite;
   -o-animation: arrow-jump 1s infinite;
   animation: arrow-jump 1s infinite;
 }
@@ -7000,7 +7084,8 @@ nav.navbar.navbar-fixed-top {
 .jumbotron .container .btn:active,
 .jumbotron .container .btn:focus {
   background-color: transparent;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 @media (max-width: 480px) {
   .jumbotron .container {
@@ -7024,13 +7109,19 @@ nav.navbar.navbar-fixed-top {
 .glyphicon-menu-left {
   left: 50%;
   margin-left: 80px;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .icon-next,
 .glyphicon-menu-right {
   right: 50%;
   margin-right: 80px;
-  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+       -o-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
 }
 .icon-prev,
 .icon-next {
@@ -7053,7 +7144,8 @@ nav.navbar.navbar-fixed-top {
 .portfolio .container .carousel-indicators {
   bottom: 8%;
   margin-left: 0;
-  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -o-transform: translateX(-50%);
@@ -7065,7 +7157,9 @@ nav.navbar.navbar-fixed-top {
   border: 0px solid #ddd;
   width: 14px;
   height: 14px;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
   background-color: #ccc;
   margin: 0 5px;
   border-radius: 20px;
@@ -7073,12 +7167,16 @@ nav.navbar.navbar-fixed-top {
 .portfolio .container .carousel-control.left,
 .portfolio .container .carousel-control.right {
   background-image: none;
-  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+       -o-transition: all .5s ease;
+          transition: all .5s ease;
 }
 .portfolio .container .carousel-control.left a,
 .portfolio .container .carousel-control.right a {
   background-image: none;
-  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+       -o-transition: all .2s ease;
+          transition: all .2s ease;
   opacity: 1;
   border-radius: 350px;
   height: 350px;
@@ -7086,7 +7184,10 @@ nav.navbar.navbar-fixed-top {
   top: 50%;
   position: absolute;
   color: #fff;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
   border: 2px solid rgba(255, 255, 255, 0);
 }
 .portfolio .container .carousel-control.left:hover,
@@ -7097,13 +7198,16 @@ nav.navbar.navbar-fixed-top {
 .portfolio .container .carousel-control.right:hover a {
   opacity: 1;
   background-color: #666666;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
   border: 2px solid #fff;
 }
 .portfolio .container .carousel-control.left:hover a span,
 .portfolio .container .carousel-control.right:hover a span {
   color: #fff;
-  transition: color 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out;
+       -o-transition: color 0.25s ease-in-out;
+          transition: color 0.25s ease-in-out;
 }
 .portfolio .container .carousel-control .glyphicon-menu-left,
 .portfolio .container .carousel-control .glyphicon-menu-right,
@@ -7166,7 +7270,8 @@ nav.navbar.navbar-fixed-top {
   .portfolio .container .carousel-control.left:hover a,
   .portfolio .container .carousel-control.right:hover a {
     border: 0;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     background-color: transparent;
   }
   .portfolio .container .carousel-control.left:hover a span,
@@ -7195,9 +7300,10 @@ nav.navbar.navbar-fixed-top {
   }
   .portfolio .container .carousel-indicators li {
     border: 0px solid #ddd;
-    width: 20px;
-    height: 20px;
     transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     background-color: #ccc;
     margin: 0 10px;
   }
@@ -7216,14 +7322,6 @@ nav.navbar.navbar-fixed-top {
   }
   .portfolio .container .carousel-indicators {
     width: 68%;
-  }
-  .portfolio .container .carousel-indicators li {
-    border: 0px solid #ddd;
-    width: 20px;
-    height: 20px;
-    transition: all 0.2s ease-in-out;
-    background-color: #ccc;
-    margin: 0 10px;
   }
 }
 .portfolio .item {
@@ -7278,7 +7376,8 @@ nav.navbar.navbar-fixed-top {
 /* Call to Action */
 .call-to-action {
   background-image: url('../../images/contact.jpg');
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   position: relative;
   overflow: hidden;
   margin-bottom: 0;
@@ -7326,7 +7425,8 @@ nav.navbar.navbar-fixed-top {
 }
 .call-to-action .container .btn:active,
 .call-to-action .container .btn:focus {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 .call-to-action .container #status {
   display: none;
@@ -7338,7 +7438,9 @@ nav.navbar.navbar-fixed-top {
 .call-to-action .container .form-group textarea.form-control {
   border-color: rgba(202, 60, 60, 0.5);
   background-color: #e08c8c;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
   color: #fff;
 }
 .call-to-action .container .form-group input.form-control:focus,
@@ -7454,7 +7556,10 @@ nav.navbar.navbar-fixed-top {
   width: 85%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .overlay .overlay-modal .overlay-close,
 .overlay-results .overlay-modal .overlay-close {
@@ -7474,11 +7579,14 @@ nav.navbar.navbar-fixed-top {
   border-radius: 4px;
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
-  perspective: 1000;
+  -webkit-perspective: 1000;
+          perspective: 1000;
 }
 .overlay .overlay-modal .overlay-close span.icon-bar,
 .overlay-results .overlay-modal .overlay-close span.icon-bar {
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+       -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
   background-color: #fff;
   display: block;
   width: 20px;
@@ -7487,12 +7595,18 @@ nav.navbar.navbar-fixed-top {
 }
 .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n),
 .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(2n) {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n),
 .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(3n) {
   margin-top: -2px;
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+       -o-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 .overlay .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n),
 .overlay-results .overlay-modal .overlay-close span.icon-bar:nth-of-type(4n) {
@@ -7645,15 +7759,14 @@ nav.navbar.navbar-fixed-top {
   z-index: 99;
   opacity: 0;
   padding: 14px 10px 16px;
-  -webkit-border-radius: 68px;
-  -moz-border-radius: 68px;
   border-radius: 68px;
   line-height: 1;
   width: 68px;
   height: 68px;
   background-color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
 }
@@ -7707,7 +7820,9 @@ footer:after {
   clear: both;
 }
 footer a {
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
   color: #00cbff;
 }
 footer .container {
@@ -7771,7 +7886,9 @@ footer .bottom .container .social-icons a .fa {
   font-size: 24px;
   color: #5e5e5e;
   margin: 2px 4px;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
 }
 footer .bottom .container .social-icons a .fa:hover {
   color: #fff;
@@ -7799,7 +7916,9 @@ body {
 a {
   color: #111;
   outline: 0;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
 }
 a:hover {
   text-decoration: none;
@@ -7817,7 +7936,9 @@ input::-moz-focus-inner {
   text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0);
   font-family: "Cabin", Helvetica, Arial, sans-serif;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
   border-width: 2px;
   padding: 6px 12px;
   font-size: 14px;
@@ -7857,6 +7978,8 @@ p {
   bottom: 100%;
   right: 0;
   z-index: 1;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+       -o-transition: all 0.3s linear;
+          transition: all 0.3s linear;
 }
 /*# sourceMappingURL=bootstrap.css.map */

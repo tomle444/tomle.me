@@ -17,7 +17,7 @@ $(function(){
  	//console.log(parseInt(contactSection));
  	function scrollToNavigation(){
  		$('.portfolio-link').click(function(){
-			$('body').stop().scrollTo(portfolioSection, {duration:600, easing: 'easeInCubic', onAfter: function(){} } );
+			$('body').stop().scrollTo(portfolioSection, {duration:600, easing: 'easeInCubic'} );
 		});
 
  		$('.contact-link').click(function(){
