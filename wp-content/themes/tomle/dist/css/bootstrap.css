@@ -7483,7 +7483,7 @@ nav.navbar.navbar-fixed-top {
 }
 .overlay .overlay-modal,
 .overlay-results .overlay-modal {
-  position: relative;
+  position: absolute;
   max-width: 1260px;
   min-height: 400px;
   overflow: hidden;
